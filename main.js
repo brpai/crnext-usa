@@ -1008,3 +1008,17 @@ window.addEventListener('load', () => {
     else { alert('Could not send. Please call us at (978) 584-5424.'); }
   });
 })();
+
+
+/* ── Phone link: WhatsApp on desktop, tel: on mobile ── */
+(function () {
+  const phoneLink = document.getElementById('contactPhone');
+  if (!phoneLink) return;
+  const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+  if (!isMobile) {
+    const waMsg = encodeURIComponent("Hello CarNext USA! I found your website and would like to get more information about your vehicles.");
+    phoneLink.href = `https://wa.me/19785845424?text=${waMsg}`;
+    phoneLink.setAttribute('target', '_blank');
+    phoneLink.setAttribute('rel', 'noopener');
+  }
+})();
