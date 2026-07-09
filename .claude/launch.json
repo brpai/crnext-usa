@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "carnext-usa",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8743", "--directory", "/Users/brunoramos/Desktop/BrunoVault/code-projects/carnext-usa"],
+      "port": 8743
+    }
+  ]
+}

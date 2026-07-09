@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CARNEXT USA — Premium pre-owned vehicles in Orlando, FL. Transparent deals, flexible financing, airport pickup, and a dealership experience designed around you." />
+  <title>CARNEXT USA — Drive What's Next</title>
+
+  <!-- Canonical & SEO -->
+  <link rel="canonical" href="https://www.carnextusa.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.carnextusa.com/" />
+  <meta property="og:title" content="CARNEXT USA — Drive What's Next" />
+  <meta property="og:description" content="Premium pre-owned vehicles in Orlando, FL. Transparent deals, flexible financing, and airport pickup service." />
+  <meta property="og:image" content="https://www.carnextusa.com/assets/images/hero-poster.jpg" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@CarNextUSA" />
+  <meta name="twitter:title" content="CARNEXT USA — Drive What's Next" />
+  <meta name="twitter:description" content="Premium pre-owned vehicles in Orlando, FL." />
+  <meta name="twitter:image" content="https://www.carnextusa.com/assets/images/hero-poster.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- GSAP -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════════ -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="nav-logo-img" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="inventory.html" class="nav-link" data-i18n="nav_inventory">Inventory</a></li>
+        <li><a href="#fleet" class="nav-link" data-i18n="nav_fleet">Rental Cars</a></li>
+        <li><a href="#airport" class="nav-link" data-i18n="nav_airport">Airport Pickup</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact Us</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-btn active" data-lang="en">🇺🇸 EN</button>
+          <button class="lang-btn" data-lang="pt">🇧🇷 PT</button>
+          <button class="lang-btn" data-lang="es">🇪🇸 ES</button>
+        </div>
+        <a href="#test-drive" class="btn btn-primary btn-sm" data-i18n="nav_cta">Schedule Test Drive</a>
+        <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="inventory.html" class="mobile-link">Inventory</a></li>
+      <li><a href="#financing" class="mobile-link">Financing</a></li>
+      <li><a href="#fleet" class="mobile-link">Fleet</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+      <li><a href="#test-drive" class="btn btn-primary" style="display:inline-block;margin-top:8px;">Schedule Test Drive</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 1 — CINEMATIC HERO
+  ═══════════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <!-- Video Background -->
+    <div class="hero-video-wrap">
+      <video
+        class="hero-video"
+        src="assets/videos/dealership-family-outlander.mp4"
+        autoplay muted loop playsinline
+        preload="auto"
+        fetchpriority="high"
+        poster="assets/images/hero-poster.jpg"
+      ></video>
+      <link rel="preload" as="image" href="assets/images/hero-poster.jpg" fetchpriority="high" />
+      <div class="hero-video-fallback" id="heroFallback">
+        <canvas id="heroCanvas"></canvas>
+      </div>
+    </div>
+
+    <!-- Overlays -->
+    <div class="hero-overlay"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-glow-left"></div>
+    <div class="hero-glow-right"></div>
+
+    <!-- Official logo watermark — covers the generic text baked in the video -->
+    <div class="hero-logo-watermark">
+      <img src="assets/images/carnext-logo.png" alt="" aria-hidden="true" class="hero-logo-neon" />
+    </div>
+
+
+    <!-- Hero Content -->
+    <div class="hero-content" id="heroContent">
+      <h1 class="hero-title">
+        Find Your <span class="cnx-teal" data-i18n="hero_next">Next</span> <span data-i18n="hero_car">Car</span>
+      </h1>
+      <p class="hero-sub" data-i18n="hero_sub">
+        Premium pre-owned vehicles, transparent deals,<br class="hidden-mobile" />
+        and a dealership experience designed around you.
+      </p>
+      <div class="hero-ctas">
+        <a href="inventory.html" class="btn btn-primary" data-i18n="hero_cta1">View Inventory</a>
+        <a href="#test-drive" class="btn btn-secondary" data-i18n="hero_cta2">Schedule Test Drive</a>
+        <a href="https://www.cargurus.com" target="_blank" rel="noopener" class="btn btn-cargurus">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <span data-i18n="hero_cta3">Search on CarGurus</span>
+        </a>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-val" data-count="500">0</span><span class="stat-unit">+</span>
+          <span class="stat-label" data-i18n="stat_vehicles">Vehicles Available</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-val" data-count="98">0</span><span class="stat-unit">%</span>
+          <span class="stat-label" data-i18n="stat_satisfaction">Customer Satisfaction</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-val" data-count="24">0</span><span class="stat-unit">hr</span>
+          <span class="stat-label" data-i18n="stat_financing">Fast Financing</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span data-i18n="scroll">Scroll</span>
+    </div>
+
+    <!-- Decorative Lines -->
+    <div class="hero-lines">
+      <div class="h-line h-line-1"></div>
+      <div class="h-line h-line-2"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 2 — CHRYSLER PACIFICA SHOWCASE
+  ═══════════════════════════════════════════════════ -->
+  <section class="showcase" id="fleet">
+    <!-- Full-screen background video -->
+    <div class="showcase-video-bg">
+      <video
+        src="assets/videos/chrysler-pacifica-showcase.mp4"
+        class="showcase-bg-video"
+        autoplay muted loop playsinline preload="metadata"
+      ></video>
+      <div class="showcase-video-overlay"></div>
+    </div>
+
+    <div class="showcase-grid">
+
+      <!-- RIGHT: Content -->
+      <div class="showcase-content">
+        <div class="showcase-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text" data-i18n="fleet_eyebrow">FLEET & RENTAL PROGRAM</span>
+        </div>
+        <h2 class="showcase-title" data-i18n="fleet_title">Exclusive Conditions<br /><span class="text-gradient">for Rental Companies</span></h2>
+        <p class="showcase-desc" data-i18n="fleet_desc">
+          Fleet operators and rental businesses receive preferential pricing, bulk acquisition programs, and dedicated account management tailored to your operation.
+        </p>
+
+        <div class="fleet-cards">
+          <div class="fleet-card glass-card">
+            <div class="fc-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div class="fc-body">
+              <h4 class="fc-title" data-i18n="fleet_c1_title">Volume Pricing</h4>
+              <p class="fc-text" data-i18n="fleet_c1_text">Competitive bulk discounts starting at 5+ units with dedicated fleet pricing tiers.</p>
+            </div>
+          </div>
+          <div class="fleet-card glass-card">
+            <div class="fc-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="fc-body">
+              <h4 class="fc-title" data-i18n="fleet_c2_title">Inspected & Certified</h4>
+              <p class="fc-text" data-i18n="fleet_c2_text">Every vehicle passes our 150-point inspection before fleet delivery.</p>
+            </div>
+          </div>
+          <div class="fleet-card glass-card">
+            <div class="fc-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="fc-body">
+              <h4 class="fc-title" data-i18n="fleet_c3_title">Fleet Financing</h4>
+              <p class="fc-text" data-i18n="fleet_c3_text">Tailored financing solutions with extended terms and flexible payment structures.</p>
+            </div>
+          </div>
+          <div class="fleet-card glass-card">
+            <div class="fc-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="fc-body">
+              <h4 class="fc-title" data-i18n="fleet_c4_title">Dedicated Account Manager</h4>
+              <p class="fc-text" data-i18n="fleet_c4_text">Personal point of contact for quotes, logistics, and ongoing fleet support.</p>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary fleet-cta-btn fleet-modal-trigger" data-i18n="fleet_cta">Talk to Fleet Team</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 3 — AIRPORT DELIVERY CONCIERGE
+  ═══════════════════════════════════════════════════ -->
+  <section class="airport-section" id="airport">
+    <!-- Full-screen background video: airplane + family -->
+    <div class="airport-video-bg">
+      <video
+        class="airport-bg-video"
+        src="assets/videos/brand-highlight.mp4"
+        autoplay muted loop playsinline preload="metadata"
+      ></video>
+      <div class="airport-video-overlay"></div>
+    </div>
+
+    <!-- 2-col grid: ::before = left empty col (video shows), right = glass content -->
+    <div class="airport-grid">
+      <!-- Right col: glass card with all info -->
+      <div class="airport-content glass-card reveal-block">
+        <div class="section-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text" data-i18n="airport_eyebrow">CONCIERGE DELIVERY</span>
+        </div>
+        <h2 class="section-title" data-i18n="airport_title">We Pick You Up<br /><span class="text-gradient">at the Airport</span></h2>
+        <p class="airport-desc" data-i18n="airport_desc">
+          Just landed in Orlando? We come to you. Our team will meet you at the airport, escort you to our showroom, and make sure you drive home the same day — stress-free.
+        </p>
+
+        <div class="airport-features">
+          <div class="af-item">
+            <div class="af-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <h4 class="af-title" data-i18n="airport_feat1_title">Schedule in Advance</h4>
+              <p class="af-text" data-i18n="airport_feat1_text">Tell us your flight details. We'll coordinate pickup and have your vehicle ready.</p>
+            </div>
+          </div>
+          <div class="af-item">
+            <div class="af-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div>
+              <h4 class="af-title" data-i18n="airport_feat2_title">Same-Day Purchase</h4>
+              <p class="af-text" data-i18n="airport_feat2_text">Browse online, choose your vehicle, and finalize the deal the moment you arrive.</p>
+            </div>
+          </div>
+          <div class="af-item">
+            <div class="af-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4 class="af-title" data-i18n="airport_feat3_title">Fully Bilingual Team</h4>
+              <p class="af-text" data-i18n="airport_feat3_text">English, Portuguese, and Spanish. We speak your language from arrival to delivery.</p>
+            </div>
+          </div>
+          <div class="af-item">
+            <div class="af-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4 class="af-title" data-i18n="airport_feat4_title">Orlando, FL Coverage</h4>
+              <p class="af-text" data-i18n="airport_feat4_text">MCO Airport and all surrounding areas. Convenient, professional, and personal.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="airport-cta-center">
+          <a href="#test-drive" class="btn btn-primary" data-i18n="airport_cta">Book Airport Pickup</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 4 — PAIN POINT / TRUST
+  ═══════════════════════════════════════════════════ -->
+  <section class="trust-section" id="trust">
+    <!-- Full-screen background video -->
+    <div class="trust-video-bg">
+      <video
+        class="trust-bg-video"
+        src="assets/videos/airport-delivery-tesla.mp4"
+        autoplay muted loop playsinline preload="metadata"
+      ></video>
+      <div class="trust-video-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="trust-grid">
+        <!-- Pain Side -->
+        <div class="trust-pain reveal-block">
+          <div class="section-eyebrow">
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-text" data-i18n="pain_eyebrow">THE OLD WAY</span>
+          </div>
+          <h2 class="section-title"><span data-i18n="pain_title">Tired of the</span><br /><span class="text-gradient-red" data-i18n="pain_title_gradient">Same Old Dealership?</span></h2>
+          <div class="pain-list">
+            <div class="pain-item">
+              <div class="pain-icon">✗</div>
+              <div>
+                <h4 data-i18n="pain_1_title">Poor After-Sales Support</h4>
+                <p data-i18n="pain_1_text">You buy, then they forget you exist. You're just another number on their list.</p>
+              </div>
+            </div>
+            <div class="pain-item">
+              <div class="pain-icon">✗</div>
+              <div>
+                <h4 data-i18n="pain_2_title">Predatory Financing</h4>
+                <p data-i18n="pain_2_text">Rates designed to trap, not help. Complex terms, high interest, buried clauses.</p>
+              </div>
+            </div>
+            <div class="pain-item">
+              <div class="pain-icon">✗</div>
+              <div>
+                <h4 data-i18n="pain_3_title">Unreliable Vehicles</h4>
+                <p data-i18n="pain_3_text">No inspection history, unknown accidents, and zero accountability.</p>
+              </div>
+            </div>
+            <div class="pain-item">
+              <div class="pain-icon">✗</div>
+              <div>
+                <h4 data-i18n="pain_4_title">Pressure Tactics</h4>
+                <p data-i18n="pain_4_text">Aggressive sales, false urgency, and a process that ignores your needs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="trust-divider reveal-block">
+          <div class="divider-line"></div>
+          <div class="divider-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Solution Side -->
+        <div class="trust-solution reveal-block">
+          <div class="section-eyebrow">
+            <span class="eyebrow-line" style="background: var(--accent-blue)"></span>
+            <span class="eyebrow-text" data-i18n="solution_eyebrow">THE CARNEXT WAY</span>
+          </div>
+          <h2 class="section-title"><span data-i18n="solution_title">A Better Experience.</span><br /><span class="text-gradient" data-i18n="solution_title_gradient">Built for You.</span></h2>
+          <div class="solution-list">
+            <div class="solution-item">
+              <div class="solution-icon">✓</div>
+              <div>
+                <h4 data-i18n="solution_1_title">Premium After-Sales</h4>
+                <p data-i18n="solution_1_text">We take care of you — because now you're part of the club.</p>
+              </div>
+            </div>
+            <div class="solution-item">
+              <div class="solution-icon">✓</div>
+              <div>
+                <h4 data-i18n="solution_2_title">Fair Financing</h4>
+                <p data-i18n="solution_2_text">Simple terms, competitive rates, and options built around your budget.</p>
+              </div>
+            </div>
+            <div class="solution-item">
+              <div class="solution-icon">✓</div>
+              <div>
+                <h4 data-i18n="solution_3_title">150-Point Inspected</h4>
+                <p data-i18n="solution_3_text">Every vehicle fully inspected, documented, and verified before sale.</p>
+              </div>
+            </div>
+            <div class="solution-item">
+              <div class="solution-icon">✓</div>
+              <div>
+                <h4 data-i18n="solution_4_title">You-First Process</h4>
+                <p data-i18n="solution_4_text">Your timeline, your terms. A team that listens before they talk.</p>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary solution-cta fleet-modal-trigger" data-i18n="solution_cta">Acquire Fleet</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 6 — TEST DRIVE BOOKING
+  ═══════════════════════════════════════════════════ -->
+  <section class="test-drive" id="test-drive">
+    <div class="test-drive-bg"></div>
+    <div class="container">
+      <div class="test-drive-grid">
+        <div class="td-left reveal-block">
+          <div class="section-eyebrow">
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-text" data-i18n="td_eyebrow">BOOK YOUR EXPERIENCE</span>
+          </div>
+          <h2 class="section-title"><span data-i18n="td_title">Schedule Your</span><br /><span class="text-gradient" data-i18n="td_title2">Test Drive</span></h2>
+          <p class="td-desc" data-i18n="td_desc">
+            Experience the vehicle before you commit. Our team will have it prepped, inspected, and ready for you.
+          </p>
+          <div class="td-trust-badges">
+            <div class="trust-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="td_trust1">No commitment required</span>
+            </div>
+            <div class="trust-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="td_trust2">We come to you (available)</span>
+            </div>
+            <div class="trust-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="td_trust3">Response within 2 hours</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="td-form-wrap glass-card reveal-block">
+          <form class="td-form" id="testDriveForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" data-i18n="form_name">Full Name</label>
+                <input type="text" class="form-input" data-i18n-placeholder="form_name_ph" placeholder="John Smith" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" data-i18n="form_phone">Phone</label>
+                <input type="tel" class="form-input" placeholder="(978) 584-5424" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_email">Email</label>
+              <input type="email" class="form-input" placeholder="john@email.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_vehicle">Preferred Vehicle</label>
+              <select class="form-input form-select">
+                <option value="" data-i18n="form_vehicle_ph">Select a vehicle...</option>
+                <option>2022 Mitsubishi Outlander</option>
+                <option>2021 Chrysler Pacifica</option>
+                <option>2022 Toyota Sienna XLE</option>
+                <option>2021 Jeep Grand Cherokee</option>
+                <option>2020 Toyota Camry SE</option>
+                <option>2019 Honda CR-V EX</option>
+                <option data-i18n="form_vehicle_other">Other (specify in message)</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" data-i18n="form_date">Preferred Date</label>
+                <input type="date" class="form-input" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" data-i18n="form_time">Preferred Time</label>
+                <select class="form-input form-select">
+                  <option value="" data-i18n="form_time_ph">Select time...</option>
+                  <option>9:00 AM</option>
+                  <option>10:00 AM</option>
+                  <option>11:00 AM</option>
+                  <option>12:00 PM</option>
+                  <option>1:00 PM</option>
+                  <option>2:00 PM</option>
+                  <option>3:00 PM</option>
+                  <option>4:00 PM</option>
+                  <option>5:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_message">Message (Optional)</label>
+              <textarea class="form-input form-textarea" data-i18n-placeholder="form_message_ph" placeholder="Any questions or special requests..."></textarea>
+            </div>
+            <label class="td-checkbox-wrap">
+              <input type="checkbox" class="td-checkbox" name="passport_financing" id="passportFinancing" />
+              <span class="td-checkbox-box">
+                <svg width="11" height="9" viewBox="0 0 11 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4.5 4 7.5 10 1"/></svg>
+              </span>
+              <span class="td-checkbox-label" data-i18n="form_passport">I'm interested in <strong>Passport Financing</strong></span>
+            </label>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span data-i18n="form_submit">Schedule My Test Drive</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p class="form-disclaimer" data-i18n="form_disclaimer">Your information is secure and will never be shared with third parties.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 8 — SOCIAL PROOF
+  ═══════════════════════════════════════════════════ -->
+  <section class="social-proof" id="reviews">
+    <div class="container">
+      <div class="section-header reveal-block">
+        <div class="section-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text" data-i18n="reviews_eyebrow">CUSTOMER STORIES</span>
+        </div>
+        <h2 class="section-title"><span data-i18n="reviews_title">Trusted by</span> <span class="text-gradient" data-i18n="reviews_title_gradient">Thousands</span></h2>
+      </div>
+
+      <!-- Stats -->
+      <div class="proof-stats reveal-block">
+        <div class="proof-stat glass-card">
+          <div class="ps-val"><span class="stat-count" data-count="1200">0</span>+</div>
+          <div class="ps-label" data-i18n="ps_stat1_label">Vehicles Sold</div>
+        </div>
+        <div class="proof-stat glass-card">
+          <div class="ps-val"><span class="stat-count" data-count="98">0</span>%</div>
+          <div class="ps-label" data-i18n="ps_stat2_label">Satisfaction Rate</div>
+        </div>
+        <div class="proof-stat glass-card">
+          <div class="ps-val"><span class="stat-count" data-count="4">0</span>.9★</div>
+          <div class="ps-label" data-i18n="ps_stat3_label">Average Rating</div>
+        </div>
+        <div class="proof-stat glass-card">
+          <div class="ps-val"><span class="stat-count" data-count="24">0</span>hr</div>
+          <div class="ps-label" data-i18n="ps_stat4_label">Average Approval</div>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="testimonials-grid">
+        <div class="testimonial glass-card reveal-block">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text" data-i18n="t1_text">"The smoothest car-buying experience I've ever had. No pressure, total transparency, and the vehicle was exactly as described. I drove home in my Outlander the same day."</p>
+          <div class="t-author">
+            <div class="t-avatar">MR</div>
+            <div class="t-info">
+              <span class="t-name">Marcus R.</span>
+              <span class="t-vehicle mono">2022 Mitsubishi Outlander</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial glass-card reveal-block">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text" data-i18n="t2_text">"We were nervous about buying used after a bad experience elsewhere. CARNEXT USA completely changed our minds. They handled our trade-in and financing in one visit — outstanding."</p>
+          <div class="t-author">
+            <div class="t-avatar">SK</div>
+            <div class="t-info">
+              <span class="t-name">Sarah K.</span>
+              <span class="t-vehicle mono">2021 Toyota Sienna</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial glass-card reveal-block">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text" data-i18n="t3_text">"As a rental company owner, I've bought fleets from many dealers. CARNEXT gave us pricing, condition, and service that no one else could match. Our go-to supplier now."</p>
+          <div class="t-author">
+            <div class="t-avatar">JM</div>
+            <div class="t-info">
+              <span class="t-name">James M.</span>
+              <span class="t-vehicle mono">Fleet of 12 Vehicles</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 9 — CONTACT / LOCATION
+  ═══════════════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header reveal-block">
+        <div class="section-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text" data-i18n="contact_eyebrow">GET IN TOUCH</span>
+        </div>
+        <h2 class="section-title"><span data-i18n="contact_title">We're Here When</span><br /><span class="text-gradient" data-i18n="contact_title_gradient">You're Ready</span></h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal-block">
+          <div class="ci-item glass-card">
+            <div class="ci-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="ci-body">
+              <span class="ci-label" data-i18n="contact_phone_label">Phone</span>
+              <a href="tel:+19785845424" class="ci-val">(978) 584-5424</a>
+            </div>
+          </div>
+
+          <div class="ci-item glass-card">
+            <div class="ci-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="ci-body">
+              <span class="ci-label" data-i18n="contact_email_label">Email</span>
+              <a href="mailto:nex@carnextusa.com" class="ci-val">nex@carnextusa.com</a>
+            </div>
+          </div>
+
+          <div class="ci-item glass-card">
+            <div class="ci-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="ci-body">
+              <span class="ci-label" data-i18n="contact_location_label">Location</span>
+              <span class="ci-val" data-i18n="contact_location_val">Orlando, Florida — USA</span>
+            </div>
+          </div>
+
+          <div class="ci-item glass-card">
+            <div class="ci-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="ci-body">
+              <span class="ci-label" data-i18n="contact_hours_label">Business Hours</span>
+              <div class="ci-hours">
+                <span data-i18n="contact_hours_1">Mon–Fri: 9:00 AM – 6:00 PM</span>
+                <span data-i18n="contact_hours_2">Saturday: 10:00 AM – 2:00 PM</span>
+                <span data-i18n="contact_hours_3">Sunday: By Appointment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map Placeholder -->
+        <div class="contact-map reveal-block">
+          <div class="map-placeholder glass-card">
+            <div class="map-bg">
+              <!-- Google Maps embed placeholder -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224162.8!2d-81.38!3d28.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e773d8fecdbc77%3A0xac3b2063ca5bf9e!2sOrlando%2C%20FL!5e0!3m2!1sen!2sus!4v1"
+                width="100%"
+                height="100%"
+                style="border:0; filter: invert(90%) hue-rotate(180deg);"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="CARNEXT USA Location"
+              ></iframe>
+            </div>
+            <div class="map-cta">
+              <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="contact_directions">Get Directions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo footer-logo">
+            <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="footer-logo-img" />
+          </a>
+          <p class="footer-tagline" data-i18n="footer_tagline">Premium pre-owned vehicles.<br />Transparent deals. Designed for you.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/profile.php?id=61577307740990" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/carnextusa/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.17 8.17 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+            </a>
+            <a href="https://x.com/CarNextUSA" target="_blank" rel="noopener" class="social-btn" aria-label="X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.84L1.254 2.25H8.08l4.261 5.636 5.903-5.636Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/carnextusa/about/?viewAsMember=true" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://cargurus.com" target="_blank" rel="noopener" class="social-btn" aria-label="CarGurus">
+              <span class="mono" style="font-size:0.6rem;font-weight:500;letter-spacing:.05em">CG</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-wrap">
+          <div class="footer-col">
+            <h4 class="footer-col-title">Inventory</h4>
+            <ul class="footer-links">
+              <li><a href="inventory.html" class="footer-link">All Vehicles</a></li>
+              <li><a href="inventory.html" class="footer-link">SUVs</a></li>
+              <li><a href="inventory.html" class="footer-link">Minivans</a></li>
+              <li><a href="inventory.html" class="footer-link">Sedans</a></li>
+              <li><a href="inventory.html" class="footer-link">Under $20k</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Services</h4>
+            <ul class="footer-links">
+              <li><a href="#financing" class="footer-link">Financing</a></li>
+              <li><a href="#test-drive" class="footer-link">Test Drive</a></li>
+              <li><a href="#fleet" class="footer-link">Fleet Program</a></li>
+              <li><a href="#contact" class="footer-link">Trade-In</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Company</h4>
+            <ul class="footer-links">
+              <li><a href="#contact" class="footer-link">Contact Us</a></li>
+              <li><a href="#reviews" class="footer-link">Reviews</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=61577307740990" target="_blank" rel="noopener" class="footer-link">Facebook</a></li>
+              <li><a href="https://cargurus.com" target="_blank" rel="noopener" class="footer-link">CarGurus</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          © 2025 CARNEXT USA. All rights reserved. All vehicles subject to prior sale. Prices exclude tax, tag, title, and dealer fees. Financing subject to credit approval. Advertised monthly payments are estimates only.
+        </p>
+        <div class="footer-meta">
+          <a href="#" class="footer-meta-link">Privacy Policy</a>
+          <a href="#" class="footer-meta-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════ FLEET INQUIRY MODAL ═══════ -->
+  <div class="td-modal" id="fleetModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="fleetModalTitle">
+    <div class="td-modal-backdrop" data-fleet-close></div>
+    <div class="td-modal-card" role="document">
+      <button class="td-modal-close" aria-label="Close" data-fleet-close>&times;</button>
+
+      <!-- STEP 1 — Form -->
+      <div class="td-modal-step td-modal-step-1" data-fleet-step="1">
+        <h3 class="td-modal-title" id="fleetModalTitle" data-i18n="fleet_modal_title">Fleet Inquiry</h3>
+        <p class="td-modal-sub" data-i18n="fleet_modal_sub">Tell us about your operation and we'll prepare a custom proposal.</p>
+        <form class="td-form" id="fleetModalForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" data-i18n="field_company_name">RENTAL COMPANY NAME</label>
+            <input type="text" class="form-input" placeholder="e.g. Sunshine Rentals LLC" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="field_current_fleet">CURRENT FLEET SIZE</label>
+            <select class="form-input form-select" required>
+              <option value="" data-i18n="field_select_size">Select fleet size...</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8</option>
+              <option>9</option><option>10+</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" data-i18n="field_full_name">FULL NAME</label>
+              <input type="text" class="form-input" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="field_contact">CONTACT</label>
+              <input type="tel" class="form-input" placeholder="(978) 584-5424" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="field_email">EMAIL</label>
+            <input type="email" class="form-input" placeholder="contact@company.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="field_interested_count">HOW MANY VEHICLES INTERESTED?</label>
+            <select class="form-input form-select" required>
+              <option value="" data-i18n="field_select_qty">Select quantity...</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8</option>
+              <option>9</option><option>10+</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary td-modal-submit"><span data-i18n="fleet_submit">REQUEST FLEET QUOTE</span> →</button>
+          <p class="form-disclaimer" data-i18n="form_disclaimer">Your information is secure and will never be shared with third parties.</p>
+          <div class="td-modal-footer-logo">
+            <img src="assets/images/carnext-logo.png" alt="CarNext USA" onerror="this.style.display='none'" />
+          </div>
+        </form>
+      </div>
+
+      <!-- STEP 2 — Success -->
+      <div class="td-modal-step td-modal-step-2" data-fleet-step="2" hidden>
+        <div class="td-modal-success">
+          <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="td-modal-logo" onerror="this.style.display='none'" />
+          <div class="td-modal-check" aria-hidden="true">
+            <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 33 L28 45 L48 22" />
+            </svg>
+          </div>
+          <h3 class="td-modal-success-title" data-i18n="modal_success_title">Thank you!</h3>
+          <p class="td-modal-success-text" data-i18n="modal_success_text">Our team will be in touch with you shortly.</p>
+          <button type="button" class="btn btn-primary td-modal-close-btn" data-fleet-close data-i18n="modal_close">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="main.js"></script>
+</body>
+</html>

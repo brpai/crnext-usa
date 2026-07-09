@@ -1,0 +1,41 @@
+# ═══════════════════════════════════════════════════
+# CARNEXT USA — .htaccess
+# ═══════════════════════════════════════════════════
+
+Options -Indexes
+RewriteEngine On
+
+# 1. Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Canonicalize to www
+RewriteCond %{HTTP_HOST} ^carnextusa\.com$ [NC]
+RewriteRule ^ https://www.carnextusa.com%{REQUEST_URI} [L,R=301]
+
+# 3. Redirect old beta path on prismio.digital (catches any residual links)
+RewriteCond %{HTTP_HOST} ^(www\.)?prismio\.digital$ [NC]
+RewriteRule ^carnext-project-beta(/.*)?$ https://www.carnextusa.com/ [L,R=301]
+
+# ── Compression ─────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
+
+# ── Cache headers ────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png  "access plus 30 days"
+  ExpiresByType image/jpg  "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType video/mp4  "access plus 30 days"
+  ExpiresByType text/css   "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>
+
+# ── Security headers ─────────────────────────────────
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

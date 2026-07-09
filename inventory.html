@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CARNEXT USA — Browse our full inventory of premium pre-owned vehicles in Orlando, FL. SUVs, sedans, minivans, and more. Transparent pricing, flexible financing." />
+  <title>Inventory — CARNEXT USA</title>
+
+  <!-- Canonical & SEO -->
+  <link rel="canonical" href="https://www.carnextusa.com/inventory.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.carnextusa.com/inventory.html" />
+  <meta property="og:title" content="Inventory — CARNEXT USA" />
+  <meta property="og:description" content="Browse pre-owned SUVs, sedans, minivans and more in Orlando, FL. Transparent pricing, flexible financing." />
+  <meta property="og:image" content="https://www.carnextusa.com/assets/images/hero-poster.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .inventory-page-hero {
+      padding: 140px 0 60px;
+      text-align: center;
+    }
+    .inventory-page-hero .section-eyebrow {
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .inventory-page-hero .section-title {
+      margin-bottom: 16px;
+    }
+    .inventory-page-hero .section-desc {
+      max-width: 540px;
+      margin: 0 auto 48px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="nav-logo-img" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="inventory.html" class="nav-link active" data-i18n="nav_inventory">Inventory</a></li>
+        <li><a href="index.html#fleet" class="nav-link" data-i18n="nav_fleet">Fleet</a></li>
+        <li><a href="index.html#airport" class="nav-link" data-i18n="nav_airport">Airport Pickup</a></li>
+        <li><a href="index.html#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-btn active" data-lang="en">🇺🇸 EN</button>
+          <button class="lang-btn" data-lang="pt">🇧🇷 PT</button>
+          <button class="lang-btn" data-lang="es">🇪🇸 ES</button>
+        </div>
+        <a href="index.html#test-drive" class="btn btn-primary btn-sm" data-i18n="nav_cta">Schedule Test Drive</a>
+        <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="inventory.html" class="mobile-link">Inventory</a></li>
+      <li><a href="index.html#fleet" class="mobile-link">Fleet</a></li>
+      <li><a href="index.html#airport" class="mobile-link">Airport Pickup</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+      <li><a href="index.html#test-drive" class="btn btn-primary" style="display:inline-block;margin-top:8px;">Schedule Test Drive</a></li>
+    </ul>
+  </div>
+
+  <!-- INVENTORY SECTION -->
+  <section class="inventory" id="inventory" style="padding-top: 0;">
+    <div class="container">
+
+      <div class="inventory-page-hero">
+        <div class="section-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text">AVAILABLE NOW</span>
+        </div>
+        <h2 class="section-title">Browse Our <span class="text-gradient">Inventory</span></h2>
+        <p class="section-desc">Hand-picked, inspected, and ready to drive. Find the vehicle that fits your life.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="inv-filter-panel reveal-block">
+
+        <div class="inv-filter-group">
+          <label class="inv-filter-label">Modelo</label>
+          <select class="inv-filter-select" id="filterModelo">
+            <option value="">Todos os modelos</option>
+            <option value="mitsubishi outlander">Mitsubishi Outlander</option>
+            <option value="chrysler pacifica">Chrysler Pacifica</option>
+            <option value="honda cr-v ex">Honda CR-V EX</option>
+            <option value="toyota camry se">Toyota Camry SE</option>
+            <option value="toyota sienna xle">Toyota Sienna XLE</option>
+            <option value="jeep grand cherokee">Jeep Grand Cherokee</option>
+          </select>
+        </div>
+
+        <div class="inv-filter-divider"></div>
+
+        <div class="inv-filter-group inv-filter-group--double">
+          <label class="inv-filter-label">Ano</label>
+          <div class="inv-filter-range">
+            <select class="inv-filter-select inv-select-sm" id="filterAnoDe">
+              <option value="">De</option>
+              <!-- years populated by JS -->
+            </select>
+            <span class="inv-range-sep">—</span>
+            <select class="inv-filter-select inv-select-sm" id="filterAnoAte">
+              <option value="">Até</option>
+              <!-- years populated by JS -->
+            </select>
+          </div>
+        </div>
+
+        <div class="inv-filter-divider"></div>
+
+        <div class="inv-filter-group">
+          <label class="inv-filter-label">Milhas</label>
+          <select class="inv-filter-select" id="filterMilhas">
+            <option value="">Qualquer km</option>
+            <option value="50000">Abaixo de 50k mi</option>
+            <option value="70000">Até 70k mi</option>
+            <option value="90000">Até 90k mi</option>
+            <option value="110000">Até 110k mi</option>
+            <option value="110001">Acima de 110k mi</option>
+          </select>
+        </div>
+
+        <div class="inv-filter-divider"></div>
+
+        <div class="inv-filter-group">
+          <label class="inv-filter-label">Valor</label>
+          <select class="inv-filter-select" id="filterValor">
+            <option value="">Qualquer valor</option>
+            <option value="5000">Até $5k</option>
+            <option value="10000">Até $10k</option>
+            <option value="15000">Até $15k</option>
+            <option value="20000">Até $20k</option>
+            <option value="20001">Acima de $20k</option>
+          </select>
+        </div>
+
+        <button class="inv-filter-reset" id="filterReset">Limpar</button>
+      </div>
+
+      <!-- Vehicle Cards Grid -->
+      <div class="inventory-grid" id="inventoryGrid">
+
+        <div class="vehicle-card glass-card" data-cat="suv family" data-year="2022" data-miles="34200">
+          <div class="vc-image-wrap">
+            <div class="vc-image-skeleton">
+              <div class="skeleton-shine"></div>
+            </div>
+            <img src="assets/images/vehicles/vehicle-01.png" alt="2022 Mitsubishi Outlander" class="vc-image" loading="lazy" onerror="this.style.display='none'" />
+            <div class="vc-badge">SUV</div>
+            <div class="vc-overlay">
+              <button class="vc-quick-view">Quick View</button>
+            </div>
+          </div>
+          <div class="vc-body">
+            <div class="vc-meta">
+              <span class="vc-year mono">2022</span>
+              <span class="vc-dot">·</span>
+              <span class="vc-miles mono">34,200 mi</span>
+            </div>
+            <h3 class="vc-name">Mitsubishi Outlander</h3>
+            <div class="vc-features">
+              <span class="feature-tag">AWD</span>
+              <span class="feature-tag">7-Pass</span>
+              <span class="feature-tag">Inspected</span>
+            </div>
+            <div class="vc-pricing">
+              <div class="vc-price mono">$22,995</div>
+              <div class="vc-finance">Est. $389/mo</div>
+            </div>
+            <div class="vc-actions">
+              <button type="button" class="btn btn-primary btn-sm td-modal-trigger" data-i18n="vc_test_drive">Test Drive</button>
+              <button class="btn btn-ghost btn-sm">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="vehicle-card glass-card" data-cat="minivan family" data-year="2021" data-miles="41800">
+          <div class="vc-image-wrap">
+            <div class="vc-image-skeleton"><div class="skeleton-shine"></div></div>
+            <img src="assets/images/vehicles/vehicle-02.png" alt="2021 Chrysler Pacifica" class="vc-image" loading="lazy" onerror="this.style.display='none'" />
+            <div class="vc-badge vc-badge-purple">Minivan</div>
+            <div class="vc-overlay"><button class="vc-quick-view">Quick View</button></div>
+          </div>
+          <div class="vc-body">
+            <div class="vc-meta">
+              <span class="vc-year mono">2021</span>
+              <span class="vc-dot">·</span>
+              <span class="vc-miles mono">41,800 mi</span>
+            </div>
+            <h3 class="vc-name">Chrysler Pacifica</h3>
+            <div class="vc-features">
+              <span class="feature-tag">Stow N' Go</span>
+              <span class="feature-tag">7-Pass</span>
+              <span class="feature-tag">V6</span>
+            </div>
+            <div class="vc-pricing">
+              <div class="vc-price mono">$25,490</div>
+              <div class="vc-finance">Est. $429/mo</div>
+            </div>
+            <div class="vc-actions">
+              <button type="button" class="btn btn-primary btn-sm td-modal-trigger" data-i18n="vc_test_drive">Test Drive</button>
+              <button class="btn btn-ghost btn-sm">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="vehicle-card glass-card" data-cat="suv under20" data-year="2019" data-miles="58400">
+          <div class="vc-image-wrap">
+            <div class="vc-image-skeleton"><div class="skeleton-shine"></div></div>
+            <img src="assets/images/vehicles/vehicle-03.png" alt="2019 Honda CR-V" class="vc-image" loading="lazy" onerror="this.style.display='none'" />
+            <div class="vc-badge vc-badge-green">Under $20k</div>
+            <div class="vc-overlay"><button class="vc-quick-view">Quick View</button></div>
+          </div>
+          <div class="vc-body">
+            <div class="vc-meta">
+              <span class="vc-year mono">2019</span>
+              <span class="vc-dot">·</span>
+              <span class="vc-miles mono">58,400 mi</span>
+            </div>
+            <h3 class="vc-name">Honda CR-V EX</h3>
+            <div class="vc-features">
+              <span class="feature-tag">AWD</span>
+              <span class="feature-tag">Sunroof</span>
+              <span class="feature-tag">Honda Sensing</span>
+            </div>
+            <div class="vc-pricing">
+              <div class="vc-price mono">$18,750</div>
+              <div class="vc-finance">Est. $318/mo</div>
+            </div>
+            <div class="vc-actions">
+              <button type="button" class="btn btn-primary btn-sm td-modal-trigger" data-i18n="vc_test_drive">Test Drive</button>
+              <button class="btn btn-ghost btn-sm">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="vehicle-card glass-card" data-cat="sedan under20" data-year="2020" data-miles="47100">
+          <div class="vc-image-wrap">
+            <div class="vc-image-skeleton"><div class="skeleton-shine"></div></div>
+            <img src="assets/images/vehicles/vehicle-04.png" alt="2020 Toyota Camry" class="vc-image" loading="lazy" onerror="this.style.display='none'" />
+            <div class="vc-badge">Sedan</div>
+            <div class="vc-overlay"><button class="vc-quick-view">Quick View</button></div>
+          </div>
+          <div class="vc-body">
+            <div class="vc-meta">
+              <span class="vc-year mono">2020</span>
+              <span class="vc-dot">·</span>
+              <span class="vc-miles mono">47,100 mi</span>
+            </div>
+            <h3 class="vc-name">Toyota Camry SE</h3>
+            <div class="vc-features">
+              <span class="feature-tag">Sport</span>
+              <span class="feature-tag">Apple CarPlay</span>
+              <span class="feature-tag">Lane Assist</span>
+            </div>
+            <div class="vc-pricing">
+              <div class="vc-price mono">$19,990</div>
+              <div class="vc-finance">Est. $338/mo</div>
+            </div>
+            <div class="vc-actions">
+              <button type="button" class="btn btn-primary btn-sm td-modal-trigger" data-i18n="vc_test_drive">Test Drive</button>
+              <button class="btn btn-ghost btn-sm">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="vehicle-card glass-card" data-cat="suv family fleet" data-year="2022" data-miles="29300">
+          <div class="vc-image-wrap">
+            <div class="vc-image-skeleton"><div class="skeleton-shine"></div></div>
+            <img src="assets/images/vehicles/vehicle-05.png" alt="2022 Toyota Sienna" class="vc-image" loading="lazy" onerror="this.style.display='none'" />
+            <div class="vc-badge vc-badge-purple">Minivan</div>
+            <div class="vc-overlay"><button class="vc-quick-view">Quick View</button></div>
+          </div>
+          <div class="vc-body">
+            <div class="vc-meta">
+              <span class="vc-year mono">2022</span>
+              <span class="vc-dot">·</span>
+              <span class="vc-miles mono">29,300 mi</span>
+            </div>
+            <h3 class="vc-name">Toyota Sienna XLE</h3>
+            <div class="vc-features">
+              <span class="feature-tag">AWD</span>
+              <span class="feature-tag">Hybrid</span>
+              <span class="feature-tag">8-Pass</span>
+            </div>
+            <div class="vc-pricing">
+              <div class="vc-price mono">$36,500</div>
+              <div class="vc-finance">Est. $618/mo</div>
+            </div>
+            <div class="vc-actions">
+              <button type="button" class="btn btn-primary btn-sm td-modal-trigger" data-i18n="vc_test_drive">Test Drive</button>
+              <button class="btn btn-ghost btn-sm">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="vehicle-card glass-card" data-cat="suv fleet" data-year="2021" data-miles="38700">
+          <div class="vc-image-wrap">
+            <div class="vc-image-skeleton"><div class="skeleton-shine"></div></div>
+            <img src="assets/images/vehicles/vehicle-06.png" alt="2021 Jeep Grand Cherokee" class="vc-image" loading="lazy" onerror="this.style.display='none'" />
+            <div class="vc-badge">SUV</div>
+            <div class="vc-overlay"><button class="vc-quick-view">Quick View</button></div>
+          </div>
+          <div class="vc-body">
+            <div class="vc-meta">
+              <span class="vc-year mono">2021</span>
+              <span class="vc-dot">·</span>
+              <span class="vc-miles mono">38,700 mi</span>
+            </div>
+            <h3 class="vc-name">Jeep Grand Cherokee</h3>
+            <div class="vc-features">
+              <span class="feature-tag">4x4</span>
+              <span class="feature-tag">Leather</span>
+              <span class="feature-tag">Panoroof</span>
+            </div>
+            <div class="vc-pricing">
+              <div class="vc-price mono">$28,900</div>
+              <div class="vc-finance">Est. $489/mo</div>
+            </div>
+            <div class="vc-actions">
+              <button type="button" class="btn btn-primary btn-sm td-modal-trigger" data-i18n="vc_test_drive">Test Drive</button>
+              <button class="btn btn-ghost btn-sm">Details</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="inventory-cta reveal-block">
+        <p class="inv-cta-text">Viewing 6 of 500+ vehicles</p>
+        <button type="button" class="btn btn-secondary td-modal-trigger" data-i18n="vc_contact_more">Contact Us for More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo footer-logo">
+            <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="footer-logo-img" />
+          </a>
+          <p class="footer-tagline">Premium pre-owned vehicles.<br />Transparent deals. Designed for you.</p>
+          <div class="footer-socials">
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://cargurus.com" target="_blank" rel="noopener" class="social-btn" aria-label="CarGurus">
+              <span class="mono" style="font-size:0.6rem;font-weight:500;letter-spacing:.05em">CG</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-wrap">
+          <div class="footer-col">
+            <h4 class="footer-col-title">Inventory</h4>
+            <ul class="footer-links">
+              <li><a href="inventory.html" class="footer-link">All Vehicles</a></li>
+              <li><a href="inventory.html" class="footer-link">SUVs</a></li>
+              <li><a href="inventory.html" class="footer-link">Minivans</a></li>
+              <li><a href="inventory.html" class="footer-link">Sedans</a></li>
+              <li><a href="inventory.html" class="footer-link">Under $20k</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Services</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#test-drive" class="footer-link">Test Drive</a></li>
+              <li><a href="index.html#fleet" class="footer-link">Fleet Program</a></li>
+              <li><a href="index.html#contact" class="footer-link">Trade-In</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Company</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#contact" class="footer-link">Contact Us</a></li>
+              <li><a href="index.html#reviews" class="footer-link">Reviews</a></li>
+              <li><a href="https://facebook.com" target="_blank" rel="noopener" class="footer-link">Facebook</a></li>
+              <li><a href="https://cargurus.com" target="_blank" rel="noopener" class="footer-link">CarGurus</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          © 2025 CARNEXT USA. All rights reserved. All vehicles subject to prior sale. Prices exclude tax, tag, title, and dealer fees. Financing subject to credit approval. Advertised monthly payments are estimates only.
+        </p>
+        <div class="footer-meta">
+          <a href="#" class="footer-meta-link">Privacy Policy</a>
+          <a href="#" class="footer-meta-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════ TEST DRIVE MODAL ═══════ -->
+  <div class="td-modal" id="tdModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tdModalTitle">
+    <div class="td-modal-backdrop" data-modal-close></div>
+    <div class="td-modal-card" role="document">
+      <button class="td-modal-close" aria-label="Close" data-modal-close>&times;</button>
+
+      <!-- STEP 1 — Form -->
+      <div class="td-modal-step td-modal-step-1" data-step="1">
+        <h3 class="td-modal-title" id="tdModalTitle" data-i18n="modal_title">Schedule Your Test Drive</h3>
+        <p class="td-modal-sub" data-i18n="modal_sub">Fill out the form and our team will get back to you shortly.</p>
+        <form class="td-form" id="tdModalForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_name">FULL NAME</label>
+              <input type="text" class="form-input" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_phone">PHONE</label>
+              <input type="tel" class="form-input" placeholder="(978) 584-5424" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="form-label" data-i18n="form_email">EMAIL</label>
+            <input type="email" class="form-input" placeholder="john@email.com" required />
+          </div>
+          <div class="form-field">
+            <label class="form-label" data-i18n="form_vehicle">PREFERRED VEHICLE</label>
+            <select class="form-input form-select" id="tdModalVehicle">
+              <option value="" data-i18n="form_select_vehicle">Select a vehicle...</option>
+              <option>2022 Mitsubishi Outlander</option>
+              <option>2021 Chrysler Pacifica</option>
+              <option>2023 Honda CR-V TrailSport</option>
+              <option>2022 Toyota Camry</option>
+              <option>2020 Toyota Sienna</option>
+              <option>2021 Jeep Grand Cherokee</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_date">PREFERRED DATE</label>
+              <input type="date" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_time">PREFERRED TIME</label>
+              <select class="form-input form-select">
+                <option value="" data-i18n="form_select_time">Select time...</option>
+                <option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option>
+                <option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option>
+                <option>4:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="form_message">MESSAGE (OPTIONAL)</label>
+            <textarea class="form-input form-textarea td-modal-textarea" rows="5" placeholder="Any questions or special requests..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary td-modal-submit"><span data-i18n="form_submit">SCHEDULE MY TEST DRIVE</span> →</button>
+          <p class="form-disclaimer" data-i18n="form_disclaimer">Your information is secure and will never be shared with third parties.</p>
+          <div class="td-modal-footer-logo">
+            <img src="assets/images/carnext-logo.png" alt="CarNext USA" onerror="this.style.display='none'" />
+          </div>
+        </form>
+      </div>
+
+      <!-- STEP 2 — Success -->
+      <div class="td-modal-step td-modal-step-2" data-step="2" hidden>
+        <div class="td-modal-success">
+          <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="td-modal-logo" onerror="this.style.display='none'" />
+          <div class="td-modal-check" aria-hidden="true">
+            <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 33 L28 45 L48 22" />
+            </svg>
+          </div>
+          <h3 class="td-modal-success-title" data-i18n="modal_success_title">Thank you!</h3>
+          <p class="td-modal-success-text" data-i18n="modal_success_text">Our team will be in touch with you shortly.</p>
+          <button class="btn btn-primary td-modal-close-btn" data-modal-close data-i18n="modal_close">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
