@@ -772,6 +772,17 @@ async function submitToWeb3Forms(form) {
   const data = new FormData(form);
   data.append('access_key', WEB3FORMS_KEY);
   data.append('from_name', 'CarNext USA Website');
+  // Subject from hidden field or derive from form id
+  if (!data.get('subject')) {
+    const subjects = {
+      testDriveForm: 'Test Drive Request - CarNext USA',
+      fleetModalForm: 'Fleet Inquiry - CarNext USA'
+    };
+    data.append('subject', subjects[form.id] || 'Contact - CarNext USA');
+  }
+  // Reply-to so the team can reply directly to the client
+  const email = data.get('email');
+  if (email) data.append('replyto', email);
   const res = await fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     body: data

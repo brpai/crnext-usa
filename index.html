@@ -447,20 +447,20 @@
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" data-i18n="form_name">Full Name</label>
-                <input type="text" class="form-input" data-i18n-placeholder="form_name_ph" placeholder="John Smith" required />
+                <input type="text" name="name" class="form-input" data-i18n-placeholder="form_name_ph" placeholder="John Smith" required />
               </div>
               <div class="form-group">
                 <label class="form-label" data-i18n="form_phone">Phone</label>
-                <input type="tel" class="form-input" placeholder="(978) 584-5424" required />
+                <input type="tel" name="phone" class="form-input" placeholder="(978) 584-5424" required />
               </div>
             </div>
             <div class="form-group">
               <label class="form-label" data-i18n="form_email">Email</label>
-              <input type="email" class="form-input" placeholder="john@email.com" required />
+              <input type="email" name="email" class="form-input" placeholder="john@email.com" required />
             </div>
             <div class="form-group">
               <label class="form-label" data-i18n="form_vehicle">Preferred Vehicle</label>
-              <select class="form-input form-select">
+              <select name="preferred_vehicle" class="form-input form-select">
                 <option value="" data-i18n="form_vehicle_ph">Select a vehicle...</option>
                 <option>2022 Mitsubishi Outlander</option>
                 <option>2021 Chrysler Pacifica</option>
@@ -474,11 +474,11 @@
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" data-i18n="form_date">Preferred Date</label>
-                <input type="date" class="form-input" />
+                <input type="date" name="preferred_date" class="form-input" />
               </div>
               <div class="form-group">
                 <label class="form-label" data-i18n="form_time">Preferred Time</label>
-                <select class="form-input form-select">
+                <select name="preferred_time" class="form-input form-select">
                   <option value="" data-i18n="form_time_ph">Select time...</option>
                   <option>9:00 AM</option>
                   <option>10:00 AM</option>
@@ -494,7 +494,7 @@
             </div>
             <div class="form-group">
               <label class="form-label" data-i18n="form_message">Message (Optional)</label>
-              <textarea class="form-input form-textarea" data-i18n-placeholder="form_message_ph" placeholder="Any questions or special requests..."></textarea>
+              <textarea name="message" class="form-input form-textarea" data-i18n-placeholder="form_message_ph" placeholder="Any questions or special requests..."></textarea>
             </div>
             <label class="td-checkbox-wrap">
               <input type="checkbox" class="td-checkbox" name="passport_financing" id="passportFinancing" />
@@ -763,13 +763,14 @@
         <h3 class="td-modal-title" id="fleetModalTitle" data-i18n="fleet_modal_title">Fleet Inquiry</h3>
         <p class="td-modal-sub" data-i18n="fleet_modal_sub">Tell us about your operation and we'll prepare a custom proposal.</p>
         <form class="td-form" id="fleetModalForm" novalidate>
+          <input type="hidden" name="subject" value="Fleet Inquiry - CarNext USA" />
           <div class="form-group">
             <label class="form-label" data-i18n="field_company_name">RENTAL COMPANY NAME</label>
-            <input type="text" class="form-input" placeholder="e.g. Sunshine Rentals LLC" required />
+            <input type="text" name="company_name" class="form-input" placeholder="e.g. Sunshine Rentals LLC" required />
           </div>
           <div class="form-group">
             <label class="form-label" data-i18n="field_current_fleet">CURRENT FLEET SIZE</label>
-            <select class="form-input form-select" required>
+            <select name="current_fleet_size" class="form-input form-select" required>
               <option value="" data-i18n="field_select_size">Select fleet size...</option>
               <option>1</option><option>2</option><option>3</option><option>4</option>
               <option>5</option><option>6</option><option>7</option><option>8</option>
@@ -779,20 +780,20 @@
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" data-i18n="field_full_name">FULL NAME</label>
-              <input type="text" class="form-input" placeholder="John Smith" required />
+              <input type="text" name="name" class="form-input" placeholder="John Smith" required />
             </div>
             <div class="form-group">
               <label class="form-label" data-i18n="field_contact">CONTACT</label>
-              <input type="tel" class="form-input" placeholder="(978) 584-5424" required />
+              <input type="tel" name="phone" class="form-input" placeholder="(978) 584-5424" required />
             </div>
           </div>
           <div class="form-group">
             <label class="form-label" data-i18n="field_email">EMAIL</label>
-            <input type="email" class="form-input" placeholder="contact@company.com" required />
+            <input type="email" name="email" class="form-input" placeholder="contact@company.com" required />
           </div>
           <div class="form-group">
             <label class="form-label" data-i18n="field_interested_count">HOW MANY VEHICLES INTERESTED?</label>
-            <select class="form-input form-select" required>
+            <select name="vehicles_interested" class="form-input form-select" required>
               <option value="" data-i18n="field_select_qty">Select quantity...</option>
               <option>1</option><option>2</option><option>3</option><option>4</option>
               <option>5</option><option>6</option><option>7</option><option>8</option>
