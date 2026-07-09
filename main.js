@@ -14,7 +14,7 @@ const TRANSLATIONS = {
     tag_inspected: 'Inspected Vehicles', tag_financing: 'Flexible Financing',
     tag_family: 'Family Ready SUVs', tag_tradein: 'Trade-In Available', tag_approval: 'Fast Approval',
     /* Hero */
-    hero_title: 'Find Your Next Car', hero_next: 'Next', hero_car: 'Car', hero_title_gradient: 'with Confidence',
+    hero_title: 'Find Your Next Car', hero_find: 'Find Your', hero_next: 'Next', hero_car: 'Car', hero_title_gradient: 'with Confidence',
     hero_sub: 'Premium pre-owned vehicles, transparent deals, and a dealership experience designed around you.',
     hero_cta1: 'View Inventory', hero_cta2: 'Schedule Test Drive', hero_cta3: 'Search on CarGurus',
     stat_vehicles: 'Vehicles Available', stat_satisfaction: 'Customer Satisfaction', stat_financing: 'Fast Financing',
@@ -110,7 +110,7 @@ const TRANSLATIONS = {
     tag_inspected: 'Veículos Vistoriados', tag_financing: 'Financiamento Flexível',
     tag_family: 'SUVs para Família', tag_tradein: 'Aceita Troca', tag_approval: 'Aprovação Rápida',
     /* Hero */
-    hero_title: 'Encontre Seu Próximo Carro', hero_next: 'Próximo', hero_car: 'Carro', hero_title_gradient: 'com Confiança',
+    hero_title: 'Encontre Seu Próximo Carro', hero_find: 'Encontre Seu', hero_next: 'Próximo', hero_car: 'Carro', hero_title_gradient: 'com Confiança',
     hero_sub: 'Veículos seminovos premium, negociações transparentes e uma experiência de concessionária feita para você.',
     hero_cta1: 'Ver Estoque', hero_cta2: 'Agendar Test Drive', hero_cta3: 'Buscar no CarGurus',
     stat_vehicles: 'Veículos Disponíveis', stat_satisfaction: 'Satisfação dos Clientes', stat_financing: 'Financiamento Rápido',
@@ -206,7 +206,7 @@ const TRANSLATIONS = {
     tag_inspected: 'Vehículos Inspeccionados', tag_financing: 'Financiamiento Flexible',
     tag_family: 'SUVs Familiares', tag_tradein: 'Aceptamos Tu Auto', tag_approval: 'Aprobación Rápida',
     /* Hero */
-    hero_title: 'Encuentra Tu Próximo Auto', hero_next: 'Próximo', hero_car: 'Auto', hero_title_gradient: 'con Confianza',
+    hero_title: 'Encuentra Tu Próximo Auto', hero_find: 'Encuentra Tu', hero_next: 'Próximo', hero_car: 'Auto', hero_title_gradient: 'con Confianza',
     hero_sub: 'Vehículos seminuevos premium, tratos transparentes y una experiencia de concesionaria diseñada para ti.',
     hero_cta1: 'Ver Inventario', hero_cta2: 'Agendar Test Drive', hero_cta3: 'Buscar en CarGurus',
     stat_vehicles: 'Vehículos Disponibles', stat_satisfaction: 'Satisfacción del Cliente', stat_financing: 'Financiamiento Rápido',
@@ -317,6 +317,17 @@ function setLanguage(lang) {
   document.documentElement.lang = lang;
   /* Persist */
   localStorage.setItem('cnx_lang', lang);
+  /* Update email mailto body per language */
+  const emailBodies = {
+    en: { subject: 'Contact from Website - CarNext USA', body: 'Hello CarNext USA Team,\n\nI would like to get more information about your vehicles and services.\n\nName: \nPhone: \nMessage: \n\nThank you!' },
+    pt: { subject: 'Contato pelo Site - CarNext USA', body: 'Olá, equipe CarNext USA!\n\nGostaria de obter mais informações sobre seus veículos e serviços.\n\nNome: \nTelefone: \nMensagem: \n\nObrigado!' },
+    es: { subject: 'Contacto desde el Sitio - CarNext USA', body: 'Hola, equipo CarNext USA!\n\nMe gustaría obtener más información sobre sus vehículos y servicios.\n\nNombre: \nTeléfono: \nMensaje: \n\n¡Gracias!' }
+  };
+  const emailLink = document.querySelector('a[href^="mailto:nex@carnextusa.com"]');
+  if (emailLink && emailBodies[lang]) {
+    const { subject, body } = emailBodies[lang];
+    emailLink.href = `mailto:nex@carnextusa.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
 }
 
 /* Init language switcher */
