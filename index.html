@@ -3,1027 +3,463 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CARNEXT USA — Premium pre-owned vehicles in Orlando, FL. Transparent deals, flexible financing, airport pickup, and a dealership experience designed around you." />
-  <title>CARNEXT USA — Drive What's Next</title>
-
-  <!-- Canonical & SEO -->
+  <meta name="description" content="CARNEXT USA — Premium pre-owned vehicles in Orlando, FL. Transparent deals, honest financing, airport pickup, and a dealership experience designed around you." />
+  <title>CARNEXT USA — Drive What's Next in Orlando</title>
   <link rel="canonical" href="https://www.carnextusa.com/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.carnextusa.com/" />
   <meta property="og:title" content="CARNEXT USA — Drive What's Next" />
-  <meta property="og:description" content="Premium pre-owned vehicles in Orlando, FL. Transparent deals, flexible financing, and airport pickup service." />
+  <meta property="og:description" content="Premium pre-owned vehicles in Orlando, FL. Transparent deals and honest financing." />
   <meta property="og:image" content="https://www.carnextusa.com/assets/images/hero-poster.jpg" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@CarNextUSA" />
-  <meta name="twitter:title" content="CARNEXT USA — Drive What's Next" />
-  <meta name="twitter:description" content="Premium pre-owned vehicles in Orlando, FL." />
-  <meta name="twitter:image" content="https://www.carnextusa.com/assets/images/hero-poster.jpg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- GSAP -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Tailwind (Play CDN) + monochrome brand theme -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black:  '#0A0A0B',
+              white:  '#F4F5F8',
+              yellow: '#D6D7DE', /* accent / button (light gray in mono) */
+              amber:  '#FFFFFF', /* hover -> white */
+              red:    '#8C8E98', /* mid gray */
+              blue:   '#B9BBC5', /* light gray */
+            },
+          },
+          fontFamily: {
+            sans: ['Poppins', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
 
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #0A0A0B; -webkit-font-smoothing: antialiased; }
+    /* Carbon texture overlay (from SSCar) */
+    .carbon-texture {
+      background-image:
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 4px),
+        repeating-linear-gradient(-45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 4px);
+    }
+    ::selection { background: rgba(255,255,255,0.22); }
+    select option { background: #0A0A0B; color: #F4F5F8; }
+    .map-dark { filter: grayscale(1) invert(0.92) contrast(0.9); }
+  </style>
 </head>
-<body>
+<body class="font-sans text-brand-white">
 
-  <!-- ═══════════════════════════════════════════════════
-       NAVIGATION
-  ═══════════════════════════════════════════════════ -->
-  <nav class="nav" id="mainNav">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">
-        <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="nav-logo-img" />
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="h-0.5 bg-gradient-to-r from-brand-yellow via-brand-red to-brand-blue"></div>
+
+    <div id="header-inner" class="relative flex items-center justify-between px-6 lg:px-12 py-4 transition-all duration-300">
+      <a href="/" class="flex items-center gap-3 flex-shrink-0" aria-label="CarNext USA Home">
+        <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="h-14 w-auto object-contain" loading="eager" />
       </a>
 
-      <ul class="nav-links">
-        <li><a href="inventory.html" class="nav-link" data-i18n="nav_inventory">Inventory</a></li>
-        <li><a href="#fleet" class="nav-link" data-i18n="nav_fleet">Rental Cars</a></li>
-        <li><a href="#airport" class="nav-link" data-i18n="nav_airport">Airport Pickup</a></li>
-        <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact Us</a></li>
-      </ul>
+      <nav class="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2" aria-label="Main navigation">
+        <a href="#experience" data-i18n="nav.experience" class="text-sm font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white transition-colors">Business</a>
+        <a href="#financing" data-i18n="nav.financing" class="text-sm font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white transition-colors">Financing</a>
+        <a href="#reviews" data-i18n="nav.reviews" class="text-sm font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white transition-colors">Reviews</a>
+        <a href="#contact" data-i18n="nav.contact" class="text-sm font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white transition-colors">Contact</a>
+      </nav>
 
-      <div class="nav-actions">
-        <div class="lang-switcher" id="langSwitcher">
-          <button class="lang-btn active" data-lang="en">🇺🇸 EN</button>
-          <button class="lang-btn" data-lang="pt">🇧🇷 PT</button>
-          <button class="lang-btn" data-lang="es">🇪🇸 ES</button>
+      <div class="flex items-center gap-4">
+        <div class="hidden md:flex items-center gap-1 border border-brand-white/20 rounded-full px-3 py-1.5" id="lang-switcher">
+          <button data-lang="en" class="lang-btn text-xs font-bold text-brand-white transition-colors">🇺🇸 EN</button>
+          <span class="text-brand-white/20 text-xs mx-1">·</span>
+          <button data-lang="pt" class="lang-btn text-xs font-bold text-brand-white/50 hover:text-brand-white transition-colors">🇧🇷 PT</button>
+          <span class="text-brand-white/20 text-xs mx-1">·</span>
+          <button data-lang="es" class="lang-btn text-xs font-bold text-brand-white/50 hover:text-brand-white transition-colors">🇪🇸 ES</button>
         </div>
-        <a href="#test-drive" class="btn btn-primary btn-sm" data-i18n="nav_cta">Schedule Test Drive</a>
-        <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
-          <span></span><span></span><span></span>
+
+        <a href="inventory.html" class="hidden sm:inline-flex items-center gap-2 bg-brand-yellow text-brand-black text-sm font-bold uppercase tracking-wider px-5 py-2.5 rounded-full hover:bg-brand-amber transition-colors">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7"/></svg>
+          <span data-i18n="nav.inventory">Inventory</span>
+        </a>
+
+        <button id="mobile-menu-btn" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu" aria-expanded="false">
+          <span class="block w-6 h-0.5 bg-brand-white transition-all duration-300 origin-center" id="burger-1"></span>
+          <span class="block w-6 h-0.5 bg-brand-white transition-all duration-300" id="burger-2"></span>
+          <span class="block w-6 h-0.5 bg-brand-white transition-all duration-300 origin-center" id="burger-3"></span>
         </button>
       </div>
     </div>
-  </nav>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="inventory.html" class="mobile-link">Inventory</a></li>
-      <li><a href="#financing" class="mobile-link">Financing</a></li>
-      <li><a href="#fleet" class="mobile-link">Fleet</a></li>
-      <li><a href="#contact" class="mobile-link">Contact</a></li>
-      <li><a href="#test-drive" class="btn btn-primary" style="display:inline-block;margin-top:8px;">Schedule Test Drive</a></li>
-    </ul>
-  </div>
-
-  <!-- ═══════════════════════════════════════════════════
-       SECTION 1 — CINEMATIC HERO
-  ═══════════════════════════════════════════════════ -->
-  <section class="hero" id="home">
-    <!-- Video Background -->
-    <div class="hero-video-wrap">
-      <video
-        class="hero-video"
-        src="assets/videos/dealership-family-outlander.mp4"
-        autoplay muted loop playsinline
-        preload="auto"
-        fetchpriority="high"
-        poster="assets/images/hero-poster.jpg"
-      ></video>
-      <link rel="preload" as="image" href="assets/images/hero-poster.jpg" fetchpriority="high" />
-      <div class="hero-video-fallback" id="heroFallback">
-        <canvas id="heroCanvas"></canvas>
-      </div>
-    </div>
-
-    <!-- Overlays -->
-    <div class="hero-overlay"></div>
-    <div class="hero-grain"></div>
-    <div class="hero-glow-left"></div>
-    <div class="hero-glow-right"></div>
-
-    <!-- Official logo watermark — covers the generic text baked in the video -->
-    <div class="hero-logo-watermark">
-      <img src="assets/images/carnext-logo.png" alt="" aria-hidden="true" class="hero-logo-neon" />
-    </div>
-
-
-    <!-- Hero Content -->
-    <div class="hero-content" id="heroContent">
-      <h1 class="hero-title">
-        <span data-i18n="hero_find">Find Your</span> <span class="cnx-teal" data-i18n="hero_next">Next</span> <span data-i18n="hero_car">Car</span>
-      </h1>
-      <p class="hero-sub" data-i18n="hero_sub">
-        Premium pre-owned vehicles, transparent deals,<br class="hidden-mobile" />
-        and a dealership experience designed around you.
-      </p>
-      <div class="hero-ctas">
-        <a href="inventory.html" class="btn btn-primary" data-i18n="hero_cta1">View Inventory</a>
-        <a href="#test-drive" class="btn btn-secondary" data-i18n="hero_cta2">Schedule Test Drive</a>
-        <a href="https://www.cargurus.com" target="_blank" rel="noopener" class="btn btn-cargurus">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <span data-i18n="hero_cta3">Search on CarGurus</span>
-        </a>
-      </div>
-
-      <!-- Hero Search Bar -->
-      <form class="hero-search" id="heroSearch" action="inventory.html" method="get">
-        <div class="hs-field">
-          <label class="hs-label" data-i18n="hs_make">Make</label>
-          <select name="make" class="hs-select">
-            <option value="" data-i18n="hs_any_make">Any Make</option>
-            <option value="toyota">Toyota</option>
-            <option value="honda">Honda</option>
-            <option value="jeep">Jeep</option>
-            <option value="chrysler">Chrysler</option>
-            <option value="mitsubishi">Mitsubishi</option>
-            <option value="ford">Ford</option>
-            <option value="nissan">Nissan</option>
-          </select>
+    <nav id="mobile-menu" class="lg:hidden hidden bg-brand-black/98 border-t border-brand-white/10 px-6 pb-6" aria-label="Mobile navigation">
+      <div class="flex flex-col gap-4 pt-4">
+        <a href="inventory.html" data-i18n="nav.inventory" class="text-base font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white py-2 border-b border-brand-white/10">Inventory</a>
+        <a href="#experience" data-i18n="nav.experience" class="text-base font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white py-2 border-b border-brand-white/10">Business</a>
+        <a href="#financing" data-i18n="nav.financing" class="text-base font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white py-2 border-b border-brand-white/10">Financing</a>
+        <a href="#reviews" data-i18n="nav.reviews" class="text-base font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white py-2 border-b border-brand-white/10">Reviews</a>
+        <a href="#contact" data-i18n="nav.contact" class="text-base font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white py-2 border-b border-brand-white/10">Contact</a>
+        <div class="flex items-center gap-3 pt-2">
+          <button data-lang="en" class="lang-btn text-sm font-bold text-brand-white">🇺🇸 EN</button>
+          <button data-lang="pt" class="lang-btn text-sm font-bold text-brand-white/50">🇧🇷 PT</button>
+          <button data-lang="es" class="lang-btn text-sm font-bold text-brand-white/50">🇪🇸 ES</button>
         </div>
-        <div class="hs-divider"></div>
-        <div class="hs-field">
-          <label class="hs-label" data-i18n="hs_price">Max Price</label>
-          <select name="max" class="hs-select">
-            <option value="" data-i18n="hs_any_price">No Limit</option>
-            <option value="15000">$15,000</option>
+        <a href="inventory.html" data-i18n="nav.inventory" class="inline-flex justify-center items-center gap-2 bg-brand-yellow text-brand-black text-sm font-bold uppercase tracking-wider px-5 py-3 rounded-full mt-2">Inventory</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="Hero">
+    <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline poster="assets/images/hero-poster.jpg" aria-hidden="true">
+      <source src="assets/videos/dealership-family-outlander.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-black/70 via-brand-black/50 to-brand-black/90"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-yellow via-brand-red to-brand-blue"></div>
+    <div class="absolute inset-0 carbon-texture opacity-30 pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 pt-32 pb-20 flex flex-col items-center text-center">
+      <div class="mb-8">
+        <img src="assets/images/carnext-logo.png" alt="" aria-hidden="true" class="h-24 md:h-36 w-auto mx-auto" />
+      </div>
+      <div class="inline-flex items-center gap-2 border border-brand-white/40 text-brand-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-white animate-pulse"></span>
+        <span data-i18n="hero.chip">Orlando, FL · Premium Pre-Owned</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight text-brand-white drop-shadow-lg mb-6" data-i18n="hero.headline">Drive What's Next in Orlando</h1>
+      <p class="text-lg md:text-xl text-brand-white/70 max-w-2xl leading-relaxed mb-12" data-i18n="hero.subhead">Premium pre-owned vehicles. Transparent deals. Honest financing.</p>
+
+      <form action="inventory.html" method="get" class="w-full max-w-2xl flex flex-col gap-3 bg-brand-white/10 backdrop-blur-md border border-brand-white/20 rounded-2xl p-3">
+        <div class="relative">
+          <svg class="w-5 h-5 text-brand-white/50 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input type="text" name="q" data-i18n-ph="hero.searchName" placeholder="Search by make, model or year..." class="w-full bg-transparent text-brand-white text-sm placeholder:text-brand-white/50 pl-12 pr-4 py-3 rounded-xl border border-brand-white/20 focus:border-brand-white focus:outline-none" />
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <select name="make" class="flex-1 bg-transparent text-brand-white text-sm px-4 py-3 rounded-xl border border-brand-white/20 focus:border-brand-white focus:outline-none">
+            <option value="" data-i18n="hero.searchMake">Make</option>
+            <option value="Chrysler">Chrysler</option>
+            <option value="Honda">Honda</option>
+            <option value="Jeep">Jeep</option>
+            <option value="Mitsubishi">Mitsubishi</option>
+            <option value="Toyota">Toyota</option>
+          </select>
+          <select name="maxPrice" class="flex-1 bg-transparent text-brand-white text-sm px-4 py-3 rounded-xl border border-brand-white/20 focus:border-brand-white focus:outline-none">
+            <option value="" data-i18n="hero.searchPrice">Max Price</option>
             <option value="20000">$20,000</option>
             <option value="25000">$25,000</option>
             <option value="30000">$30,000</option>
             <option value="40000">$40,000</option>
-            <option value="50000">$50,000+</option>
           </select>
+          <button type="submit" data-i18n="hero.searchBtn" class="bg-brand-yellow text-brand-black text-sm font-bold uppercase tracking-wider px-6 py-3 rounded-xl hover:bg-brand-amber transition-colors">Search</button>
         </div>
-        <button type="submit" class="hs-btn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <span data-i18n="hs_search">Search</span>
-        </button>
       </form>
-
-      <!-- Stats Row -->
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="stat-val" data-count="500">0</span><span class="stat-unit">+</span>
-          <span class="stat-label" data-i18n="stat_vehicles">Vehicles Available</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="stat-val" data-count="98">0</span><span class="stat-unit">%</span>
-          <span class="stat-label" data-i18n="stat_satisfaction">Customer Satisfaction</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="stat-val" data-count="24">0</span><span class="stat-unit">hr</span>
-          <span class="stat-label" data-i18n="stat_financing">Fast Financing</span>
-        </div>
-      </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-      <div class="scroll-line"></div>
-      <span data-i18n="scroll">Scroll</span>
-    </div>
-
-    <!-- Decorative Lines -->
-    <div class="hero-lines">
-      <div class="h-line h-line-1"></div>
-      <div class="h-line h-line-2"></div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-50">
+      <span class="text-brand-white text-xs uppercase tracking-widest" data-i18n="hero.scroll">Scroll</span>
+      <div class="w-px h-8 bg-gradient-to-b from-brand-white to-transparent animate-pulse"></div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       SECTION 8 — SOCIAL PROOF
-  ═══════════════════════════════════════════════════ -->
-  <section class="social-proof" id="reviews">
-    <div class="container">
-      <div class="section-header reveal-block">
-        <div class="section-eyebrow">
-          <span class="eyebrow-line"></span>
-          <span class="eyebrow-text" data-i18n="reviews_eyebrow">CUSTOMER REVIEWS</span>
-        </div>
-        <h2 class="section-title"><span data-i18n="reviews_title">What Our</span> <span class="text-gradient" data-i18n="reviews_title_gradient">Clients Say</span></h2>
-      </div>
-
-      <!-- Rating badge — PLACEHOLDER: replace score/count with CarNext's real numbers -->
-      <div class="google-rating reveal-block">
-        <div class="gr-logo" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <div class="gr-score mono">5.0</div>
-        <div class="gr-detail">
-          <div class="gr-stars">★★★★★</div>
-          <div class="gr-count"><span data-i18n="gr_based">Rated by our</span> <span data-i18n="gr_reviews">CarNext customers</span></div>
-        </div>
-      </div>
-
-      <!-- Stats -->
-      <div class="proof-stats reveal-block">
-        <div class="proof-stat glass-card">
-          <div class="ps-val"><span class="stat-count" data-count="1200">0</span>+</div>
-          <div class="ps-label" data-i18n="ps_stat1_label">Vehicles Sold</div>
-        </div>
-        <div class="proof-stat glass-card">
-          <div class="ps-val"><span class="stat-count" data-count="98">0</span>%</div>
-          <div class="ps-label" data-i18n="ps_stat2_label">Satisfaction Rate</div>
-        </div>
-        <div class="proof-stat glass-card">
-          <div class="ps-val"><span class="stat-count" data-count="4">0</span>.9★</div>
-          <div class="ps-label" data-i18n="ps_stat3_label">Average Rating</div>
-        </div>
-        <div class="proof-stat glass-card">
-          <div class="ps-val"><span class="stat-count" data-count="24">0</span>hr</div>
-          <div class="ps-label" data-i18n="ps_stat4_label">Average Approval</div>
-        </div>
-      </div>
-
-      <!-- Testimonials -->
-      <div class="testimonials-grid">
-        <div class="testimonial glass-card reveal-block">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text" data-i18n="t1_text">"The smoothest car-buying experience I've ever had. No pressure, total transparency, and the vehicle was exactly as described. I drove home in my Outlander the same day."</p>
-          <div class="t-author">
-            <div class="t-avatar">MR</div>
-            <div class="t-info">
-              <span class="t-name">Marcus R. <span class="t-flag">🇺🇸</span></span>
-              <span class="t-vehicle mono" data-i18n="t_verified">Verified Purchase</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial glass-card reveal-block">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text" data-i18n="t2_text">"We were nervous about buying used after a bad experience elsewhere. CARNEXT USA completely changed our minds. They handled our trade-in and financing in one visit — outstanding."</p>
-          <div class="t-author">
-            <div class="t-avatar">SK</div>
-            <div class="t-info">
-              <span class="t-name">Sarah K. <span class="t-flag">🇧🇷</span></span>
-              <span class="t-vehicle mono" data-i18n="t_verified">Verified Purchase</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial glass-card reveal-block">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text" data-i18n="t3_text">"As a rental company owner, I've bought fleets from many dealers. CARNEXT gave us pricing, condition, and service that no one else could match. Our go-to supplier now."</p>
-          <div class="t-author">
-            <div class="t-avatar">JM</div>
-            <div class="t-info">
-              <span class="t-name">James M. <span class="t-flag">🇵🇷</span></span>
-              <span class="t-vehicle mono" data-i18n="t_verified">Verified Purchase</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════
-       SECTION 2 — CHRYSLER PACIFICA SHOWCASE
-  ═══════════════════════════════════════════════════ -->
-  <section class="showcase" id="fleet">
-    <!-- Full-screen background video -->
-    <div class="showcase-video-bg">
-      <video
-        src="assets/videos/chrysler-pacifica-showcase.mp4"
-        class="showcase-bg-video"
-        autoplay muted loop playsinline preload="metadata"
-      ></video>
-      <div class="showcase-video-overlay"></div>
-    </div>
-
-    <div class="showcase-grid">
-
-      <!-- RIGHT: Content -->
-      <div class="showcase-content">
-        <div class="showcase-eyebrow">
-          <span class="eyebrow-line"></span>
-          <span class="eyebrow-text" data-i18n="fleet_eyebrow">FLEET & RENTAL PROGRAM</span>
-        </div>
-        <h2 class="showcase-title" data-i18n="fleet_title">Exclusive Conditions<br /><span class="text-gradient">for Rental Companies</span></h2>
-        <p class="showcase-desc" data-i18n="fleet_desc">
-          Fleet operators and rental businesses receive preferential pricing, bulk acquisition programs, and dedicated account management tailored to your operation.
+  <!-- ═══════════════ TESTIMONIALS / REVIEWS ═══════════════ -->
+  <section id="reviews" class="relative py-24 overflow-hidden">
+    <img src="assets/images/reviews-bg.jpg" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+    <div class="absolute inset-0 bg-brand-black/80"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-14">
+        <p class="inline-flex items-center gap-2 text-brand-white text-xs font-bold uppercase tracking-widest mb-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-white"></span>
+          <span data-i18n="reviews.eyebrow">Customer Reviews</span>
         </p>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-brand-white mb-4" data-i18n="reviews.title">What Our Clients Say</h2>
+        <p class="text-brand-white/50 text-base" data-i18n="reviews.subtitle">Real reviews from real customers</p>
 
-        <div class="fleet-cards">
-          <div class="fleet-card glass-card">
-            <div class="fc-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            </div>
-            <div class="fc-body">
-              <h4 class="fc-title" data-i18n="fleet_c1_title">Volume Pricing</h4>
-              <p class="fc-text" data-i18n="fleet_c1_text">Competitive bulk discounts starting at 5+ units with dedicated fleet pricing tiers.</p>
-            </div>
-          </div>
-          <div class="fleet-card glass-card">
-            <div class="fc-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div class="fc-body">
-              <h4 class="fc-title" data-i18n="fleet_c2_title">Inspected & Certified</h4>
-              <p class="fc-text" data-i18n="fleet_c2_text">Every vehicle passes our 150-point inspection before fleet delivery.</p>
-            </div>
-          </div>
-          <div class="fleet-card glass-card">
-            <div class="fc-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <div class="fc-body">
-              <h4 class="fc-title" data-i18n="fleet_c3_title">Fleet Financing</h4>
-              <p class="fc-text" data-i18n="fleet_c3_text">Tailored financing solutions with extended terms and flexible payment structures.</p>
-            </div>
-          </div>
-          <div class="fleet-card glass-card">
-            <div class="fc-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div class="fc-body">
-              <h4 class="fc-title" data-i18n="fleet_c4_title">Dedicated Account Manager</h4>
-              <p class="fc-text" data-i18n="fleet_c4_text">Personal point of contact for quotes, logistics, and ongoing fleet support.</p>
-            </div>
-          </div>
+        <!-- Rating badge (PLACEHOLDER — replace with CarNext's real rating/count) -->
+        <div class="inline-flex items-center gap-3 mt-6 bg-brand-white/5 border border-brand-white/15 rounded-full px-6 py-3">
+          <div class="flex" id="rating-stars"></div>
+          <span class="text-brand-white font-black text-xl">5.0</span>
+          <span class="text-brand-white/50 text-sm" data-i18n="reviews.ratingNote">· Rated by our customers</span>
         </div>
+      </div>
 
-        <button type="button" class="btn btn-primary fleet-cta-btn fleet-modal-trigger" data-i18n="fleet_cta">Talk to Fleet Team</button>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="reviews-grid"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONCIERGE / CORPORATE ═══════════════ -->
+  <section id="experience" class="relative py-32 overflow-hidden">
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" poster="assets/images/hero-poster.jpg" aria-hidden="true">
+      <source src="assets/videos/airport-delivery-tesla.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-brand-black/75"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-yellow via-brand-red to-brand-blue"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-14">
+        <p class="text-brand-white text-xs font-bold uppercase tracking-widest mb-3">● <span data-i18n="concierge.eyebrow">Corporate Program</span></p>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-brand-white mb-4 leading-tight" data-i18n="concierge.title">Special Conditions for Companies</h2>
+        <p class="text-brand-white/60 text-base max-w-2xl mx-auto" data-i18n="concierge.subtitle">Volume pricing, flexible terms, and priority service — designed for businesses that move fast</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-brand-black/60 backdrop-blur-sm border border-brand-white/10 rounded-2xl p-6 hover:border-brand-white/30 transition-all">
+          <div class="w-10 h-10 rounded-full bg-brand-white/10 border border-brand-white/30 flex items-center justify-center mb-4"><div class="w-2 h-2 rounded-full bg-brand-white"></div></div>
+          <h3 class="text-brand-white font-bold mb-2" data-i18n="concierge.c1t">Volume Pricing</h3>
+          <p class="text-brand-white/50 text-sm leading-relaxed" data-i18n="concierge.c1d">Exclusive wholesale rates for companies acquiring 2 or more vehicles. The more you buy, the better the deal.</p>
+        </div>
+        <div class="bg-brand-black/60 backdrop-blur-sm border border-brand-white/10 rounded-2xl p-6 hover:border-brand-white/30 transition-all">
+          <div class="w-10 h-10 rounded-full bg-brand-white/10 border border-brand-white/30 flex items-center justify-center mb-4"><div class="w-2 h-2 rounded-full bg-brand-white"></div></div>
+          <h3 class="text-brand-white font-bold mb-2" data-i18n="concierge.c2t">Direct Delivery</h3>
+          <p class="text-brand-white/50 text-sm leading-relaxed" data-i18n="concierge.c2d">We deliver directly to your location in the Orlando metro area. Zero logistics hassle for your team.</p>
+        </div>
+        <div class="bg-brand-black/60 backdrop-blur-sm border border-brand-white/10 rounded-2xl p-6 hover:border-brand-white/30 transition-all">
+          <div class="w-10 h-10 rounded-full bg-brand-white/10 border border-brand-white/30 flex items-center justify-center mb-4"><div class="w-2 h-2 rounded-full bg-brand-white"></div></div>
+          <h3 class="text-brand-white font-bold mb-2" data-i18n="concierge.c3t">Business Financing</h3>
+          <p class="text-brand-white/50 text-sm leading-relaxed" data-i18n="concierge.c3d">Dedicated credit lines for corporate vehicle acquisitions. Fast approval and flexible terms built around your operation.</p>
+        </div>
+        <div class="bg-brand-black/60 backdrop-blur-sm border border-brand-white/10 rounded-2xl p-6 hover:border-brand-white/30 transition-all">
+          <div class="w-10 h-10 rounded-full bg-brand-white/10 border border-brand-white/30 flex items-center justify-center mb-4"><div class="w-2 h-2 rounded-full bg-brand-white"></div></div>
+          <h3 class="text-brand-white font-bold mb-2" data-i18n="concierge.c4t">Dedicated Support</h3>
+          <p class="text-brand-white/50 text-sm leading-relaxed" data-i18n="concierge.c4d">A dedicated account manager for corporate partners. Fast turnaround on documentation, titles, and trade-ins.</p>
+        </div>
+      </div>
+
+      <div class="flex justify-center mt-12">
+        <a href="https://wa.me/19785845424?text=Hi!%20I'm%20interested%20in%20acquiring%20multiple%20vehicles%20for%20my%20company." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-brand-yellow text-brand-black font-black uppercase tracking-wider text-base px-10 py-5 rounded-full hover:bg-brand-amber transition-all hover:scale-105 shadow-lg">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <span data-i18n="concierge.cta">Talk to a Business Specialist</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       FEATURED VEHICLES
-  ═══════════════════════════════════════════════════ -->
-  <section class="featured" id="featured">
-    <div class="container">
-      <div class="section-header reveal-block">
-        <div class="section-eyebrow">
-          <span class="eyebrow-line"></span>
-          <span class="eyebrow-text" data-i18n="featured_eyebrow">FEATURED</span>
+  <!-- ═══════════════ FEATURED VEHICLES ═══════════════ -->
+  <section class="py-24 bg-[#0d0d0d]" aria-label="Featured vehicles">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-14">
+        <div>
+          <p class="text-brand-white text-xs font-bold uppercase tracking-widest mb-2">● <span data-i18n="featured.eyebrow">Featured</span></p>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-brand-white" data-i18n="featured.title">Featured Vehicles</h2>
+          <p class="text-brand-white/50 mt-2 text-base" data-i18n="featured.subtitle">Hand-picked, inspected and ready to drive</p>
         </div>
-        <h2 class="section-title"><span data-i18n="featured_title">Featured</span> <span class="text-gradient" data-i18n="featured_title_gradient">Vehicles</span></h2>
-        <p class="section-sub" data-i18n="featured_sub">Hand-picked, inspected, and ready to drive.</p>
+        <a href="inventory.html" class="inline-flex items-center gap-2 border border-brand-white/50 text-brand-white text-sm font-semibold uppercase tracking-wider px-6 py-3 rounded-full hover:bg-brand-white hover:text-brand-black transition-all flex-shrink-0">
+          <span data-i18n="featured.viewAll">View All Inventory</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
 
-      <div class="featured-grid reveal-block">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="featured-grid"></div>
 
-        <article class="fv-card glass-card">
-          <div class="fv-image">
-            <img src="assets/images/vehicles/vehicle-01.png" alt="2022 Mitsubishi Outlander" loading="lazy" onerror="this.closest('.fv-image').classList.add('fv-noimg')" />
-            <span class="fv-badge">SUV</span>
-          </div>
-          <div class="fv-body">
-            <span class="fv-make mono">MITSUBISHI</span>
-            <h3 class="fv-name">2022 Outlander SE</h3>
-            <div class="fv-price mono">$22,995</div>
-            <div class="fv-meta mono">34,200 mi · Automatic · AWD</div>
-            <div class="fv-actions">
-              <a href="inventory.html" class="btn btn-secondary btn-sm" data-i18n="fv_details">View Details</a>
-              <button type="button" class="btn btn-primary btn-sm fv-finance" data-i18n="fv_finance">Finance This</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="fv-card glass-card">
-          <div class="fv-image">
-            <img src="assets/images/vehicles/vehicle-06.png" alt="2021 Jeep Grand Cherokee" loading="lazy" onerror="this.closest('.fv-image').classList.add('fv-noimg')" />
-            <span class="fv-badge">SUV</span>
-          </div>
-          <div class="fv-body">
-            <span class="fv-make mono">JEEP</span>
-            <h3 class="fv-name">2021 Grand Cherokee</h3>
-            <div class="fv-price mono">$28,900</div>
-            <div class="fv-meta mono">38,700 mi · Automatic · 4x4</div>
-            <div class="fv-actions">
-              <a href="inventory.html" class="btn btn-secondary btn-sm" data-i18n="fv_details">View Details</a>
-              <button type="button" class="btn btn-primary btn-sm fv-finance" data-i18n="fv_finance">Finance This</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="fv-card glass-card">
-          <div class="fv-image">
-            <img src="assets/images/vehicles/vehicle-05.png" alt="2022 Toyota Sienna XLE" loading="lazy" onerror="this.closest('.fv-image').classList.add('fv-noimg')" />
-            <span class="fv-badge">Minivan</span>
-          </div>
-          <div class="fv-body">
-            <span class="fv-make mono">TOYOTA</span>
-            <h3 class="fv-name">2022 Sienna XLE Hybrid</h3>
-            <div class="fv-price mono">$36,500</div>
-            <div class="fv-meta mono">29,300 mi · eCVT · AWD</div>
-            <div class="fv-actions">
-              <a href="inventory.html" class="btn btn-secondary btn-sm" data-i18n="fv_details">View Details</a>
-              <button type="button" class="btn btn-primary btn-sm fv-finance" data-i18n="fv_finance">Finance This</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="fv-card glass-card">
-          <div class="fv-image">
-            <img src="assets/images/vehicles/vehicle-02.png" alt="2021 Chrysler Pacifica" loading="lazy" onerror="this.closest('.fv-image').classList.add('fv-noimg')" />
-            <span class="fv-badge">Minivan</span>
-          </div>
-          <div class="fv-body">
-            <span class="fv-make mono">CHRYSLER</span>
-            <h3 class="fv-name">2021 Pacifica Touring</h3>
-            <div class="fv-price mono">$25,490</div>
-            <div class="fv-meta mono">41,800 mi · Automatic · FWD</div>
-            <div class="fv-actions">
-              <a href="inventory.html" class="btn btn-secondary btn-sm" data-i18n="fv_details">View Details</a>
-              <button type="button" class="btn btn-primary btn-sm fv-finance" data-i18n="fv_finance">Finance This</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="fv-card glass-card">
-          <div class="fv-image">
-            <img src="assets/images/vehicles/vehicle-04.png" alt="2020 Toyota Camry SE" loading="lazy" onerror="this.closest('.fv-image').classList.add('fv-noimg')" />
-            <span class="fv-badge">Sedan</span>
-          </div>
-          <div class="fv-body">
-            <span class="fv-make mono">TOYOTA</span>
-            <h3 class="fv-name">2020 Camry SE</h3>
-            <div class="fv-price mono">$19,990</div>
-            <div class="fv-meta mono">47,100 mi · Automatic · FWD</div>
-            <div class="fv-actions">
-              <a href="inventory.html" class="btn btn-secondary btn-sm" data-i18n="fv_details">View Details</a>
-              <button type="button" class="btn btn-primary btn-sm fv-finance" data-i18n="fv_finance">Finance This</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="fv-card glass-card">
-          <div class="fv-image">
-            <img src="assets/images/vehicles/vehicle-03.png" alt="2019 Honda CR-V EX" loading="lazy" onerror="this.closest('.fv-image').classList.add('fv-noimg')" />
-            <span class="fv-badge">SUV</span>
-          </div>
-          <div class="fv-body">
-            <span class="fv-make mono">HONDA</span>
-            <h3 class="fv-name">2019 CR-V EX</h3>
-            <div class="fv-price mono">$18,750</div>
-            <div class="fv-meta mono">58,400 mi · CVT · AWD</div>
-            <div class="fv-actions">
-              <a href="inventory.html" class="btn btn-secondary btn-sm" data-i18n="fv_details">View Details</a>
-              <button type="button" class="btn btn-primary btn-sm fv-finance" data-i18n="fv_finance">Finance This</button>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="featured-cta">
-        <a href="inventory.html" class="btn btn-primary" data-i18n="featured_viewall">View All Inventory</a>
+      <div class="text-center mt-12">
+        <a href="inventory.html" class="inline-flex items-center gap-2 bg-brand-yellow text-brand-black text-sm font-bold uppercase tracking-wider px-10 py-4 rounded-full hover:bg-brand-amber transition-all hover:scale-105">
+          <span data-i18n="featured.viewAll">View All Inventory</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-
-  <!-- ═══════════════════════════════════════════════════
-       SECTION 3 — AIRPORT DELIVERY CONCIERGE
-  ═══════════════════════════════════════════════════ -->
-  <section class="airport-section" id="airport">
-    <!-- Full-screen background video: airplane + family -->
-    <div class="airport-video-bg">
-      <video
-        class="airport-bg-video"
-        src="assets/videos/brand-highlight.mp4"
-        autoplay muted loop playsinline preload="metadata"
-      ></video>
-      <div class="airport-video-overlay"></div>
-    </div>
-
-    <!-- 2-col grid: ::before = left empty col (video shows), right = glass content -->
-    <div class="airport-grid">
-      <!-- Right col: glass card with all info -->
-      <div class="airport-content glass-card reveal-block">
-        <div class="section-eyebrow">
-          <span class="eyebrow-line"></span>
-          <span class="eyebrow-text" data-i18n="airport_eyebrow">CONCIERGE DELIVERY</span>
+  <!-- ═══════════════ FINANCING CTA ═══════════════ -->
+  <section id="financing" class="py-20 bg-brand-black relative overflow-hidden">
+    <div class="absolute inset-0 carbon-texture opacity-20 pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto px-6 lg:px-12 relative">
+      <div class="bg-gradient-to-br from-[#141416] to-brand-black border border-brand-white/20 rounded-3xl p-10 md:p-14 text-center">
+        <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-brand-yellow flex items-center justify-center">
+          <svg class="w-8 h-8 text-brand-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
-        <h2 class="section-title" data-i18n="airport_title">We Pick You Up<br /><span class="text-gradient">at the Airport</span></h2>
-        <p class="airport-desc" data-i18n="airport_desc">
-          Just landed in Orlando? We come to you. Our team will meet you at the airport, escort you to our showroom, and make sure you drive home the same day — stress-free.
-        </p>
+        <p class="text-brand-white text-xs font-bold uppercase tracking-widest mb-3">● <span data-i18n="fin.eyebrow">Flexible Financing</span></p>
+        <h2 class="text-3xl md:text-4xl font-black uppercase text-brand-white mb-4" data-i18n="fin.title">Get Financed Today</h2>
+        <p class="text-brand-white/60 text-base max-w-2xl mx-auto mb-8" data-i18n="fin.body">Through our partnerships with multiple lenders, we can help anybody in Orlando, FL get financed! Good credit, rebuilding credit, first-time buyer? Our lenders work with all types of scores and situations.</p>
+        <a href="#test-drive" class="inline-flex items-center gap-2 bg-brand-yellow text-brand-black font-bold uppercase tracking-wider text-sm px-10 py-4 rounded-full hover:bg-brand-amber transition-colors">
+          <span data-i18n="fin.cta">Apply Now</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <div class="airport-features">
-          <div class="af-item">
-            <div class="af-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  <!-- ═══════════════ CONTACT + TEST DRIVE ═══════════════ -->
+  <section id="contact" class="py-24 bg-[#0a0a0a]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-14">
+        <p class="text-brand-white text-xs font-bold uppercase tracking-widest mb-2">● Orlando, FL</p>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-brand-white" data-i18n="contact.title">Get in Touch</h2>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="space-y-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-[#111113] border border-brand-white/10 rounded-xl p-5">
+              <p class="text-brand-white text-xs uppercase tracking-wider font-bold mb-2" data-i18n="contact.address">Address</p>
+              <p class="text-brand-white/80 text-sm leading-relaxed">Orlando, Florida — USA</p>
+              <a href="https://maps.google.com/?q=Orlando+FL" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-brand-white text-xs mt-3 hover:underline"><span data-i18n="contact.directions">Get Directions</span> ↗</a>
+            </div>
+            <div class="bg-[#111113] border border-brand-white/10 rounded-xl p-5">
+              <p class="text-brand-white text-xs uppercase tracking-wider font-bold mb-2" data-i18n="contact.hours">Business Hours</p>
+              <p class="text-brand-white/80 text-sm leading-relaxed" data-i18n="contact.hoursVal">Mon – Sat: 9:00 AM – 6:00 PM</p>
+            </div>
+            <div class="bg-[#111113] border border-brand-white/10 rounded-xl p-5">
+              <p class="text-brand-white text-xs uppercase tracking-wider font-bold mb-2" data-i18n="contact.phone">Phone</p>
+              <a href="tel:+19785845424" class="text-brand-white/80 text-sm hover:text-brand-white transition-colors">(978) 584-5424</a>
+            </div>
+            <div class="bg-[#111113] border border-brand-white/10 rounded-xl p-5">
+              <p class="text-brand-white text-xs uppercase tracking-wider font-bold mb-2" data-i18n="contact.email">Email</p>
+              <a href="mailto:nex@carnextusa.com" class="text-brand-white/80 text-sm hover:text-brand-white transition-colors break-all">nex@carnextusa.com</a>
+            </div>
+          </div>
+
+          <a href="https://wa.me/19785845424" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-brand-white/5 border border-brand-white/20 rounded-xl p-5 hover:bg-brand-white/10 transition-colors group">
+            <div class="w-12 h-12 rounded-full bg-brand-white/15 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-brand-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
             </div>
             <div>
-              <h4 class="af-title" data-i18n="airport_feat1_title">Schedule in Advance</h4>
-              <p class="af-text" data-i18n="airport_feat1_text">Tell us your flight details. We'll coordinate pickup and have your vehicle ready.</p>
+              <p class="text-brand-white font-semibold" data-i18n="contact.whatsapp">Chat on WhatsApp</p>
+              <p class="text-brand-white/50 text-xs">+1 (978) 584-5424</p>
             </div>
+          </a>
+
+          <div class="rounded-xl overflow-hidden border border-brand-white/10 aspect-[4/3]">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224162.8!2d-81.38!3d28.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e773d8fecdbc77%3A0xac3b2063ca5bf9e!2sOrlando%2C%20FL!5e0!3m2!1sen!2sus!4v1" width="100%" height="100%" style="border:0;" class="map-dark" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="CarNext USA location"></iframe>
           </div>
-          <div class="af-item">
-            <div class="af-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+
+        <div id="test-drive" class="bg-[#111113] border border-brand-white/10 rounded-2xl p-8 relative">
+          <div class="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-brand-yellow via-brand-red to-brand-blue rounded-t-2xl"></div>
+          <div class="mb-6">
+            <p class="text-brand-white text-xs font-bold uppercase tracking-widest mb-1">● <span data-i18n="td.eyebrow">Schedule</span></p>
+            <h3 class="text-brand-white font-black text-2xl uppercase" data-i18n="td.title">Schedule a Test Drive</h3>
+          </div>
+
+          <form id="td-form" class="space-y-5">
+            <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-brand-white/60 text-xs uppercase tracking-wider mb-2"><span data-i18n="td.name">Full Name</span> *</label>
+                <input type="text" name="name" required class="w-full bg-brand-black border border-brand-white/20 text-brand-white px-4 py-3 rounded-xl focus:border-brand-white focus:outline-none text-sm placeholder:text-brand-white/30" placeholder="John Smith" />
+              </div>
+              <div>
+                <label class="block text-brand-white/60 text-xs uppercase tracking-wider mb-2"><span data-i18n="td.phone">Phone</span> *</label>
+                <input type="tel" name="phone" required class="w-full bg-brand-black border border-brand-white/20 text-brand-white px-4 py-3 rounded-xl focus:border-brand-white focus:outline-none text-sm placeholder:text-brand-white/30" placeholder="(978) 584-5424" />
+              </div>
             </div>
             <div>
-              <h4 class="af-title" data-i18n="airport_feat2_title">Same-Day Purchase</h4>
-              <p class="af-text" data-i18n="airport_feat2_text">Browse online, choose your vehicle, and finalize the deal the moment you arrive.</p>
-            </div>
-          </div>
-          <div class="af-item">
-            <div class="af-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <label class="block text-brand-white/60 text-xs uppercase tracking-wider mb-2"><span data-i18n="td.email">Email</span> *</label>
+              <input type="email" name="email" required class="w-full bg-brand-black border border-brand-white/20 text-brand-white px-4 py-3 rounded-xl focus:border-brand-white focus:outline-none text-sm placeholder:text-brand-white/30" placeholder="john@email.com" />
             </div>
             <div>
-              <h4 class="af-title" data-i18n="airport_feat3_title">Fully Bilingual Team</h4>
-              <p class="af-text" data-i18n="airport_feat3_text">English, Portuguese, and Spanish. We speak your language from arrival to delivery.</p>
-            </div>
-          </div>
-          <div class="af-item">
-            <div class="af-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <h4 class="af-title" data-i18n="airport_feat4_title">Orlando, FL Coverage</h4>
-              <p class="af-text" data-i18n="airport_feat4_text">MCO Airport and all surrounding areas. Convenient, professional, and personal.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="airport-cta-center">
-          <a href="#test-drive" class="btn btn-primary" data-i18n="airport_cta">Book Airport Pickup</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════
-       SECTION 4 — PAIN POINT / TRUST
-  ═══════════════════════════════════════════════════ -->
-  <section class="trust-section" id="trust">
-    <!-- Full-screen background video -->
-    <div class="trust-video-bg">
-      <video
-        class="trust-bg-video"
-        src="assets/videos/airport-delivery-tesla.mp4"
-        autoplay muted loop playsinline preload="metadata"
-      ></video>
-      <div class="trust-video-overlay"></div>
-    </div>
-    <div class="container">
-      <div class="trust-grid">
-        <!-- Pain Side -->
-        <div class="trust-pain reveal-block">
-          <div class="section-eyebrow">
-            <span class="eyebrow-line"></span>
-            <span class="eyebrow-text" data-i18n="pain_eyebrow">THE OLD WAY</span>
-          </div>
-          <h2 class="section-title"><span data-i18n="pain_title">Tired of the</span><br /><span class="text-gradient-red" data-i18n="pain_title_gradient">Same Old Dealership?</span></h2>
-          <div class="pain-list">
-            <div class="pain-item">
-              <div class="pain-icon">✗</div>
-              <div>
-                <h4 data-i18n="pain_1_title">Poor After-Sales Support</h4>
-                <p data-i18n="pain_1_text">You buy, then they forget you exist. You're just another number on their list.</p>
-              </div>
-            </div>
-            <div class="pain-item">
-              <div class="pain-icon">✗</div>
-              <div>
-                <h4 data-i18n="pain_2_title">Predatory Financing</h4>
-                <p data-i18n="pain_2_text">Rates designed to trap, not help. Complex terms, high interest, buried clauses.</p>
-              </div>
-            </div>
-            <div class="pain-item">
-              <div class="pain-icon">✗</div>
-              <div>
-                <h4 data-i18n="pain_3_title">Unreliable Vehicles</h4>
-                <p data-i18n="pain_3_text">No inspection history, unknown accidents, and zero accountability.</p>
-              </div>
-            </div>
-            <div class="pain-item">
-              <div class="pain-icon">✗</div>
-              <div>
-                <h4 data-i18n="pain_4_title">Pressure Tactics</h4>
-                <p data-i18n="pain_4_text">Aggressive sales, false urgency, and a process that ignores your needs.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Divider -->
-        <div class="trust-divider reveal-block">
-          <div class="divider-line"></div>
-          <div class="divider-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-          <div class="divider-line"></div>
-        </div>
-
-        <!-- Solution Side -->
-        <div class="trust-solution reveal-block">
-          <div class="section-eyebrow">
-            <span class="eyebrow-line" style="background: var(--accent-blue)"></span>
-            <span class="eyebrow-text" data-i18n="solution_eyebrow">THE CARNEXT WAY</span>
-          </div>
-          <h2 class="section-title"><span data-i18n="solution_title">A Better Experience.</span><br /><span class="text-gradient" data-i18n="solution_title_gradient">Built for You.</span></h2>
-          <div class="solution-list">
-            <div class="solution-item">
-              <div class="solution-icon">✓</div>
-              <div>
-                <h4 data-i18n="solution_1_title">Premium After-Sales</h4>
-                <p data-i18n="solution_1_text">We take care of you — because now you're part of the club.</p>
-              </div>
-            </div>
-            <div class="solution-item">
-              <div class="solution-icon">✓</div>
-              <div>
-                <h4 data-i18n="solution_2_title">Fair Financing</h4>
-                <p data-i18n="solution_2_text">Simple terms, competitive rates, and options built around your budget.</p>
-              </div>
-            </div>
-            <div class="solution-item">
-              <div class="solution-icon">✓</div>
-              <div>
-                <h4 data-i18n="solution_3_title">150-Point Inspected</h4>
-                <p data-i18n="solution_3_text">Every vehicle fully inspected, documented, and verified before sale.</p>
-              </div>
-            </div>
-            <div class="solution-item">
-              <div class="solution-icon">✓</div>
-              <div>
-                <h4 data-i18n="solution_4_title">You-First Process</h4>
-                <p data-i18n="solution_4_text">Your timeline, your terms. A team that listens before they talk.</p>
-              </div>
-            </div>
-          </div>
-          <button type="button" class="btn btn-primary solution-cta fleet-modal-trigger" data-i18n="solution_cta">Acquire Fleet</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════
-       FINANCING CTA BAND
-  ═══════════════════════════════════════════════════ -->
-  <section class="financing" id="financing">
-    <div class="financing-glow"></div>
-    <div class="container">
-      <div class="financing-inner reveal-block">
-        <div class="section-eyebrow financing-eyebrow">
-          <span class="eyebrow-line"></span>
-          <span class="eyebrow-text" data-i18n="fin_eyebrow">FLEXIBLE FINANCING</span>
-        </div>
-        <h2 class="financing-title"><span data-i18n="fin_title">Get Financed</span> <span class="text-gradient" data-i18n="fin_title_gradient">Today</span></h2>
-        <p class="financing-desc" data-i18n="fin_desc">
-          Through our network of trusted lenders, we help buyers across Orlando get approved — good credit, rebuilding credit, or first-time buyer. Every situation, every score.
-        </p>
-        <div class="financing-badges">
-          <span class="fin-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="fin_b1">All credit types</span></span>
-          <span class="fin-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="fin_b2">Approval in 24h</span></span>
-          <span class="fin-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="fin_b3">No obligation</span></span>
-        </div>
-        <a href="#test-drive" class="btn btn-primary financing-cta" data-i18n="fin_cta">Apply Now</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════════════
-       SECTION 9 — CONTACT / LOCATION
-  ═══════════════════════════════════════════════════ -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-header reveal-block">
-        <div class="section-eyebrow">
-          <span class="eyebrow-line"></span>
-          <span class="eyebrow-text" data-i18n="contact_eyebrow">GET IN TOUCH</span>
-        </div>
-        <h2 class="section-title"><span data-i18n="contact_title">We're Here When</span><br /><span class="text-gradient" data-i18n="contact_title_gradient">You're Ready</span></h2>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info reveal-block">
-          <div class="ci-item glass-card">
-            <div class="ci-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div class="ci-body">
-              <span class="ci-label" data-i18n="contact_phone_label">Phone</span>
-              <a href="tel:+19785845424" class="ci-val" id="contactPhone">(978) 584-5424</a>
-            </div>
-          </div>
-
-          <div class="ci-item glass-card">
-            <div class="ci-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div class="ci-body">
-              <span class="ci-label" data-i18n="contact_email_label">Email</span>
-              <a href="mailto:nex@carnextusa.com?subject=Contact%20from%20Website%20-%20CarNext%20USA&body=Hello%20CarNext%20USA%20Team%2C%0A%0AI%20would%20like%20to%20get%20more%20information%20about%20your%20vehicles%20and%20services.%0A%0AName%3A%20%0APhone%3A%20%0AMessage%3A%20%0A%0AThank%20you%21" class="ci-val">nex@carnextusa.com</a>
-            </div>
-          </div>
-
-          <div class="ci-item glass-card">
-            <div class="ci-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="ci-body">
-              <span class="ci-label" data-i18n="contact_location_label">Location</span>
-              <span class="ci-val" data-i18n="contact_location_val">Orlando, Florida — USA</span>
-            </div>
-          </div>
-
-          <div class="ci-item glass-card">
-            <div class="ci-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div class="ci-body">
-              <span class="ci-label" data-i18n="contact_hours_label">Business Hours</span>
-              <div class="ci-hours">
-                <span data-i18n="contact_hours_1">Mon–Fri: 9:00 AM – 6:00 PM</span>
-                <span data-i18n="contact_hours_2">Saturday: 10:00 AM – 2:00 PM</span>
-                <span data-i18n="contact_hours_3">Sunday: By Appointment</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Map Placeholder -->
-        <div class="contact-map reveal-block">
-          <div class="map-placeholder glass-card">
-            <div class="map-bg">
-              <!-- Google Maps embed placeholder -->
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224162.8!2d-81.38!3d28.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e773d8fecdbc77%3A0xac3b2063ca5bf9e!2sOrlando%2C%20FL!5e0!3m2!1sen!2sus!4v1"
-                width="100%"
-                height="100%"
-                style="border:0; filter: invert(90%) hue-rotate(180deg);"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="CARNEXT USA Location"
-              ></iframe>
-            </div>
-            <div class="map-cta">
-              <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="contact_directions">Get Directions</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════
-       SECTION 6 — TEST DRIVE BOOKING
-  ═══════════════════════════════════════════════════ -->
-  <section class="test-drive" id="test-drive">
-    <div class="test-drive-bg"></div>
-    <div class="container">
-      <div class="test-drive-grid">
-        <div class="td-left reveal-block">
-          <div class="section-eyebrow">
-            <span class="eyebrow-line"></span>
-            <span class="eyebrow-text" data-i18n="td_eyebrow">BOOK YOUR EXPERIENCE</span>
-          </div>
-          <h2 class="section-title"><span data-i18n="td_title">Schedule Your</span><br /><span class="text-gradient" data-i18n="td_title2">Test Drive</span></h2>
-          <p class="td-desc" data-i18n="td_desc">
-            Experience the vehicle before you commit. Our team will have it prepped, inspected, and ready for you.
-          </p>
-          <div class="td-trust-badges">
-            <div class="trust-badge">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="td_trust1">No commitment required</span>
-            </div>
-            <div class="trust-badge">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="td_trust2">We come to you (available)</span>
-            </div>
-            <div class="trust-badge">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="td_trust3">Response within 2 hours</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="td-form-wrap glass-card reveal-block">
-          <form class="td-form" id="testDriveForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" data-i18n="form_name">Full Name</label>
-                <input type="text" name="name" class="form-input" data-i18n-placeholder="form_name_ph" placeholder="John Smith" required />
-              </div>
-              <div class="form-group">
-                <label class="form-label" data-i18n="form_phone">Phone</label>
-                <input type="tel" name="phone" class="form-input" placeholder="(978) 584-5424" required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label" data-i18n="form_email">Email</label>
-              <input type="email" name="email" class="form-input" placeholder="john@email.com" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label" data-i18n="form_vehicle">Preferred Vehicle</label>
-              <select name="preferred_vehicle" class="form-input form-select">
-                <option value="" data-i18n="form_vehicle_ph">Select a vehicle...</option>
-                <option>2022 Mitsubishi Outlander</option>
-                <option>2021 Chrysler Pacifica</option>
-                <option>2022 Toyota Sienna XLE</option>
-                <option>2021 Jeep Grand Cherokee</option>
-                <option>2020 Toyota Camry SE</option>
-                <option>2019 Honda CR-V EX</option>
-                <option data-i18n="form_vehicle_other">Other (specify in message)</option>
+              <label class="block text-brand-white/60 text-xs uppercase tracking-wider mb-2" data-i18n="td.vehicle">Vehicle of Interest</label>
+              <select name="vehicle" class="w-full bg-brand-black border border-brand-white/20 text-brand-white px-4 py-3 rounded-xl focus:border-brand-white focus:outline-none text-sm">
+                <option value="" data-i18n="td.anyVehicle">Any vehicle / Open to suggestions</option>
+                <option>2022 Mitsubishi Outlander SE — $22,995</option>
+                <option>2021 Jeep Grand Cherokee — $28,900</option>
+                <option>2022 Toyota Sienna XLE — $36,500</option>
+                <option>2021 Chrysler Pacifica — $25,490</option>
+                <option>2020 Toyota Camry SE — $19,990</option>
+                <option>2019 Honda CR-V EX — $18,750</option>
               </select>
             </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" data-i18n="form_date">Preferred Date</label>
-                <input type="date" name="preferred_date" class="form-input" />
+            <div class="grid grid-cols-2 gap-5">
+              <div>
+                <label class="block text-brand-white/60 text-xs uppercase tracking-wider mb-2" data-i18n="td.date">Preferred Date</label>
+                <input type="date" name="preferredDate" class="w-full bg-brand-black border border-brand-white/20 text-brand-white px-4 py-3 rounded-xl focus:border-brand-white focus:outline-none text-sm" />
               </div>
-              <div class="form-group">
-                <label class="form-label" data-i18n="form_time">Preferred Time</label>
-                <select name="preferred_time" class="form-input form-select">
-                  <option value="" data-i18n="form_time_ph">Select time...</option>
-                  <option>9:00 AM</option>
-                  <option>10:00 AM</option>
-                  <option>11:00 AM</option>
-                  <option>12:00 PM</option>
-                  <option>1:00 PM</option>
-                  <option>2:00 PM</option>
-                  <option>3:00 PM</option>
-                  <option>4:00 PM</option>
-                  <option>5:00 PM</option>
+              <div>
+                <label class="block text-brand-white/60 text-xs uppercase tracking-wider mb-2" data-i18n="td.time">Preferred Time</label>
+                <select name="preferredTime" class="w-full bg-brand-black border border-brand-white/20 text-brand-white px-4 py-3 rounded-xl focus:border-brand-white focus:outline-none text-sm">
+                  <option value="" data-i18n="td.anyTime">Any time</option>
+                  <option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option>
                 </select>
               </div>
             </div>
-            <div class="form-group">
-              <label class="form-label" data-i18n="form_message">Message (Optional)</label>
-              <textarea name="message" class="form-input form-textarea" data-i18n-placeholder="form_message_ph" placeholder="Any questions or special requests..."></textarea>
+            <div>
+              <label class="block text-brand-white/60 text-xs uppercase tracking-wider mb-2" data-i18n="td.message">Additional Notes</label>
+              <textarea name="message" rows="3" class="w-full bg-brand-black border border-brand-white/20 text-brand-white px-4 py-3 rounded-xl focus:border-brand-white focus:outline-none text-sm placeholder:text-brand-white/30 resize-none" placeholder="Any questions or requests?"></textarea>
             </div>
-            <label class="td-checkbox-wrap">
-              <input type="checkbox" class="td-checkbox" name="passport_financing" id="passportFinancing" />
-              <span class="td-checkbox-box">
-                <svg width="11" height="9" viewBox="0 0 11 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4.5 4 7.5 10 1"/></svg>
-              </span>
-              <span class="td-checkbox-label" data-i18n="form_passport">I'm interested in <strong>Passport Financing</strong></span>
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" name="interestFinancing" class="w-4 h-4 accent-brand-white" />
+              <span class="text-brand-white/70 text-sm" data-i18n="td.financing">I'm interested in financing</span>
             </label>
-            <button type="submit" class="btn btn-primary btn-full">
-              <span data-i18n="form_submit">Schedule My Test Drive</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-            <p class="form-disclaimer" data-i18n="form_disclaimer">Your information is secure and will never be shared with third parties.</p>
+            <div id="td-success" class="hidden bg-brand-white/10 border border-brand-white/30 text-brand-white text-sm px-4 py-3 rounded-xl" data-i18n="td.success">Test drive scheduled! We'll confirm within the hour.</div>
+            <button type="submit" class="w-full bg-brand-yellow text-brand-black font-black uppercase tracking-wider text-base px-6 py-4 rounded-xl hover:bg-brand-amber transition-all" data-i18n="td.submit">Schedule Now</button>
+            <p class="text-center text-brand-white/40 text-xs"><span data-i18n="td.whatsappFallback">Or contact us directly on WhatsApp</span> → <a href="https://wa.me/19785845424" target="_blank" rel="noopener noreferrer" class="text-brand-white hover:underline ml-1">WhatsApp</a></p>
           </form>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ═══════════════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="footer-glow"></div>
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#" class="nav-logo footer-logo">
-            <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="footer-logo-img" />
-          </a>
-          <p class="footer-tagline" data-i18n="footer_tagline">Premium pre-owned vehicles.<br />Transparent deals. Designed for you.</p>
-          <div class="footer-socials">
-            <a href="https://www.facebook.com/profile.php?id=61577307740990" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/carnextusa/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.17 8.17 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
-            </a>
-            <a href="https://x.com/CarNextUSA" target="_blank" rel="noopener" class="social-btn" aria-label="X">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.84L1.254 2.25H8.08l4.261 5.636 5.903-5.636Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/company/carnextusa/about/?viewAsMember=true" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="https://cargurus.com" target="_blank" rel="noopener" class="social-btn" aria-label="CarGurus">
-              <span class="mono" style="font-size:0.6rem;font-weight:500;letter-spacing:.05em">CG</span>
-            </a>
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="bg-[#060607] border-t border-brand-white/10">
+    <div class="h-1 bg-gradient-to-r from-brand-yellow via-brand-red to-brand-blue"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+        <div class="lg:col-span-1">
+          <a href="/" aria-label="CarNext USA Home"><img src="assets/images/carnext-logo.png" alt="CarNext USA" class="h-12 w-auto mb-4" /></a>
+          <p class="text-brand-white/60 text-sm leading-relaxed mb-6" data-i18n="footer.tagline">Premium Pre-Owned. Orlando's Best.</p>
+          <div class="flex items-center gap-4">
+            <a href="https://www.instagram.com/carnextusa/" target="_blank" rel="noopener noreferrer" class="text-brand-white/40 hover:text-brand-white transition-colors" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.facebook.com/profile.php?id=61577307740990" target="_blank" rel="noopener noreferrer" class="text-brand-white/40 hover:text-brand-white transition-colors" aria-label="Facebook"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="text-brand-white/40 hover:text-brand-white transition-colors" aria-label="TikTok"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+            <a href="https://wa.me/19785845424" target="_blank" rel="noopener noreferrer" class="text-brand-white/40 hover:text-brand-white transition-colors" aria-label="WhatsApp"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
           </div>
         </div>
 
-        <div class="footer-links-wrap">
-          <div class="footer-col">
-            <h4 class="footer-col-title">Inventory</h4>
-            <ul class="footer-links">
-              <li><a href="inventory.html" class="footer-link">All Vehicles</a></li>
-              <li><a href="inventory.html" class="footer-link">SUVs</a></li>
-              <li><a href="inventory.html" class="footer-link">Minivans</a></li>
-              <li><a href="inventory.html" class="footer-link">Sedans</a></li>
-              <li><a href="inventory.html" class="footer-link">Under $20k</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 class="footer-col-title">Services</h4>
-            <ul class="footer-links">
-              <li><a href="#financing" class="footer-link">Financing</a></li>
-              <li><a href="#test-drive" class="footer-link">Test Drive</a></li>
-              <li><a href="#fleet" class="footer-link">Fleet Program</a></li>
-              <li><a href="#contact" class="footer-link">Trade-In</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 class="footer-col-title">Company</h4>
-            <ul class="footer-links">
-              <li><a href="#contact" class="footer-link">Contact Us</a></li>
-              <li><a href="#reviews" class="footer-link">Reviews</a></li>
-              <li><a href="https://www.facebook.com/profile.php?id=61577307740990" target="_blank" rel="noopener" class="footer-link">Facebook</a></li>
-              <li><a href="https://cargurus.com" target="_blank" rel="noopener" class="footer-link">CarGurus</a></li>
-            </ul>
+        <div>
+          <h3 class="text-brand-white text-xs font-bold uppercase tracking-widest mb-5" data-i18n="footer.inventory">Inventory</h3>
+          <ul class="space-y-3">
+            <li><a href="inventory.html" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="footer.allInventory">All Vehicles</a></li>
+            <li><a href="#reviews" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="nav.reviews">Reviews</a></li>
+            <li><a href="#test-drive" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="footer.testDrive">Test Drive</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-brand-white text-xs font-bold uppercase tracking-widest mb-5" data-i18n="footer.company">Company</h3>
+          <ul class="space-y-3">
+            <li><a href="#experience" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="nav.experience">Business</a></li>
+            <li><a href="#financing" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="nav.financing">Financing</a></li>
+            <li><a href="#contact" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="footer.contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-brand-white text-xs font-bold uppercase tracking-widest mb-5" data-i18n="footer.legal">Legal</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="footer.privacy">Privacy Policy</a></li>
+            <li><a href="#" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="footer.terms">Terms of Service</a></li>
+          </ul>
+          <div class="mt-6 space-y-2">
+            <p class="text-brand-white/60 text-sm">📍 Orlando, FL — USA</p>
+            <p class="text-brand-white/60 text-sm">📞 <a href="tel:+19785845424" class="hover:text-brand-white transition-colors">(978) 584-5424</a></p>
           </div>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p class="footer-legal">
-          © 2025 CARNEXT USA. All rights reserved. All vehicles subject to prior sale. Prices exclude tax, tag, title, and dealer fees. Financing subject to credit approval. Advertised monthly payments are estimates only.
-        </p>
-        <div class="footer-meta">
-          <a href="#" class="footer-meta-link">Privacy Policy</a>
-          <a href="#" class="footer-meta-link">Terms of Service</a>
+      <div class="mt-12 pt-6 border-t border-brand-white/10 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
+        <p class="text-brand-white/30 text-xs leading-relaxed max-w-2xl" data-i18n="footer.disclaimer">CarNext USA is an independent pre-owned vehicle dealership. All prices exclude taxes, title, tags and dealer fees. Financing subject to credit approval.</p>
+        <div class="flex items-center gap-1 flex-shrink-0">
+          <button data-lang="en" class="lang-btn text-xs font-bold text-brand-white">🇺🇸 EN</button>
+          <span class="text-brand-white/20 text-xs mx-1">·</span>
+          <button data-lang="pt" class="lang-btn text-xs font-bold text-brand-white/30 hover:text-brand-white/60">🇧🇷 PT</button>
+          <span class="text-brand-white/20 text-xs mx-1">·</span>
+          <button data-lang="es" class="lang-btn text-xs font-bold text-brand-white/30 hover:text-brand-white/60">🇪🇸 ES</button>
         </div>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mt-4">
+        <p class="text-brand-white/20 text-xs">© <span id="footer-year">2026</span> CarNext USA. <span data-i18n="footer.rights">All rights reserved.</span></p>
+        <a href="https://prismio.digital" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-brand-white/25 hover:text-brand-white/60 transition-colors text-xs group">
+          <span data-i18n="footer.by">Developed by</span>
+          <span class="font-semibold text-brand-white/40 group-hover:text-brand-white transition-colors">Prismio Digital</span>
+        </a>
       </div>
     </div>
   </footer>
 
-  <!-- ═══════ FLEET INQUIRY MODAL ═══════ -->
-  <div class="td-modal" id="fleetModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="fleetModalTitle">
-    <div class="td-modal-backdrop" data-fleet-close></div>
-    <div class="td-modal-card" role="document">
-      <button class="td-modal-close" aria-label="Close" data-fleet-close>&times;</button>
-
-      <!-- STEP 1 — Form -->
-      <div class="td-modal-step td-modal-step-1" data-fleet-step="1">
-        <h3 class="td-modal-title" id="fleetModalTitle" data-i18n="fleet_modal_title">Fleet Inquiry</h3>
-        <p class="td-modal-sub" data-i18n="fleet_modal_sub">Tell us about your operation and we'll prepare a custom proposal.</p>
-        <form class="td-form" id="fleetModalForm" novalidate>
-          <input type="hidden" name="subject" value="Fleet Inquiry - CarNext USA" />
-          <div class="form-group">
-            <label class="form-label" data-i18n="field_company_name">RENTAL COMPANY NAME</label>
-            <input type="text" name="company_name" class="form-input" placeholder="e.g. Sunshine Rentals LLC" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" data-i18n="field_current_fleet">CURRENT FLEET SIZE</label>
-            <select name="current_fleet_size" class="form-input form-select" required>
-              <option value="" data-i18n="field_select_size">Select fleet size...</option>
-              <option>1</option><option>2</option><option>3</option><option>4</option>
-              <option>5</option><option>6</option><option>7</option><option>8</option>
-              <option>9</option><option>10+</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" data-i18n="field_full_name">FULL NAME</label>
-              <input type="text" name="name" class="form-input" placeholder="John Smith" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label" data-i18n="field_contact">CONTACT</label>
-              <input type="tel" name="phone" class="form-input" placeholder="(978) 584-5424" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" data-i18n="field_email">EMAIL</label>
-            <input type="email" name="email" class="form-input" placeholder="contact@company.com" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" data-i18n="field_interested_count">HOW MANY VEHICLES INTERESTED?</label>
-            <select name="vehicles_interested" class="form-input form-select" required>
-              <option value="" data-i18n="field_select_qty">Select quantity...</option>
-              <option>1</option><option>2</option><option>3</option><option>4</option>
-              <option>5</option><option>6</option><option>7</option><option>8</option>
-              <option>9</option><option>10+</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary td-modal-submit"><span data-i18n="fleet_submit">REQUEST FLEET QUOTE</span> →</button>
-          <p class="form-disclaimer" data-i18n="form_disclaimer">Your information is secure and will never be shared with third parties.</p>
-          <div class="td-modal-footer-logo">
-            <img src="assets/images/carnext-logo.png" alt="CarNext USA" onerror="this.style.display='none'" />
-          </div>
-        </form>
-      </div>
-
-      <!-- STEP 2 — Success -->
-      <div class="td-modal-step td-modal-step-2" data-fleet-step="2" hidden>
-        <div class="td-modal-success">
-          <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="td-modal-logo" onerror="this.style.display='none'" />
-          <div class="td-modal-check" aria-hidden="true">
-            <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 33 L28 45 L48 22" />
-            </svg>
-          </div>
-          <h3 class="td-modal-success-title" data-i18n="modal_success_title">Thank you!</h3>
-          <p class="td-modal-success-text" data-i18n="modal_success_text">Our team will be in touch with you shortly.</p>
-          <button type="button" class="btn btn-primary td-modal-close-btn" data-fleet-close data-i18n="modal_close">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script defer src="main.js"></script>
+  <script src="clone.js" defer></script>
 </body>
 </html>
