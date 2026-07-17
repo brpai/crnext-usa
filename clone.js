@@ -85,40 +85,58 @@ const I18N = {
 /* ---------- Star SVG ---------- */
 const STAR = '<svg class="w-4 h-4 text-brand-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
 
-/* ---------- Inject featured vehicles ---------- */
-function renderFeatured() {
-  const grid = document.getElementById('featured-grid');
-  if (!grid) return;
-  grid.innerHTML = VEHICLES.map((v, i) => `
+/* ---------- Featured card template (shared shape) ---------- */
+function featuredCard(v, i) {
+  const price = v.price > 0 ? '$' + Number(v.price).toLocaleString('en-US') : '—';
+  const miles = v.mileage ? Number(v.mileage).toLocaleString('en-US') : '';
+  const img = v.image || ('assets/images/vehicles/' + (v.img || 'vehicle-01.png'));
+  const make = v.make || '';
+  const title = v.title || v.name || '';
+  const badge = v.body || v.badge || '';
+  return `
     <article class="group bg-brand-black border border-brand-white/10 rounded-2xl overflow-hidden hover:border-brand-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <a href="inventory.html" class="block relative overflow-hidden aspect-[16/10]">
-        <img src="assets/images/vehicles/${v.img}" alt="${v.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="${i === 0 ? 'eager' : 'lazy'}" width="800" height="500" onerror="this.style.opacity=0" />
-        <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
-          <span class="bg-brand-yellow text-brand-black text-xs font-bold px-2.5 py-1 rounded-full">${v.badge}</span>
-        </div>
+        <img src="${img}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="${i === 0 ? 'eager' : 'lazy'}" width="800" height="500" onerror="this.style.opacity=0" />
+        ${badge ? `<div class="absolute top-3 left-3 flex flex-wrap gap-1.5"><span class="bg-brand-yellow text-brand-black text-xs font-bold px-2.5 py-1 rounded-full">${badge}</span></div>` : ''}
         <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-brand-black to-transparent"></div>
       </a>
       <div class="p-5">
         <div class="flex items-start justify-between gap-2 mb-3">
           <div>
-            <p class="text-brand-white/50 text-xs uppercase tracking-wider">${v.make}</p>
-            <h3 class="text-brand-white font-bold text-lg leading-tight">${v.name}</h3>
+            <p class="text-brand-white/50 text-xs uppercase tracking-wider">${make}</p>
+            <h3 class="text-brand-white font-bold text-lg leading-tight">${title}</h3>
           </div>
-          <p class="text-brand-white font-black text-sm uppercase tracking-wider flex-shrink-0">${v.price}</p>
+          <p class="text-brand-white font-black text-sm uppercase tracking-wider flex-shrink-0">${price}</p>
         </div>
         <div class="flex items-center gap-3 text-brand-white/40 text-xs mb-5">
           <span class="flex items-center gap-1">
             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-            ${v.miles} <span data-i18n="featured.miles">miles</span>
+            ${miles} <span data-i18n="featured.miles">miles</span>
           </span>
-          <span>·</span><span>${v.trans}</span><span>·</span><span>${v.drive}</span>
+          ${badge ? `<span>·</span><span>${badge}</span>` : ''}
         </div>
         <div class="flex gap-2">
           <a href="inventory.html" data-i18n="featured.details" class="flex-1 text-center text-sm font-semibold text-brand-white bg-brand-white/10 hover:bg-brand-white hover:text-brand-black px-4 py-2.5 rounded-xl transition-all">View Details</a>
           <a href="#test-drive" data-i18n="featured.financing" class="flex-1 text-center text-sm font-semibold text-brand-black bg-brand-yellow hover:bg-brand-amber px-4 py-2.5 rounded-xl transition-all">Finance This</a>
         </div>
       </div>
-    </article>`).join('');
+    </article>`;
+}
+
+/* ---------- Inject featured vehicles (from mirrored inventory JSON) ---------- */
+async function renderFeatured() {
+  const grid = document.getElementById('featured-grid');
+  if (!grid) return;
+  let list = VEHICLES; // fallback
+  try {
+    const res = await fetch('assets/data/inventory.json', { cache: 'no-cache' });
+    if (res.ok) {
+      const data = await res.json();
+      if (data && Array.isArray(data.vehicles) && data.vehicles.length) list = data.vehicles.slice(0, 6);
+    }
+  } catch (e) { /* keep fallback */ }
+  grid.innerHTML = list.map((v, i) => featuredCard(v, i)).join('');
+  applyLang(document.documentElement.lang || 'en'); // translate injected labels
 }
 
 /* ---------- Inject reviews ---------- */

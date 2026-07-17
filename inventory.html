@@ -103,14 +103,8 @@
 
         <div class="inv-filter-group">
           <label class="inv-filter-label" data-i18n="inv_f_model">Model</label>
-          <select class="inv-filter-select" id="filterModelo">
+          <select class="inv-filter-select" id="invMake">
             <option value="" data-i18n="inv_f_all_models">All Models</option>
-            <option value="mitsubishi outlander">Mitsubishi Outlander</option>
-            <option value="chrysler pacifica">Chrysler Pacifica</option>
-            <option value="honda cr-v ex">Honda CR-V EX</option>
-            <option value="toyota camry se">Toyota Camry SE</option>
-            <option value="toyota sienna xle">Toyota Sienna XLE</option>
-            <option value="jeep grand cherokee">Jeep Grand Cherokee</option>
           </select>
         </div>
 
@@ -119,12 +113,12 @@
         <div class="inv-filter-group inv-filter-group--double">
           <label class="inv-filter-label" data-i18n="inv_f_year">Year</label>
           <div class="inv-filter-range">
-            <select class="inv-filter-select inv-select-sm" id="filterAnoDe">
+            <select class="inv-filter-select inv-select-sm" id="invYearFrom">
               <option value="" data-i18n="inv_f_from">From</option>
               <!-- years populated by JS -->
             </select>
             <span class="inv-range-sep">—</span>
-            <select class="inv-filter-select inv-select-sm" id="filterAnoAte">
+            <select class="inv-filter-select inv-select-sm" id="invYearTo">
               <option value="" data-i18n="inv_f_to">To</option>
               <!-- years populated by JS -->
             </select>
@@ -135,7 +129,7 @@
 
         <div class="inv-filter-group">
           <label class="inv-filter-label" data-i18n="inv_f_miles">Mileage</label>
-          <select class="inv-filter-select" id="filterMilhas">
+          <select class="inv-filter-select" id="invMiles">
             <option value="" data-i18n="inv_f_any_miles">Any mileage</option>
             <option value="50000" data-i18n="inv_f_below50">Under 50k mi</option>
             <option value="70000" data-i18n="inv_f_upto70">Up to 70k mi</option>
@@ -149,7 +143,7 @@
 
         <div class="inv-filter-group">
           <label class="inv-filter-label" data-i18n="inv_f_price">Price</label>
-          <select class="inv-filter-select" id="filterValor">
+          <select class="inv-filter-select" id="invPrice">
             <option value="" data-i18n="inv_f_any_price">Any price</option>
             <option value="5000" data-i18n="inv_f_upto5">Up to $5k</option>
             <option value="10000" data-i18n="inv_f_upto10">Up to $10k</option>
@@ -159,200 +153,18 @@
           </select>
         </div>
 
-        <button class="inv-filter-reset" id="filterReset" data-i18n="inv_f_clear">Clear</button>
+        <button class="inv-filter-reset" id="invClear" data-i18n="inv_f_clear">Clear</button>
       </div>
 
       <!-- Vehicle Cards Grid -->
       <div class="inventory-grid" id="inventoryGrid">
-
-        <div class="vehicle-card glass-card" data-cat="suv family" data-year="2022" data-miles="34200">
-          <div class="vc-image-wrap">
-            <div class="vc-image-skeleton">
-              <div class="skeleton-shine"></div>
-            </div>
-            <img src="assets/images/vehicles/vehicle-01.png" alt="2022 Mitsubishi Outlander" class="vc-image" loading="lazy" onerror="this.style.display='none'" />
-            <div class="vc-badge">SUV</div>
-            <div class="vc-overlay">
-              <button class="vc-quick-view">Quick View</button>
-            </div>
-          </div>
-          <div class="vc-body">
-            <div class="vc-meta">
-              <span class="vc-year mono">2022</span>
-              <span class="vc-dot">·</span>
-              <span class="vc-miles mono">34,200 mi</span>
-            </div>
-            <h3 class="vc-name">Mitsubishi Outlander</h3>
-            <div class="vc-features">
-              <span class="feature-tag">AWD</span>
-              <span class="feature-tag">7-Pass</span>
-              <span class="feature-tag">Inspected</span>
-            </div>
-            <div class="vc-pricing">
-              <div class="vc-price mono">$22,995</div>
-              <div class="vc-finance">Est. $389/mo</div>
-            </div>
-            <div class="vc-actions">
-              <button type="button" class="btn btn-primary btn-sm td-modal-trigger" data-i18n="vc_test_drive">Test Drive</button>
-              <button class="btn btn-ghost btn-sm">Details</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="vehicle-card glass-card" data-cat="minivan family" data-year="2021" data-miles="41800">
-          <div class="vc-image-wrap">
-            <div class="vc-image-skeleton"><div class="skeleton-shine"></div></div>
-            <img src="assets/images/vehicles/vehicle-02.png" alt="2021 Chrysler Pacifica" class="vc-image" loading="lazy" onerror="this.style.display='none'" />
-            <div class="vc-badge vc-badge-purple">Minivan</div>
-            <div class="vc-overlay"><button class="vc-quick-view">Quick View</button></div>
-          </div>
-          <div class="vc-body">
-            <div class="vc-meta">
-              <span class="vc-year mono">2021</span>
-              <span class="vc-dot">·</span>
-              <span class="vc-miles mono">41,800 mi</span>
-            </div>
-            <h3 class="vc-name">Chrysler Pacifica</h3>
-            <div class="vc-features">
-              <span class="feature-tag">Stow N' Go</span>
-              <span class="feature-tag">7-Pass</span>
-              <span class="feature-tag">V6</span>
-            </div>
-            <div class="vc-pricing">
-              <div class="vc-price mono">$25,490</div>
-              <div class="vc-finance">Est. $429/mo</div>
-            </div>
-            <div class="vc-actions">
-              <button type="button" class="btn btn-primary btn-sm td-modal-trigger" data-i18n="vc_test_drive">Test Drive</button>
-              <button class="btn btn-ghost btn-sm">Details</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="vehicle-card glass-card" data-cat="suv under20" data-year="2019" data-miles="58400">
-          <div class="vc-image-wrap">
-            <div class="vc-image-skeleton"><div class="skeleton-shine"></div></div>
-            <img src="assets/images/vehicles/vehicle-03.png" alt="2019 Honda CR-V" class="vc-image" loading="lazy" onerror="this.style.display='none'" />
-            <div class="vc-badge vc-badge-green">Under $20k</div>
-            <div class="vc-overlay"><button class="vc-quick-view">Quick View</button></div>
-          </div>
-          <div class="vc-body">
-            <div class="vc-meta">
-              <span class="vc-year mono">2019</span>
-              <span class="vc-dot">·</span>
-              <span class="vc-miles mono">58,400 mi</span>
-            </div>
-            <h3 class="vc-name">Honda CR-V EX</h3>
-            <div class="vc-features">
-              <span class="feature-tag">AWD</span>
-              <span class="feature-tag">Sunroof</span>
-              <span class="feature-tag">Honda Sensing</span>
-            </div>
-            <div class="vc-pricing">
-              <div class="vc-price mono">$18,750</div>
-              <div class="vc-finance">Est. $318/mo</div>
-            </div>
-            <div class="vc-actions">
-              <button type="button" class="btn btn-primary btn-sm td-modal-trigger" data-i18n="vc_test_drive">Test Drive</button>
-              <button class="btn btn-ghost btn-sm">Details</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="vehicle-card glass-card" data-cat="sedan under20" data-year="2020" data-miles="47100">
-          <div class="vc-image-wrap">
-            <div class="vc-image-skeleton"><div class="skeleton-shine"></div></div>
-            <img src="assets/images/vehicles/vehicle-04.png" alt="2020 Toyota Camry" class="vc-image" loading="lazy" onerror="this.style.display='none'" />
-            <div class="vc-badge">Sedan</div>
-            <div class="vc-overlay"><button class="vc-quick-view">Quick View</button></div>
-          </div>
-          <div class="vc-body">
-            <div class="vc-meta">
-              <span class="vc-year mono">2020</span>
-              <span class="vc-dot">·</span>
-              <span class="vc-miles mono">47,100 mi</span>
-            </div>
-            <h3 class="vc-name">Toyota Camry SE</h3>
-            <div class="vc-features">
-              <span class="feature-tag">Sport</span>
-              <span class="feature-tag">Apple CarPlay</span>
-              <span class="feature-tag">Lane Assist</span>
-            </div>
-            <div class="vc-pricing">
-              <div class="vc-price mono">$19,990</div>
-              <div class="vc-finance">Est. $338/mo</div>
-            </div>
-            <div class="vc-actions">
-              <button type="button" class="btn btn-primary btn-sm td-modal-trigger" data-i18n="vc_test_drive">Test Drive</button>
-              <button class="btn btn-ghost btn-sm">Details</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="vehicle-card glass-card" data-cat="suv family fleet" data-year="2022" data-miles="29300">
-          <div class="vc-image-wrap">
-            <div class="vc-image-skeleton"><div class="skeleton-shine"></div></div>
-            <img src="assets/images/vehicles/vehicle-05.png" alt="2022 Toyota Sienna" class="vc-image" loading="lazy" onerror="this.style.display='none'" />
-            <div class="vc-badge vc-badge-purple">Minivan</div>
-            <div class="vc-overlay"><button class="vc-quick-view">Quick View</button></div>
-          </div>
-          <div class="vc-body">
-            <div class="vc-meta">
-              <span class="vc-year mono">2022</span>
-              <span class="vc-dot">·</span>
-              <span class="vc-miles mono">29,300 mi</span>
-            </div>
-            <h3 class="vc-name">Toyota Sienna XLE</h3>
-            <div class="vc-features">
-              <span class="feature-tag">AWD</span>
-              <span class="feature-tag">Hybrid</span>
-              <span class="feature-tag">8-Pass</span>
-            </div>
-            <div class="vc-pricing">
-              <div class="vc-price mono">$36,500</div>
-              <div class="vc-finance">Est. $618/mo</div>
-            </div>
-            <div class="vc-actions">
-              <button type="button" class="btn btn-primary btn-sm td-modal-trigger" data-i18n="vc_test_drive">Test Drive</button>
-              <button class="btn btn-ghost btn-sm">Details</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="vehicle-card glass-card" data-cat="suv fleet" data-year="2021" data-miles="38700">
-          <div class="vc-image-wrap">
-            <div class="vc-image-skeleton"><div class="skeleton-shine"></div></div>
-            <img src="assets/images/vehicles/vehicle-06.png" alt="2021 Jeep Grand Cherokee" class="vc-image" loading="lazy" onerror="this.style.display='none'" />
-            <div class="vc-badge">SUV</div>
-            <div class="vc-overlay"><button class="vc-quick-view">Quick View</button></div>
-          </div>
-          <div class="vc-body">
-            <div class="vc-meta">
-              <span class="vc-year mono">2021</span>
-              <span class="vc-dot">·</span>
-              <span class="vc-miles mono">38,700 mi</span>
-            </div>
-            <h3 class="vc-name">Jeep Grand Cherokee</h3>
-            <div class="vc-features">
-              <span class="feature-tag">4x4</span>
-              <span class="feature-tag">Leather</span>
-              <span class="feature-tag">Panoroof</span>
-            </div>
-            <div class="vc-pricing">
-              <div class="vc-price mono">$28,900</div>
-              <div class="vc-finance">Est. $489/mo</div>
-            </div>
-            <div class="vc-actions">
-              <button type="button" class="btn btn-primary btn-sm td-modal-trigger" data-i18n="vc_test_drive">Test Drive</button>
-              <button class="btn btn-ghost btn-sm">Details</button>
-            </div>
-          </div>
-        </div>
+        <p id="invLoading" style="grid-column:1/-1;text-align:center;color:var(--text-secondary);padding:60px 0;">Loading inventory…</p>
+      </div>
 
       </div>
 
       <div class="inventory-cta reveal-block">
-        <p class="inv-cta-text">Viewing 6 of 500+ vehicles</p>
+        <p class="inv-cta-text" id="invCount">Loading…</p>
         <button type="button" class="btn btn-secondary td-modal-trigger" data-i18n="vc_contact_more">Contact Us for More</button>
       </div>
     </div>
@@ -503,5 +315,6 @@
   </div>
 
   <script src="main.js"></script>
+  <script src="inventory-render.js" defer></script>
 </body>
 </html>

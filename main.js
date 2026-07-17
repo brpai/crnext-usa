@@ -113,7 +113,7 @@ const TRANSLATIONS = {
     field_select_qty: 'Select quantity...',
     fleet_submit: 'Request Fleet Quote',
     /* Inventory filters */
-    inv_f_model: 'Model', inv_f_all_models: 'All Models', inv_f_year: 'Year', inv_f_from: 'From', inv_f_to: 'To',
+    inv_f_model: 'Make', inv_f_all_models: 'All Makes', inv_f_year: 'Year', inv_f_from: 'From', inv_f_to: 'To',
     inv_f_miles: 'Mileage', inv_f_any_miles: 'Any mileage', inv_f_below50: 'Under 50k mi', inv_f_upto70: 'Up to 70k mi', inv_f_upto90: 'Up to 90k mi', inv_f_upto110: 'Up to 110k mi', inv_f_above110: 'Over 110k mi',
     inv_f_price: 'Price', inv_f_any_price: 'Any price', inv_f_upto5: 'Up to $5k', inv_f_upto10: 'Up to $10k', inv_f_upto15: 'Up to $15k', inv_f_upto20: 'Up to $20k', inv_f_above20: 'Over $20k', inv_f_clear: 'Clear',
   },
@@ -224,7 +224,7 @@ const TRANSLATIONS = {
     field_select_qty: 'Selecione a quantidade...',
     fleet_submit: 'Solicitar Cotação',
     /* Inventory filters */
-    inv_f_model: 'Modelo', inv_f_all_models: 'Todos os Modelos', inv_f_year: 'Ano', inv_f_from: 'De', inv_f_to: 'Até',
+    inv_f_model: 'Marca', inv_f_all_models: 'Todas as Marcas', inv_f_year: 'Ano', inv_f_from: 'De', inv_f_to: 'Até',
     inv_f_miles: 'Milhas', inv_f_any_miles: 'Qualquer km', inv_f_below50: 'Abaixo de 50k mi', inv_f_upto70: 'Até 70k mi', inv_f_upto90: 'Até 90k mi', inv_f_upto110: 'Até 110k mi', inv_f_above110: 'Acima de 110k mi',
     inv_f_price: 'Valor', inv_f_any_price: 'Qualquer valor', inv_f_upto5: 'Até $5k', inv_f_upto10: 'Até $10k', inv_f_upto15: 'Até $15k', inv_f_upto20: 'Até $20k', inv_f_above20: 'Acima de $20k', inv_f_clear: 'Limpar',
   },
@@ -335,7 +335,7 @@ const TRANSLATIONS = {
     field_select_qty: 'Selecciona la cantidad...',
     fleet_submit: 'Solicitar Cotización',
     /* Inventory filters */
-    inv_f_model: 'Modelo', inv_f_all_models: 'Todos los Modelos', inv_f_year: 'Año', inv_f_from: 'Desde', inv_f_to: 'Hasta',
+    inv_f_model: 'Marca', inv_f_all_models: 'Todas las Marcas', inv_f_year: 'Año', inv_f_from: 'Desde', inv_f_to: 'Hasta',
     inv_f_miles: 'Kilometraje', inv_f_any_miles: 'Cualquier km', inv_f_below50: 'Menos de 50k mi', inv_f_upto70: 'Hasta 70k mi', inv_f_upto90: 'Hasta 90k mi', inv_f_upto110: 'Hasta 110k mi', inv_f_above110: 'Más de 110k mi',
     inv_f_price: 'Precio', inv_f_any_price: 'Cualquier precio', inv_f_upto5: 'Hasta $5k', inv_f_upto10: 'Hasta $10k', inv_f_upto15: 'Hasta $15k', inv_f_upto20: 'Hasta $20k', inv_f_above20: 'Más de $20k', inv_f_clear: 'Limpiar',
   }
