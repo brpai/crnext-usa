@@ -55,14 +55,14 @@ const TRANSLATIONS = {
     /* Hero search */
     hs_make: 'Make', hs_any_make: 'Any Make', hs_price: 'Max Price', hs_any_price: 'No Limit', hs_search: 'Search',
     /* Reviews */
-    reviews_eyebrow: 'GOOGLE REVIEWS', reviews_title: 'What Our', reviews_title_gradient: 'Clients Say',
-    gr_based: 'Based on', gr_reviews: 'Google reviews', t_verified: 'Verified Purchase',
+    reviews_eyebrow: 'CUSTOMER REVIEWS', reviews_title: 'What Our', reviews_title_gradient: 'Clients Say',
+    gr_based: 'Rated by our', gr_reviews: 'CarNext customers', t_verified: 'Verified Purchase',
     /* Featured */
     featured_eyebrow: 'FEATURED', featured_title: 'Featured', featured_title_gradient: 'Vehicles',
     featured_sub: 'Hand-picked, inspected, and ready to drive.',
     fv_details: 'View Details', fv_finance: 'Finance This', featured_viewall: 'View All Inventory',
     /* Financing */
-    fin_eyebrow: '#1 IN AUTO LOANS', fin_title: 'Get Financed', fin_title_gradient: 'Today',
+    fin_eyebrow: 'FLEXIBLE FINANCING', fin_title: 'Get Financed', fin_title_gradient: 'Today',
     fin_desc: 'Through our network of trusted lenders, we help buyers across Orlando get approved — good credit, rebuilding credit, or first-time buyer. Every situation, every score.',
     fin_b1: 'All credit types', fin_b2: 'Approval in 24h', fin_b3: 'No obligation', fin_cta: 'Apply Now',
     ps_stat1_label: 'Vehicles Sold', ps_stat2_label: 'Satisfaction Rate', ps_stat3_label: 'Average Rating', ps_stat4_label: 'Average Approval',
@@ -166,12 +166,12 @@ const TRANSLATIONS = {
     featured_sub: 'Selecionados a dedo, inspecionados e prontos para rodar.',
     fv_details: 'Ver Detalhes', fv_finance: 'Financiar', featured_viewall: 'Ver Todo o Estoque',
     /* Financing */
-    fin_eyebrow: '#1 EM FINANCIAMENTO', fin_title: 'Seja Aprovado', fin_title_gradient: 'Hoje',
+    fin_eyebrow: 'FINANCIAMENTO FLEXÍVEL', fin_title: 'Seja Aprovado', fin_title_gradient: 'Hoje',
     fin_desc: 'Através da nossa rede de parceiros financeiros, ajudamos compradores em toda Orlando a serem aprovados — crédito bom, em recuperação ou primeiro carro. Toda situação, todo score.',
     fin_b1: 'Todos os perfis de crédito', fin_b2: 'Aprovação em 24h', fin_b3: 'Sem compromisso', fin_cta: 'Solicitar Agora',
-    gr_based: 'Baseado em', gr_reviews: 'avaliações no Google', t_verified: 'Compra Verificada',
+    gr_based: 'Avaliado pelos nossos', gr_reviews: 'clientes CarNext', t_verified: 'Compra Verificada',
     /* Reviews */
-    reviews_eyebrow: 'AVALIAÇÕES GOOGLE', reviews_title: 'O Que Nossos', reviews_title_gradient: 'Clientes Dizem',
+    reviews_eyebrow: 'AVALIAÇÕES', reviews_title: 'O Que Nossos', reviews_title_gradient: 'Clientes Dizem',
     ps_stat1_label: 'Veículos Vendidos', ps_stat2_label: 'Taxa de Satisfação', ps_stat3_label: 'Avaliação Média', ps_stat4_label: 'Aprovação Média',
     t1_text: '"A experiência de compra de carro mais tranquila que já tive. Sem pressão, total transparência e o veículo era exatamente como descrito. Fui para casa no mesmo dia no meu Outlander."',
     t2_text: '"Estávamos com medo de comprar usado após uma experiência ruim. A CARNEXT USA mudou completamente nossa visão. Resolveram nossa troca e o financiamento em uma visita — incrível."',
@@ -273,12 +273,12 @@ const TRANSLATIONS = {
     featured_sub: 'Seleccionados a mano, inspeccionados y listos para conducir.',
     fv_details: 'Ver Detalles', fv_finance: 'Financiar', featured_viewall: 'Ver Todo el Inventario',
     /* Financing */
-    fin_eyebrow: '#1 EN FINANCIAMIENTO', fin_title: 'Aprobación', fin_title_gradient: 'Hoy',
+    fin_eyebrow: 'FINANCIAMIENTO FLEXIBLE', fin_title: 'Aprobación', fin_title_gradient: 'Hoy',
     fin_desc: 'A través de nuestra red de prestamistas de confianza, ayudamos a compradores en todo Orlando a ser aprobados — buen crédito, en recuperación o primer auto. Cada situación, cada score.',
     fin_b1: 'Todos los tipos de crédito', fin_b2: 'Aprobación en 24h', fin_b3: 'Sin compromiso', fin_cta: 'Solicitar Ahora',
-    gr_based: 'Basado en', gr_reviews: 'reseñas de Google', t_verified: 'Compra Verificada',
+    gr_based: 'Valorado por nuestros', gr_reviews: 'clientes CarNext', t_verified: 'Compra Verificada',
     /* Reviews */
-    reviews_eyebrow: 'RESEÑAS GOOGLE', reviews_title: 'Lo Que Dicen', reviews_title_gradient: 'Nuestros Clientes',
+    reviews_eyebrow: 'RESEÑAS', reviews_title: 'Lo Que Dicen', reviews_title_gradient: 'Nuestros Clientes',
     ps_stat1_label: 'Vehículos Vendidos', ps_stat2_label: 'Tasa de Satisfacción', ps_stat3_label: 'Calificación Promedio', ps_stat4_label: 'Aprobación Promedio',
     t1_text: '"La experiencia de compra de auto más fluida que he tenido. Sin presión, total transparencia y el vehículo era exactamente como lo describían. Me fui a casa en mi Outlander el mismo día."',
     t2_text: '"Estábamos nerviosos por comprar usado tras una mala experiencia. CARNEXT USA cambió completamente nuestra opinión. Manejaron nuestro intercambio y financiamiento en una visita — excelente."',
