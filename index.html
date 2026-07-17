@@ -55,6 +55,34 @@
     ::selection { background: rgba(255,255,255,0.22); }
     select option { background: #0A0A0B; color: #F4F5F8; }
     .map-dark { filter: grayscale(1) invert(0.92) contrast(0.9); }
+
+    /* ── Light (off-white) sections — pages without video ── */
+    .light { background: #F3F1EA !important; }
+    .light .bg-\[\#0d0d0d\], .light .bg-\[\#0a0a0a\], .light .bg-\[\#111113\], .light .bg-brand-black { background: #FFFFFF !important; }
+    .light .text-brand-white { color: #16171C !important; }
+    .light .text-brand-white\/80 { color: rgba(22,23,28,.82) !important; }
+    .light .text-brand-white\/70 { color: rgba(22,23,28,.74) !important; }
+    .light .text-brand-white\/60 { color: rgba(22,23,28,.66) !important; }
+    .light .text-brand-white\/50 { color: rgba(22,23,28,.58) !important; }
+    .light .text-brand-white\/40 { color: rgba(22,23,28,.52) !important; }
+    .light .text-brand-white\/30 { color: rgba(22,23,28,.5) !important; }
+    .light .text-brand-white\/10 { color: rgba(22,23,28,.12) !important; }
+    .light .border-brand-white\/10, .light .border-brand-white\/15, .light .border-brand-white\/20, .light .border-brand-white\/30 { border-color: rgba(22,23,28,.14) !important; }
+    .light .bg-brand-white\/5, .light .bg-brand-white\/10, .light .bg-brand-white\/15 { background: rgba(22,23,28,.05) !important; }
+    /* primary buttons -> dark on light for contrast */
+    .light .bg-brand-yellow { background: #16171C !important; }
+    .light .text-brand-black { color: #F4F5F8 !important; }
+    .light .hover\:bg-brand-amber:hover { background: #33353E !important; }
+    /* outline / ghost buttons */
+    .light .hover\:bg-brand-white:hover { background: #16171C !important; }
+    .light .hover\:text-brand-black:hover { color: #F4F5F8 !important; }
+    .light .hover\:border-brand-white\/10:hover, .light .hover\:border-brand-white\/20:hover, .light .hover\:border-brand-white\/30:hover, .light .hover\:border-brand-white\/40:hover { border-color: rgba(22,23,28,.28) !important; }
+    /* form fields */
+    .light input, .light textarea, .light select { color: #16171C !important; }
+    .light .placeholder\:text-brand-white\/30::placeholder { color: rgba(22,23,28,.4) !important; }
+    .light .focus\:border-brand-white:focus { border-color: #16171C !important; }
+    .light .accent-brand-white { accent-color: #16171C !important; }
+    .light .map-dark { filter: grayscale(1) contrast(1.02) !important; }
   </style>
 </head>
 <body class="font-sans text-brand-white">
@@ -167,9 +195,9 @@
   </section>
 
   <!-- ═══════════════ TESTIMONIALS / REVIEWS ═══════════════ -->
-  <section id="reviews" class="relative py-24 overflow-hidden">
-    <img src="assets/images/reviews-bg.jpg" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-20" />
-    <div class="absolute inset-0 bg-brand-black/80"></div>
+  <section id="reviews" class="light relative py-24 overflow-hidden">
+    <img src="assets/images/reviews-bg.jpg" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-10" />
+    <div class="absolute inset-0 bg-[#F3F1EA]/85"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-14">
         <p class="inline-flex items-center gap-2 text-brand-white text-xs font-bold uppercase tracking-widest mb-2">
@@ -239,7 +267,7 @@
   </section>
 
   <!-- ═══════════════ FEATURED VEHICLES ═══════════════ -->
-  <section class="py-24 bg-[#0d0d0d]" aria-label="Featured vehicles">
+  <section class="py-24 light" aria-label="Featured vehicles">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-14">
         <div>
@@ -265,10 +293,10 @@
   </section>
 
   <!-- ═══════════════ FINANCING CTA ═══════════════ -->
-  <section id="financing" class="py-20 bg-brand-black relative overflow-hidden">
-    <div class="absolute inset-0 carbon-texture opacity-20 pointer-events-none"></div>
+  <section id="financing" class="py-20 light relative overflow-hidden">
+    <div class="absolute inset-0 carbon-texture opacity-10 pointer-events-none"></div>
     <div class="max-w-4xl mx-auto px-6 lg:px-12 relative">
-      <div class="bg-gradient-to-br from-[#141416] to-brand-black border border-brand-white/20 rounded-3xl p-10 md:p-14 text-center">
+      <div class="bg-white border border-brand-white/20 rounded-3xl p-10 md:p-14 text-center shadow-xl">
         <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-brand-yellow flex items-center justify-center">
           <svg class="w-8 h-8 text-brand-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
@@ -284,7 +312,7 @@
   </section>
 
   <!-- ═══════════════ CONTACT + TEST DRIVE ═══════════════ -->
-  <section id="contact" class="py-24 bg-[#0a0a0a]">
+  <section id="contact" class="py-24 light">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-14">
         <p class="text-brand-white text-xs font-bold uppercase tracking-widest mb-2">● Orlando, FL</p>
