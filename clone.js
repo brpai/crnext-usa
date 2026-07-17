@@ -43,6 +43,8 @@ const I18N = {
     'contact.title': 'Get in Touch', 'contact.address': 'Address', 'contact.directions': 'Get Directions', 'contact.hours': 'Business Hours', 'contact.hoursVal': 'Mon – Sat: 9:00 AM – 6:00 PM', 'contact.phone': 'Phone', 'contact.email': 'Email', 'contact.whatsapp': 'Chat on WhatsApp',
     'td.eyebrow': 'Schedule', 'td.title': 'Schedule a Test Drive', 'td.name': 'Full Name', 'td.phone': 'Phone', 'td.email': 'Email', 'td.vehicle': 'Vehicle of Interest', 'td.anyVehicle': 'Any vehicle / Open to suggestions', 'td.date': 'Preferred Date', 'td.time': 'Preferred Time', 'td.anyTime': 'Any time', 'td.message': 'Additional Notes', 'td.financing': "I'm interested in financing", 'td.success': "Test drive scheduled! We'll confirm within the hour.", 'td.submit': 'Schedule Now', 'td.whatsappFallback': 'Or contact us directly on WhatsApp',
     'footer.tagline': "Premium Pre-Owned. Orlando's Best.", 'footer.inventory': 'Inventory', 'footer.company': 'Company', 'footer.legal': 'Legal', 'footer.allInventory': 'All Vehicles', 'footer.testDrive': 'Test Drive', 'footer.contact': 'Contact', 'footer.privacy': 'Privacy Policy', 'footer.terms': 'Terms of Service', 'footer.rights': 'All rights reserved.', 'footer.by': 'Developed by',
+    'inv.title': 'Inventory', 'inv.subtitle': 'Browse our current selection', 'inv.loading': 'Loading inventory…', 'inv.showing': 'Showing', 'inv.of': 'of', 'inv.vehicles': 'vehicles', 'inv.empty': 'Inventory is being updated. Please check back shortly.',
+    'invf.make': 'Make', 'invf.anyMake': 'All Makes', 'invf.year': 'Year', 'invf.from': 'From', 'invf.to': 'To', 'invf.miles': 'Mileage', 'invf.anyMiles': 'Any mileage', 'invf.price': 'Price', 'invf.anyPrice': 'Any price', 'invf.clear': 'Clear', 'invf.details': 'Details', 'invf.finance': 'Finance This',
   },
   pt: {
     'nav.inventory': 'Estoque', 'nav.experience': 'Empresas', 'nav.financing': 'Financiamento', 'nav.reviews': 'Avaliações', 'nav.contact': 'Contato',
@@ -61,6 +63,8 @@ const I18N = {
     'contact.title': 'Entre em Contato', 'contact.address': 'Endereço', 'contact.directions': 'Como Chegar', 'contact.hours': 'Horário de Funcionamento', 'contact.hoursVal': 'Seg – Sáb: 9:00 – 18:00', 'contact.phone': 'Telefone', 'contact.email': 'E-mail', 'contact.whatsapp': 'Falar no WhatsApp',
     'td.eyebrow': 'Agendar', 'td.title': 'Agendar Test Drive', 'td.name': 'Nome Completo', 'td.phone': 'Telefone', 'td.email': 'E-mail', 'td.vehicle': 'Veículo de Interesse', 'td.anyVehicle': 'Qualquer veículo / Aberto a sugestões', 'td.date': 'Data Preferida', 'td.time': 'Horário Preferido', 'td.anyTime': 'Qualquer horário', 'td.message': 'Observações', 'td.financing': 'Tenho interesse em financiamento', 'td.success': 'Test drive agendado! Confirmaremos em breve.', 'td.submit': 'Agendar Agora', 'td.whatsappFallback': 'Ou fale direto no WhatsApp',
     'footer.tagline': 'Seminovos Premium. O Melhor de Orlando.', 'footer.inventory': 'Estoque', 'footer.company': 'Empresa', 'footer.legal': 'Jurídico', 'footer.allInventory': 'Todos os Veículos', 'footer.testDrive': 'Test Drive', 'footer.contact': 'Contato', 'footer.privacy': 'Política de Privacidade', 'footer.terms': 'Termos de Serviço', 'footer.rights': 'Todos os direitos reservados.', 'footer.by': 'Desenvolvido por',
+    'inv.title': 'Estoque', 'inv.subtitle': 'Veja nossa seleção atual', 'inv.loading': 'Carregando estoque…', 'inv.showing': 'Mostrando', 'inv.of': 'de', 'inv.vehicles': 'veículos', 'inv.empty': 'O estoque está sendo atualizado. Volte em instantes.',
+    'invf.make': 'Marca', 'invf.anyMake': 'Todas as Marcas', 'invf.year': 'Ano', 'invf.from': 'De', 'invf.to': 'Até', 'invf.miles': 'Milhas', 'invf.anyMiles': 'Qualquer km', 'invf.price': 'Preço', 'invf.anyPrice': 'Qualquer valor', 'invf.clear': 'Limpar', 'invf.details': 'Detalhes', 'invf.finance': 'Financiar',
   },
   es: {
     'nav.inventory': 'Inventario', 'nav.experience': 'Empresas', 'nav.financing': 'Financiamiento', 'nav.reviews': 'Reseñas', 'nav.contact': 'Contacto',
@@ -79,6 +83,8 @@ const I18N = {
     'contact.title': 'Contáctanos', 'contact.address': 'Dirección', 'contact.directions': 'Cómo Llegar', 'contact.hours': 'Horario de Atención', 'contact.hoursVal': 'Lun – Sáb: 9:00 AM – 6:00 PM', 'contact.phone': 'Teléfono', 'contact.email': 'Correo', 'contact.whatsapp': 'Chatear en WhatsApp',
     'td.eyebrow': 'Agendar', 'td.title': 'Agendar Test Drive', 'td.name': 'Nombre Completo', 'td.phone': 'Teléfono', 'td.email': 'Correo', 'td.vehicle': 'Vehículo de Interés', 'td.anyVehicle': 'Cualquier vehículo / Abierto a sugerencias', 'td.date': 'Fecha Preferida', 'td.time': 'Hora Preferida', 'td.anyTime': 'Cualquier hora', 'td.message': 'Notas Adicionales', 'td.financing': 'Me interesa el financiamiento', 'td.success': '¡Test drive agendado! Confirmaremos en breve.', 'td.submit': 'Agendar Ahora', 'td.whatsappFallback': 'O contáctanos directamente por WhatsApp',
     'footer.tagline': 'Seminuevos Premium. Lo Mejor de Orlando.', 'footer.inventory': 'Inventario', 'footer.company': 'Empresa', 'footer.legal': 'Legal', 'footer.allInventory': 'Todos los Vehículos', 'footer.testDrive': 'Test Drive', 'footer.contact': 'Contacto', 'footer.privacy': 'Política de Privacidad', 'footer.terms': 'Términos de Servicio', 'footer.rights': 'Todos los derechos reservados.', 'footer.by': 'Desarrollado por',
+    'inv.title': 'Inventario', 'inv.subtitle': 'Explora nuestra selección actual', 'inv.loading': 'Cargando inventario…', 'inv.showing': 'Mostrando', 'inv.of': 'de', 'inv.vehicles': 'vehículos', 'inv.empty': 'El inventario se está actualizando. Vuelve en unos momentos.',
+    'invf.make': 'Marca', 'invf.anyMake': 'Todas las Marcas', 'invf.year': 'Año', 'invf.from': 'Desde', 'invf.to': 'Hasta', 'invf.miles': 'Kilometraje', 'invf.anyMiles': 'Cualquier km', 'invf.price': 'Precio', 'invf.anyPrice': 'Cualquier precio', 'invf.clear': 'Limpiar', 'invf.details': 'Detalles', 'invf.finance': 'Financiar',
   },
 };
 
@@ -234,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Test-drive form -> mailto + success message */
   const form = document.getElementById('td-form');
   const success = document.getElementById('td-success');
-  form.addEventListener('submit', (e) => {
+  if (form) form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (form.website && form.website.value) return; // honeypot
     const d = Object.fromEntries(new FormData(form).entries());

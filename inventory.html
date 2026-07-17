@@ -3,318 +3,226 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CARNEXT USA — Browse our full inventory of premium pre-owned vehicles in Orlando, FL. SUVs, sedans, minivans, and more. Transparent pricing, flexible financing." />
+  <meta name="description" content="CARNEXT USA — Browse our current inventory of premium pre-owned vehicles in Orlando, FL." />
   <title>Inventory — CARNEXT USA</title>
-
-  <!-- Canonical & SEO -->
   <link rel="canonical" href="https://www.carnextusa.com/inventory.html" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.carnextusa.com/inventory.html" />
-  <meta property="og:title" content="Inventory — CARNEXT USA" />
-  <meta property="og:description" content="Browse pre-owned SUVs, sedans, minivans and more in Orlando, FL. Transparent pricing, flexible financing." />
-  <meta property="og:image" content="https://www.carnextusa.com/assets/images/hero-poster.jpg" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { black:'#0A0A0B', white:'#F4F5F8', yellow:'#D6D7DE', amber:'#FFFFFF', red:'#8C8E98', blue:'#B9BBC5' } },
+        fontFamily: { sans: ['Poppins','system-ui','sans-serif'] },
+      } },
+    };
+  </script>
 
-  <link rel="stylesheet" href="styles.css" />
   <style>
-    .inventory-page-hero {
-      padding: 140px 0 60px;
-      text-align: center;
-    }
-    .inventory-page-hero .section-eyebrow {
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-    .inventory-page-hero .section-title {
-      margin-bottom: 16px;
-    }
-    .inventory-page-hero .section-desc {
-      max-width: 540px;
-      margin: 0 auto 48px;
-    }
+    html { scroll-behavior: smooth; }
+    body { background: #0A0A0B; -webkit-font-smoothing: antialiased; }
+    .carbon-texture { background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(-45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 4px); }
+    ::selection { background: rgba(255,255,255,0.22); }
+    select option { background: #0A0A0B; color: #F4F5F8; }
+    /* Light (off-white) section */
+    .light { background: #F3F1EA !important; }
+    .light .bg-brand-black { background: #FFFFFF !important; }
+    .light .text-brand-white { color: #16171C !important; }
+    .light .text-brand-white\/80 { color: rgba(22,23,28,.82) !important; }
+    .light .text-brand-white\/70 { color: rgba(22,23,28,.74) !important; }
+    .light .text-brand-white\/60 { color: rgba(22,23,28,.66) !important; }
+    .light .text-brand-white\/50 { color: rgba(22,23,28,.58) !important; }
+    .light .text-brand-white\/40 { color: rgba(22,23,28,.52) !important; }
+    .light .text-brand-white\/30 { color: rgba(22,23,28,.5) !important; }
+    .light .border-brand-white\/10, .light .border-brand-white\/20, .light .border-brand-white\/30 { border-color: rgba(22,23,28,.14) !important; }
+    .light .bg-brand-white\/5, .light .bg-brand-white\/10, .light .bg-brand-white\/15 { background: rgba(22,23,28,.05) !important; }
+    .light .bg-brand-yellow { background: #16171C !important; }
+    .light .text-brand-black { color: #F4F5F8 !important; }
+    .light .hover\:bg-brand-amber:hover { background: #33353E !important; }
+    .light .hover\:bg-brand-white:hover { background: #16171C !important; }
+    .light .hover\:text-brand-black:hover { color: #F4F5F8 !important; }
+    .light .hover\:border-brand-white\/40:hover { border-color: rgba(22,23,28,.28) !important; }
+    .light select { color: #16171C !important; }
+    .light .focus\:border-brand-white:focus { border-color: #16171C !important; }
   </style>
 </head>
-<body>
+<body class="font-sans text-brand-white">
 
-  <!-- NAVIGATION -->
-  <nav class="nav" id="mainNav">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="nav-logo-img" />
+  <!-- ═══════════════ HEADER (same as home) ═══════════════ -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-brand-black/95 backdrop-blur-md">
+    <div class="h-0.5 bg-gradient-to-r from-brand-yellow via-brand-red to-brand-blue"></div>
+    <div id="header-inner" class="relative flex items-center justify-between px-6 lg:px-12 py-3 transition-all duration-300">
+      <a href="index.html" class="flex items-center gap-3 flex-shrink-0" aria-label="CarNext USA Home">
+        <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="h-11 w-auto object-contain" loading="eager" />
       </a>
-
-      <ul class="nav-links">
-        <li><a href="inventory.html" class="nav-link active" data-i18n="nav_inventory">Inventory</a></li>
-        <li><a href="index.html#fleet" class="nav-link" data-i18n="nav_fleet">Fleet</a></li>
-        <li><a href="index.html#airport" class="nav-link" data-i18n="nav_airport">Airport Pickup</a></li>
-        <li><a href="index.html#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <div class="lang-switcher" id="langSwitcher">
-          <button class="lang-btn active" data-lang="en">🇺🇸 EN</button>
-          <button class="lang-btn" data-lang="pt">🇧🇷 PT</button>
-          <button class="lang-btn" data-lang="es">🇪🇸 ES</button>
+      <nav class="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2" aria-label="Main navigation">
+        <a href="index.html#experience" data-i18n="nav.experience" class="text-sm font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white transition-colors">Business</a>
+        <a href="index.html#financing" data-i18n="nav.financing" class="text-sm font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white transition-colors">Financing</a>
+        <a href="index.html#reviews" data-i18n="nav.reviews" class="text-sm font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white transition-colors">Reviews</a>
+        <a href="index.html#contact" data-i18n="nav.contact" class="text-sm font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white transition-colors">Contact</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <div class="hidden md:flex items-center gap-1 border border-brand-white/20 rounded-full px-3 py-1.5">
+          <button data-lang="en" class="lang-btn text-xs font-bold text-brand-white transition-colors">🇺🇸 EN</button>
+          <span class="text-brand-white/20 text-xs mx-1">·</span>
+          <button data-lang="pt" class="lang-btn text-xs font-bold text-brand-white/50 hover:text-brand-white transition-colors">🇧🇷 PT</button>
+          <span class="text-brand-white/20 text-xs mx-1">·</span>
+          <button data-lang="es" class="lang-btn text-xs font-bold text-brand-white/50 hover:text-brand-white transition-colors">🇪🇸 ES</button>
         </div>
-        <a href="index.html#test-drive" class="btn btn-primary btn-sm" data-i18n="nav_cta">Schedule Test Drive</a>
-        <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
-          <span></span><span></span><span></span>
+        <a href="inventory.html" class="hidden sm:inline-flex items-center gap-2 bg-brand-yellow text-brand-black text-sm font-bold uppercase tracking-wider px-5 py-2.5 rounded-full hover:bg-brand-amber transition-colors">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7"/></svg>
+          <span data-i18n="nav.inventory">Inventory</span>
+        </a>
+        <button id="mobile-menu-btn" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu" aria-expanded="false">
+          <span class="block w-6 h-0.5 bg-brand-white transition-all duration-300 origin-center" id="burger-1"></span>
+          <span class="block w-6 h-0.5 bg-brand-white transition-all duration-300" id="burger-2"></span>
+          <span class="block w-6 h-0.5 bg-brand-white transition-all duration-300 origin-center" id="burger-3"></span>
         </button>
       </div>
     </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="inventory.html" class="mobile-link">Inventory</a></li>
-      <li><a href="index.html#fleet" class="mobile-link">Fleet</a></li>
-      <li><a href="index.html#airport" class="mobile-link">Airport Pickup</a></li>
-      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
-      <li><a href="index.html#test-drive" class="btn btn-primary" style="display:inline-block;margin-top:8px;">Schedule Test Drive</a></li>
-    </ul>
-  </div>
-
-  <!-- INVENTORY SECTION -->
-  <section class="inventory" id="inventory" style="padding-top: 0;">
-    <div class="container">
-
-      <div class="inventory-page-hero">
-        <div class="section-eyebrow">
-          <span class="eyebrow-line"></span>
-          <span class="eyebrow-text">AVAILABLE NOW</span>
-        </div>
-        <h2 class="section-title">Browse Our <span class="text-gradient">Inventory</span></h2>
-        <p class="section-desc">Hand-picked, inspected, and ready to drive. Find the vehicle that fits your life.</p>
+    <nav id="mobile-menu" class="lg:hidden hidden bg-brand-black/98 border-t border-brand-white/10 px-6 pb-6" aria-label="Mobile navigation">
+      <div class="flex flex-col gap-4 pt-4">
+        <a href="inventory.html" data-i18n="nav.inventory" class="text-base font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white py-2 border-b border-brand-white/10">Inventory</a>
+        <a href="index.html#experience" data-i18n="nav.experience" class="text-base font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white py-2 border-b border-brand-white/10">Business</a>
+        <a href="index.html#financing" data-i18n="nav.financing" class="text-base font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white py-2 border-b border-brand-white/10">Financing</a>
+        <a href="index.html#reviews" data-i18n="nav.reviews" class="text-base font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white py-2 border-b border-brand-white/10">Reviews</a>
+        <a href="index.html#contact" data-i18n="nav.contact" class="text-base font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white py-2 border-b border-brand-white/10">Contact</a>
       </div>
+    </nav>
+  </header>
 
-      <!-- Filters -->
-      <div class="inv-filter-panel reveal-block">
+  <!-- ═══════════════ TITLE BAND (dark) ═══════════════ -->
+  <section class="relative pt-32 pb-14 bg-brand-black overflow-hidden">
+    <div class="absolute inset-0 carbon-texture opacity-30 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-yellow via-brand-red to-brand-blue"></div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-12">
+      <p class="text-brand-white text-xs font-bold uppercase tracking-widest mb-2">● Orlando, FL</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase text-brand-white" data-i18n="inv.title">Inventory</h1>
+      <p class="text-brand-white/60 mt-2" data-i18n="inv.subtitle">Browse our current selection</p>
+    </div>
+  </section>
 
-        <div class="inv-filter-group">
-          <label class="inv-filter-label" data-i18n="inv_f_model">Model</label>
-          <select class="inv-filter-select" id="invMake">
-            <option value="" data-i18n="inv_f_all_models">All Models</option>
+  <!-- ═══════════════ FILTERS + GRID (light) ═══════════════ -->
+  <section class="light py-14 min-h-[60vh]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+      <div class="flex flex-wrap items-end gap-4 mb-8 pb-8 border-b border-brand-white/10">
+        <div class="flex flex-col gap-1.5">
+          <label class="text-brand-white/50 text-xs uppercase tracking-wider font-bold" data-i18n="invf.make">Make</label>
+          <select id="invMake" class="bg-brand-black border border-brand-white/20 text-brand-white text-sm px-4 py-2.5 rounded-xl focus:border-brand-white focus:outline-none min-w-[150px]">
+            <option value="" data-i18n="invf.anyMake">All Makes</option>
           </select>
         </div>
 
-        <div class="inv-filter-divider"></div>
-
-        <div class="inv-filter-group inv-filter-group--double">
-          <label class="inv-filter-label" data-i18n="inv_f_year">Year</label>
-          <div class="inv-filter-range">
-            <select class="inv-filter-select inv-select-sm" id="invYearFrom">
-              <option value="" data-i18n="inv_f_from">From</option>
-              <!-- years populated by JS -->
+        <div class="flex flex-col gap-1.5">
+          <label class="text-brand-white/50 text-xs uppercase tracking-wider font-bold" data-i18n="invf.year">Year</label>
+          <div class="flex items-center gap-2">
+            <select id="invYearFrom" class="bg-brand-black border border-brand-white/20 text-brand-white text-sm px-3 py-2.5 rounded-xl focus:border-brand-white focus:outline-none">
+              <option value="" data-i18n="invf.from">From</option>
             </select>
-            <span class="inv-range-sep">—</span>
-            <select class="inv-filter-select inv-select-sm" id="invYearTo">
-              <option value="" data-i18n="inv_f_to">To</option>
-              <!-- years populated by JS -->
+            <span class="text-brand-white/40">—</span>
+            <select id="invYearTo" class="bg-brand-black border border-brand-white/20 text-brand-white text-sm px-3 py-2.5 rounded-xl focus:border-brand-white focus:outline-none">
+              <option value="" data-i18n="invf.to">To</option>
             </select>
           </div>
         </div>
 
-        <div class="inv-filter-divider"></div>
-
-        <div class="inv-filter-group">
-          <label class="inv-filter-label" data-i18n="inv_f_miles">Mileage</label>
-          <select class="inv-filter-select" id="invMiles">
-            <option value="" data-i18n="inv_f_any_miles">Any mileage</option>
-            <option value="50000" data-i18n="inv_f_below50">Under 50k mi</option>
-            <option value="70000" data-i18n="inv_f_upto70">Up to 70k mi</option>
-            <option value="90000" data-i18n="inv_f_upto90">Up to 90k mi</option>
-            <option value="110000" data-i18n="inv_f_upto110">Up to 110k mi</option>
-            <option value="110001" data-i18n="inv_f_above110">Over 110k mi</option>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-brand-white/50 text-xs uppercase tracking-wider font-bold" data-i18n="invf.miles">Mileage</label>
+          <select id="invMiles" class="bg-brand-black border border-brand-white/20 text-brand-white text-sm px-4 py-2.5 rounded-xl focus:border-brand-white focus:outline-none">
+            <option value="" data-i18n="invf.anyMiles">Any mileage</option>
+            <option value="30000">≤ 30k mi</option>
+            <option value="60000">≤ 60k mi</option>
+            <option value="90000">≤ 90k mi</option>
+            <option value="120000">≤ 120k mi</option>
+            <option value="120001">&gt; 120k mi</option>
           </select>
         </div>
 
-        <div class="inv-filter-divider"></div>
-
-        <div class="inv-filter-group">
-          <label class="inv-filter-label" data-i18n="inv_f_price">Price</label>
-          <select class="inv-filter-select" id="invPrice">
-            <option value="" data-i18n="inv_f_any_price">Any price</option>
-            <option value="5000" data-i18n="inv_f_upto5">Up to $5k</option>
-            <option value="10000" data-i18n="inv_f_upto10">Up to $10k</option>
-            <option value="15000" data-i18n="inv_f_upto15">Up to $15k</option>
-            <option value="20000" data-i18n="inv_f_upto20">Up to $20k</option>
-            <option value="20001" data-i18n="inv_f_above20">Over $20k</option>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-brand-white/50 text-xs uppercase tracking-wider font-bold" data-i18n="invf.price">Price</label>
+          <select id="invPrice" class="bg-brand-black border border-brand-white/20 text-brand-white text-sm px-4 py-2.5 rounded-xl focus:border-brand-white focus:outline-none">
+            <option value="" data-i18n="invf.anyPrice">Any price</option>
+            <option value="15000">≤ $15k</option>
+            <option value="25000">≤ $25k</option>
+            <option value="35000">≤ $35k</option>
+            <option value="50000">≤ $50k</option>
+            <option value="75000">≤ $75k</option>
+            <option value="75001">&gt; $75k</option>
           </select>
         </div>
 
-        <button class="inv-filter-reset" id="invClear" data-i18n="inv_f_clear">Clear</button>
+        <button id="invClear" class="ml-auto text-brand-white/60 text-xs uppercase tracking-wider font-semibold border border-brand-white/20 hover:border-brand-white/40 px-4 py-2.5 rounded-xl transition-colors" data-i18n="invf.clear">Clear</button>
       </div>
 
-      <!-- Vehicle Cards Grid -->
-      <div class="inventory-grid" id="inventoryGrid">
-        <p id="invLoading" style="grid-column:1/-1;text-align:center;color:var(--text-secondary);padding:60px 0;">Loading inventory…</p>
-      </div>
+      <p id="invCount" class="text-brand-white/50 text-sm mb-6">Loading inventory…</p>
 
-      </div>
-
-      <div class="inventory-cta reveal-block">
-        <p class="inv-cta-text" id="invCount">Loading…</p>
-        <button type="button" class="btn btn-secondary td-modal-trigger" data-i18n="vc_contact_more">Contact Us for More</button>
+      <div id="inventoryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <p id="invLoading" class="col-span-full text-center text-brand-white/50 py-16" data-i18n="inv.loading">Loading inventory…</p>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-glow"></div>
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo footer-logo">
-            <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="footer-logo-img" />
-          </a>
-          <p class="footer-tagline">Premium pre-owned vehicles.<br />Transparent deals. Designed for you.</p>
-          <div class="footer-socials">
-            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="https://cargurus.com" target="_blank" rel="noopener" class="social-btn" aria-label="CarGurus">
-              <span class="mono" style="font-size:0.6rem;font-weight:500;letter-spacing:.05em">CG</span>
-            </a>
+  <!-- ═══════════════ FOOTER (same as home) ═══════════════ -->
+  <footer class="bg-[#060607] border-t border-brand-white/10">
+    <div class="h-1 bg-gradient-to-r from-brand-yellow via-brand-red to-brand-blue"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+        <div class="lg:col-span-1">
+          <a href="index.html" aria-label="CarNext USA Home"><img src="assets/images/carnext-logo.png" alt="CarNext USA" class="h-12 w-auto mb-4" /></a>
+          <p class="text-brand-white/60 text-sm leading-relaxed mb-6" data-i18n="footer.tagline">Premium Pre-Owned. Orlando's Best.</p>
+          <div class="flex items-center gap-4">
+            <a href="https://www.instagram.com/carnextusa/" target="_blank" rel="noopener noreferrer" class="text-brand-white/40 hover:text-brand-white transition-colors" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.facebook.com/profile.php?id=61577307740990" target="_blank" rel="noopener noreferrer" class="text-brand-white/40 hover:text-brand-white transition-colors" aria-label="Facebook"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="text-brand-white/40 hover:text-brand-white transition-colors" aria-label="TikTok"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+            <a href="https://wa.me/19785845424" target="_blank" rel="noopener noreferrer" class="text-brand-white/40 hover:text-brand-white transition-colors" aria-label="WhatsApp"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
           </div>
         </div>
-
-        <div class="footer-links-wrap">
-          <div class="footer-col">
-            <h4 class="footer-col-title">Inventory</h4>
-            <ul class="footer-links">
-              <li><a href="inventory.html" class="footer-link">All Vehicles</a></li>
-              <li><a href="inventory.html" class="footer-link">SUVs</a></li>
-              <li><a href="inventory.html" class="footer-link">Minivans</a></li>
-              <li><a href="inventory.html" class="footer-link">Sedans</a></li>
-              <li><a href="inventory.html" class="footer-link">Under $20k</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 class="footer-col-title">Services</h4>
-            <ul class="footer-links">
-              <li><a href="index.html#test-drive" class="footer-link">Test Drive</a></li>
-              <li><a href="index.html#fleet" class="footer-link">Fleet Program</a></li>
-              <li><a href="index.html#contact" class="footer-link">Trade-In</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 class="footer-col-title">Company</h4>
-            <ul class="footer-links">
-              <li><a href="index.html#contact" class="footer-link">Contact Us</a></li>
-              <li><a href="index.html#reviews" class="footer-link">Reviews</a></li>
-              <li><a href="https://facebook.com" target="_blank" rel="noopener" class="footer-link">Facebook</a></li>
-              <li><a href="https://cargurus.com" target="_blank" rel="noopener" class="footer-link">CarGurus</a></li>
-            </ul>
+        <div>
+          <h3 class="text-brand-white text-xs font-bold uppercase tracking-widest mb-5" data-i18n="footer.inventory">Inventory</h3>
+          <ul class="space-y-3">
+            <li><a href="inventory.html" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="footer.allInventory">All Vehicles</a></li>
+            <li><a href="index.html#reviews" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="nav.reviews">Reviews</a></li>
+            <li><a href="index.html#test-drive" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="footer.testDrive">Test Drive</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-brand-white text-xs font-bold uppercase tracking-widest mb-5" data-i18n="footer.company">Company</h3>
+          <ul class="space-y-3">
+            <li><a href="index.html#experience" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="nav.experience">Business</a></li>
+            <li><a href="index.html#financing" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="nav.financing">Financing</a></li>
+            <li><a href="index.html#contact" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="footer.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-brand-white text-xs font-bold uppercase tracking-widest mb-5" data-i18n="footer.legal">Legal</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="footer.privacy">Privacy Policy</a></li>
+            <li><a href="#" class="text-brand-white/60 text-sm hover:text-brand-white transition-colors" data-i18n="footer.terms">Terms of Service</a></li>
+          </ul>
+          <div class="mt-6 space-y-2">
+            <p class="text-brand-white/60 text-sm">📍 Orlando, FL — USA</p>
+            <p class="text-brand-white/60 text-sm">📞 <a href="tel:+19785845424" class="hover:text-brand-white transition-colors">(978) 584-5424</a></p>
           </div>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <p class="footer-legal">
-          © 2025 CARNEXT USA. All rights reserved. All vehicles subject to prior sale. Prices exclude tax, tag, title, and dealer fees. Financing subject to credit approval. Advertised monthly payments are estimates only.
-        </p>
-        <div class="footer-meta">
-          <a href="#" class="footer-meta-link">Privacy Policy</a>
-          <a href="#" class="footer-meta-link">Terms of Service</a>
+      <div class="mt-12 pt-6 border-t border-brand-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <p class="text-brand-white/20 text-xs">© <span id="footer-year">2026</span> CarNext USA. <span data-i18n="footer.rights">All rights reserved.</span></p>
+        <div class="flex items-center gap-1">
+          <button data-lang="en" class="lang-btn text-xs font-bold text-brand-white">🇺🇸 EN</button>
+          <span class="text-brand-white/20 text-xs mx-1">·</span>
+          <button data-lang="pt" class="lang-btn text-xs font-bold text-brand-white/30 hover:text-brand-white/60">🇧🇷 PT</button>
+          <span class="text-brand-white/20 text-xs mx-1">·</span>
+          <button data-lang="es" class="lang-btn text-xs font-bold text-brand-white/30 hover:text-brand-white/60">🇪🇸 ES</button>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- ═══════ TEST DRIVE MODAL ═══════ -->
-  <div class="td-modal" id="tdModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tdModalTitle">
-    <div class="td-modal-backdrop" data-modal-close></div>
-    <div class="td-modal-card" role="document">
-      <button class="td-modal-close" aria-label="Close" data-modal-close>&times;</button>
-
-      <!-- STEP 1 — Form -->
-      <div class="td-modal-step td-modal-step-1" data-step="1">
-        <h3 class="td-modal-title" id="tdModalTitle" data-i18n="modal_title">Schedule Your Test Drive</h3>
-        <p class="td-modal-sub" data-i18n="modal_sub">Fill out the form and our team will get back to you shortly.</p>
-        <form class="td-form" id="tdModalForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" data-i18n="form_name">FULL NAME</label>
-              <input type="text" class="form-input" placeholder="John Smith" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label" data-i18n="form_phone">PHONE</label>
-              <input type="tel" class="form-input" placeholder="(978) 584-5424" required />
-            </div>
-          </div>
-          <div class="form-field">
-            <label class="form-label" data-i18n="form_email">EMAIL</label>
-            <input type="email" class="form-input" placeholder="john@email.com" required />
-          </div>
-          <div class="form-field">
-            <label class="form-label" data-i18n="form_vehicle">PREFERRED VEHICLE</label>
-            <select class="form-input form-select" id="tdModalVehicle">
-              <option value="" data-i18n="form_select_vehicle">Select a vehicle...</option>
-              <option>2022 Mitsubishi Outlander</option>
-              <option>2021 Chrysler Pacifica</option>
-              <option>2023 Honda CR-V TrailSport</option>
-              <option>2022 Toyota Camry</option>
-              <option>2020 Toyota Sienna</option>
-              <option>2021 Jeep Grand Cherokee</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" data-i18n="form_date">PREFERRED DATE</label>
-              <input type="date" class="form-input" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" data-i18n="form_time">PREFERRED TIME</label>
-              <select class="form-input form-select">
-                <option value="" data-i18n="form_select_time">Select time...</option>
-                <option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option>
-                <option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option>
-                <option>4:00 PM</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" data-i18n="form_message">MESSAGE (OPTIONAL)</label>
-            <textarea class="form-input form-textarea td-modal-textarea" rows="5" placeholder="Any questions or special requests..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary td-modal-submit"><span data-i18n="form_submit">SCHEDULE MY TEST DRIVE</span> →</button>
-          <p class="form-disclaimer" data-i18n="form_disclaimer">Your information is secure and will never be shared with third parties.</p>
-          <div class="td-modal-footer-logo">
-            <img src="assets/images/carnext-logo.png" alt="CarNext USA" onerror="this.style.display='none'" />
-          </div>
-        </form>
-      </div>
-
-      <!-- STEP 2 — Success -->
-      <div class="td-modal-step td-modal-step-2" data-step="2" hidden>
-        <div class="td-modal-success">
-          <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="td-modal-logo" onerror="this.style.display='none'" />
-          <div class="td-modal-check" aria-hidden="true">
-            <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 33 L28 45 L48 22" />
-            </svg>
-          </div>
-          <h3 class="td-modal-success-title" data-i18n="modal_success_title">Thank you!</h3>
-          <p class="td-modal-success-text" data-i18n="modal_success_text">Our team will be in touch with you shortly.</p>
-          <button class="btn btn-primary td-modal-close-btn" data-modal-close data-i18n="modal_close">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="main.js"></script>
+  <script src="clone.js" defer></script>
   <script src="inventory-render.js" defer></script>
 </body>
 </html>
