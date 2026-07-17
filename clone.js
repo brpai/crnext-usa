@@ -28,7 +28,7 @@ const REVIEWS = [
 const I18N = {
   en: {
     'nav.inventory': 'Inventory', 'nav.experience': 'Business', 'nav.financing': 'Financing', 'nav.reviews': 'Reviews', 'nav.contact': 'Contact',
-    'hero.chip': 'Orlando, FL · Premium Pre-Owned', 'hero.headline': "Drive What's Next in Orlando",
+    'hero.chip': 'Orlando, FL · Premium Pre-Owned', 'hero.headline': 'Your Next Car Starts Here',
     'hero.subhead': 'Premium pre-owned vehicles. Transparent deals. Honest financing.',
     'hero.searchName': 'Search by make, model or year...', 'hero.searchMake': 'Make', 'hero.searchPrice': 'Max Price', 'hero.searchBtn': 'Search', 'hero.scroll': 'Scroll',
     'reviews.eyebrow': 'Customer Reviews', 'reviews.title': 'What Our Clients Say', 'reviews.subtitle': 'Real reviews from real customers', 'reviews.ratingNote': '· Rated by our customers', 'reviews.verified': 'Verified Purchase',
@@ -46,7 +46,7 @@ const I18N = {
   },
   pt: {
     'nav.inventory': 'Estoque', 'nav.experience': 'Empresas', 'nav.financing': 'Financiamento', 'nav.reviews': 'Avaliações', 'nav.contact': 'Contato',
-    'hero.chip': 'Orlando, FL · Seminovos Premium', 'hero.headline': 'Encontre Seu Próximo Carro em Orlando',
+    'hero.chip': 'Orlando, FL · Seminovos Premium', 'hero.headline': 'Seu Próximo Carro Começa Aqui',
     'hero.subhead': 'Seminovos premium. Negócios transparentes. Financiamento honesto.',
     'hero.searchName': 'Buscar por marca, modelo ou ano...', 'hero.searchMake': 'Marca', 'hero.searchPrice': 'Preço Máx.', 'hero.searchBtn': 'Buscar', 'hero.scroll': 'Rolar',
     'reviews.eyebrow': 'Avaliações', 'reviews.title': 'O Que Nossos Clientes Dizem', 'reviews.subtitle': 'Avaliações reais de clientes reais', 'reviews.ratingNote': '· Avaliado pelos nossos clientes', 'reviews.verified': 'Compra Verificada',
@@ -64,7 +64,7 @@ const I18N = {
   },
   es: {
     'nav.inventory': 'Inventario', 'nav.experience': 'Empresas', 'nav.financing': 'Financiamiento', 'nav.reviews': 'Reseñas', 'nav.contact': 'Contacto',
-    'hero.chip': 'Orlando, FL · Seminuevos Premium', 'hero.headline': 'Encuentra Tu Próximo Auto en Orlando',
+    'hero.chip': 'Orlando, FL · Seminuevos Premium', 'hero.headline': 'Tu Próximo Auto Empieza Aquí',
     'hero.subhead': 'Vehículos seminuevos premium. Tratos transparentes. Financiamiento honesto.',
     'hero.searchName': 'Buscar por marca, modelo o año...', 'hero.searchMake': 'Marca', 'hero.searchPrice': 'Precio Máx.', 'hero.searchBtn': 'Buscar', 'hero.scroll': 'Desliza',
     'reviews.eyebrow': 'Reseñas', 'reviews.title': 'Lo Que Dicen Nuestros Clientes', 'reviews.subtitle': 'Reseñas reales de clientes reales', 'reviews.ratingNote': '· Valorado por nuestros clientes', 'reviews.verified': 'Compra Verificada',
@@ -163,7 +163,7 @@ function applyLang(lang) {
     b.classList.toggle('text-brand-white', active);
     b.classList.toggle('text-brand-white/50', !active);
   });
-  try { localStorage.setItem('cnx-lang', lang); } catch (e) {}
+  try { localStorage.setItem('cnx_lang', lang); } catch (e) {}
 }
 
 /* ---------- Init ---------- */
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderReviews();
   renderRatingStars();
 
-  const saved = (() => { try { return localStorage.getItem('cnx-lang'); } catch (e) { return null; } })();
+  const saved = (() => { try { return localStorage.getItem('cnx_lang'); } catch (e) { return null; } })();
   applyLang(saved && I18N[saved] ? saved : 'en');
 
   document.querySelectorAll('.lang-btn').forEach(btn => {

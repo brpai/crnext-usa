@@ -102,9 +102,9 @@
       <div class="inv-filter-panel reveal-block">
 
         <div class="inv-filter-group">
-          <label class="inv-filter-label">Modelo</label>
+          <label class="inv-filter-label" data-i18n="inv_f_model">Model</label>
           <select class="inv-filter-select" id="filterModelo">
-            <option value="">Todos os modelos</option>
+            <option value="" data-i18n="inv_f_all_models">All Models</option>
             <option value="mitsubishi outlander">Mitsubishi Outlander</option>
             <option value="chrysler pacifica">Chrysler Pacifica</option>
             <option value="honda cr-v ex">Honda CR-V EX</option>
@@ -117,15 +117,15 @@
         <div class="inv-filter-divider"></div>
 
         <div class="inv-filter-group inv-filter-group--double">
-          <label class="inv-filter-label">Ano</label>
+          <label class="inv-filter-label" data-i18n="inv_f_year">Year</label>
           <div class="inv-filter-range">
             <select class="inv-filter-select inv-select-sm" id="filterAnoDe">
-              <option value="">De</option>
+              <option value="" data-i18n="inv_f_from">From</option>
               <!-- years populated by JS -->
             </select>
             <span class="inv-range-sep">—</span>
             <select class="inv-filter-select inv-select-sm" id="filterAnoAte">
-              <option value="">Até</option>
+              <option value="" data-i18n="inv_f_to">To</option>
               <!-- years populated by JS -->
             </select>
           </div>
@@ -134,32 +134,32 @@
         <div class="inv-filter-divider"></div>
 
         <div class="inv-filter-group">
-          <label class="inv-filter-label">Milhas</label>
+          <label class="inv-filter-label" data-i18n="inv_f_miles">Mileage</label>
           <select class="inv-filter-select" id="filterMilhas">
-            <option value="">Qualquer km</option>
-            <option value="50000">Abaixo de 50k mi</option>
-            <option value="70000">Até 70k mi</option>
-            <option value="90000">Até 90k mi</option>
-            <option value="110000">Até 110k mi</option>
-            <option value="110001">Acima de 110k mi</option>
+            <option value="" data-i18n="inv_f_any_miles">Any mileage</option>
+            <option value="50000" data-i18n="inv_f_below50">Under 50k mi</option>
+            <option value="70000" data-i18n="inv_f_upto70">Up to 70k mi</option>
+            <option value="90000" data-i18n="inv_f_upto90">Up to 90k mi</option>
+            <option value="110000" data-i18n="inv_f_upto110">Up to 110k mi</option>
+            <option value="110001" data-i18n="inv_f_above110">Over 110k mi</option>
           </select>
         </div>
 
         <div class="inv-filter-divider"></div>
 
         <div class="inv-filter-group">
-          <label class="inv-filter-label">Valor</label>
+          <label class="inv-filter-label" data-i18n="inv_f_price">Price</label>
           <select class="inv-filter-select" id="filterValor">
-            <option value="">Qualquer valor</option>
-            <option value="5000">Até $5k</option>
-            <option value="10000">Até $10k</option>
-            <option value="15000">Até $15k</option>
-            <option value="20000">Até $20k</option>
-            <option value="20001">Acima de $20k</option>
+            <option value="" data-i18n="inv_f_any_price">Any price</option>
+            <option value="5000" data-i18n="inv_f_upto5">Up to $5k</option>
+            <option value="10000" data-i18n="inv_f_upto10">Up to $10k</option>
+            <option value="15000" data-i18n="inv_f_upto15">Up to $15k</option>
+            <option value="20000" data-i18n="inv_f_upto20">Up to $20k</option>
+            <option value="20001" data-i18n="inv_f_above20">Over $20k</option>
           </select>
         </div>
 
-        <button class="inv-filter-reset" id="filterReset">Limpar</button>
+        <button class="inv-filter-reset" id="filterReset" data-i18n="inv_f_clear">Clear</button>
       </div>
 
       <!-- Vehicle Cards Grid -->
