@@ -52,8 +52,19 @@ const TRANSLATIONS = {
     solution_2_title: 'Fair Financing', solution_2_text: 'Simple terms, competitive rates, and options built around your budget.',
     solution_3_title: '150-Point Inspected', solution_3_text: 'Every vehicle fully inspected, documented, and verified before sale.',
     solution_4_title: 'You-First Process', solution_4_text: 'Your timeline, your terms. A team that listens before they talk.',
+    /* Hero search */
+    hs_make: 'Make', hs_any_make: 'Any Make', hs_price: 'Max Price', hs_any_price: 'No Limit', hs_search: 'Search',
     /* Reviews */
-    reviews_eyebrow: 'CUSTOMER STORIES', reviews_title: 'Trusted by', reviews_title_gradient: 'Thousands',
+    reviews_eyebrow: 'GOOGLE REVIEWS', reviews_title: 'What Our', reviews_title_gradient: 'Clients Say',
+    gr_based: 'Based on', gr_reviews: 'Google reviews', t_verified: 'Verified Purchase',
+    /* Featured */
+    featured_eyebrow: 'FEATURED', featured_title: 'Featured', featured_title_gradient: 'Vehicles',
+    featured_sub: 'Hand-picked, inspected, and ready to drive.',
+    fv_details: 'View Details', fv_finance: 'Finance This', featured_viewall: 'View All Inventory',
+    /* Financing */
+    fin_eyebrow: '#1 IN AUTO LOANS', fin_title: 'Get Financed', fin_title_gradient: 'Today',
+    fin_desc: 'Through our network of trusted lenders, we help buyers across Orlando get approved — good credit, rebuilding credit, or first-time buyer. Every situation, every score.',
+    fin_b1: 'All credit types', fin_b2: 'Approval in 24h', fin_b3: 'No obligation', fin_cta: 'Apply Now',
     ps_stat1_label: 'Vehicles Sold', ps_stat2_label: 'Satisfaction Rate', ps_stat3_label: 'Average Rating', ps_stat4_label: 'Average Approval',
     t1_text: '"The smoothest car-buying experience I\'ve ever had. No pressure, total transparency, and the vehicle was exactly as described. I drove home in my Outlander the same day."',
     t2_text: '"We were nervous about buying used after a bad experience elsewhere. CARNEXT USA completely changed our minds. They handled our trade-in and financing in one visit — outstanding."',
@@ -148,8 +159,19 @@ const TRANSLATIONS = {
     solution_2_title: 'Financiamento Justo', solution_2_text: 'Termos simples, taxas competitivas e opções adequadas ao seu orçamento.',
     solution_3_title: '150 Pontos Vistoriado', solution_3_text: 'Todo veículo inspecionado, documentado e verificado antes da venda.',
     solution_4_title: 'Você em Primeiro', solution_4_text: 'Seu prazo, suas condições. Uma equipe que ouve antes de falar.',
+    /* Hero search */
+    hs_make: 'Marca', hs_any_make: 'Qualquer Marca', hs_price: 'Preço Máx.', hs_any_price: 'Sem Limite', hs_search: 'Buscar',
+    /* Featured */
+    featured_eyebrow: 'DESTAQUES', featured_title: 'Veículos em', featured_title_gradient: 'Destaque',
+    featured_sub: 'Selecionados a dedo, inspecionados e prontos para rodar.',
+    fv_details: 'Ver Detalhes', fv_finance: 'Financiar', featured_viewall: 'Ver Todo o Estoque',
+    /* Financing */
+    fin_eyebrow: '#1 EM FINANCIAMENTO', fin_title: 'Seja Aprovado', fin_title_gradient: 'Hoje',
+    fin_desc: 'Através da nossa rede de parceiros financeiros, ajudamos compradores em toda Orlando a serem aprovados — crédito bom, em recuperação ou primeiro carro. Toda situação, todo score.',
+    fin_b1: 'Todos os perfis de crédito', fin_b2: 'Aprovação em 24h', fin_b3: 'Sem compromisso', fin_cta: 'Solicitar Agora',
+    gr_based: 'Baseado em', gr_reviews: 'avaliações no Google', t_verified: 'Compra Verificada',
     /* Reviews */
-    reviews_eyebrow: 'HISTÓRIAS DE CLIENTES', reviews_title: 'Confiados por', reviews_title_gradient: 'Milhares',
+    reviews_eyebrow: 'AVALIAÇÕES GOOGLE', reviews_title: 'O Que Nossos', reviews_title_gradient: 'Clientes Dizem',
     ps_stat1_label: 'Veículos Vendidos', ps_stat2_label: 'Taxa de Satisfação', ps_stat3_label: 'Avaliação Média', ps_stat4_label: 'Aprovação Média',
     t1_text: '"A experiência de compra de carro mais tranquila que já tive. Sem pressão, total transparência e o veículo era exatamente como descrito. Fui para casa no mesmo dia no meu Outlander."',
     t2_text: '"Estávamos com medo de comprar usado após uma experiência ruim. A CARNEXT USA mudou completamente nossa visão. Resolveram nossa troca e o financiamento em uma visita — incrível."',
@@ -244,8 +266,19 @@ const TRANSLATIONS = {
     solution_2_title: 'Financiamiento Justo', solution_2_text: 'Términos simples, tasas competitivas y opciones para tu presupuesto.',
     solution_3_title: '150 Puntos Inspeccionado', solution_3_text: 'Cada vehículo inspeccionado, documentado y verificado antes de la venta.',
     solution_4_title: 'Tú Primero', solution_4_text: 'Tu tiempo, tus condiciones. Un equipo que escucha antes de hablar.',
+    /* Hero search */
+    hs_make: 'Marca', hs_any_make: 'Cualquier Marca', hs_price: 'Precio Máx.', hs_any_price: 'Sin Límite', hs_search: 'Buscar',
+    /* Featured */
+    featured_eyebrow: 'DESTACADOS', featured_title: 'Vehículos', featured_title_gradient: 'Destacados',
+    featured_sub: 'Seleccionados a mano, inspeccionados y listos para conducir.',
+    fv_details: 'Ver Detalles', fv_finance: 'Financiar', featured_viewall: 'Ver Todo el Inventario',
+    /* Financing */
+    fin_eyebrow: '#1 EN FINANCIAMIENTO', fin_title: 'Aprobación', fin_title_gradient: 'Hoy',
+    fin_desc: 'A través de nuestra red de prestamistas de confianza, ayudamos a compradores en todo Orlando a ser aprobados — buen crédito, en recuperación o primer auto. Cada situación, cada score.',
+    fin_b1: 'Todos los tipos de crédito', fin_b2: 'Aprobación en 24h', fin_b3: 'Sin compromiso', fin_cta: 'Solicitar Ahora',
+    gr_based: 'Basado en', gr_reviews: 'reseñas de Google', t_verified: 'Compra Verificada',
     /* Reviews */
-    reviews_eyebrow: 'HISTORIAS DE CLIENTES', reviews_title: 'Confiado por', reviews_title_gradient: 'Miles',
+    reviews_eyebrow: 'RESEÑAS GOOGLE', reviews_title: 'Lo Que Dicen', reviews_title_gradient: 'Nuestros Clientes',
     ps_stat1_label: 'Vehículos Vendidos', ps_stat2_label: 'Tasa de Satisfacción', ps_stat3_label: 'Calificación Promedio', ps_stat4_label: 'Aprobación Promedio',
     t1_text: '"La experiencia de compra de auto más fluida que he tenido. Sin presión, total transparencia y el vehículo era exactamente como lo describían. Me fui a casa en mi Outlander el mismo día."',
     t2_text: '"Estábamos nerviosos por comprar usado tras una mala experiencia. CARNEXT USA cambió completamente nuestra opinión. Manejaron nuestro intercambio y financiamiento en una visita — excelente."',
@@ -593,9 +626,46 @@ document.querySelectorAll('.reveal-block').forEach((el, i) => {
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
       [modeloSelect, anoDeSelect, anoAteSelect, milhasSelect, valorSelect].forEach(s => s.value = '');
+      document.querySelectorAll('.vehicle-card').forEach(c => { c.style.display = ''; });
       applyFilters();
     });
   }
+
+  /* Hero search (?make & ?max) → pre-filter inventory */
+  (function applyURLSearch() {
+    const params = new URLSearchParams(location.search);
+    const make = (params.get('make') || '').toLowerCase().trim();
+    const max  = params.get('max') ? parseInt(params.get('max'), 10) : null;
+    if (!make && !max) return;
+
+    let shown = 0;
+    document.querySelectorAll('.vehicle-card').forEach(card => {
+      const name  = (card.querySelector('.vc-name')?.textContent || '').toLowerCase();
+      const price = parseInt((card.querySelector('.vc-price')?.textContent || '').replace(/[^0-9]/g, ''), 10) || 0;
+      let show = true;
+      if (make && !name.includes(make)) show = false;
+      if (max  && price > max)          show = false;
+      card.style.display = show ? '' : 'none';
+      if (show) shown++;
+    });
+
+    // Reflect max price in the price select for consistency
+    if (max && valorSelect) {
+      [...valorSelect.options].forEach(o => { if (parseInt(o.value, 10) === max) valorSelect.value = o.value; });
+    }
+
+    // Empty-result note
+    if (shown === 0) {
+      const grid = document.querySelector('.inventory-grid');
+      if (grid) {
+        const note = document.createElement('p');
+        note.style.cssText = 'grid-column:1/-1;text-align:center;color:var(--text-secondary);padding:40px 0;font-size:1rem;';
+        note.textContent = 'No vehicles match that search right now — showing all inventory instead.';
+        grid.prepend(note);
+        document.querySelectorAll('.vehicle-card').forEach(c => { c.style.display = ''; });
+      }
+    }
+  })();
 })();
 
 /* ── Vehicle Showcase Parallax (guarded) ────────────── */

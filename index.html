@@ -128,6 +128,40 @@
         </a>
       </div>
 
+      <!-- Hero Search Bar -->
+      <form class="hero-search" id="heroSearch" action="inventory.html" method="get">
+        <div class="hs-field">
+          <label class="hs-label" data-i18n="hs_make">Make</label>
+          <select name="make" class="hs-select">
+            <option value="" data-i18n="hs_any_make">Any Make</option>
+            <option value="toyota">Toyota</option>
+            <option value="honda">Honda</option>
+            <option value="jeep">Jeep</option>
+            <option value="chrysler">Chrysler</option>
+            <option value="mitsubishi">Mitsubishi</option>
+            <option value="ford">Ford</option>
+            <option value="nissan">Nissan</option>
+          </select>
+        </div>
+        <div class="hs-divider"></div>
+        <div class="hs-field">
+          <label class="hs-label" data-i18n="hs_price">Max Price</label>
+          <select name="max" class="hs-select">
+            <option value="" data-i18n="hs_any_price">No Limit</option>
+            <option value="15000">$15,000</option>
+            <option value="20000">$20,000</option>
+            <option value="25000">$25,000</option>
+            <option value="30000">$30,000</option>
+            <option value="40000">$40,000</option>
+            <option value="50000">$50,000+</option>
+          </select>
+        </div>
+        <button type="submit" class="hs-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <span data-i18n="hs_search">Search</span>
+        </button>
+      </form>
+
       <!-- Stats Row -->
       <div class="hero-stats">
         <div class="hero-stat">
@@ -157,6 +191,92 @@
     <div class="hero-lines">
       <div class="h-line h-line-1"></div>
       <div class="h-line h-line-2"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 8 — SOCIAL PROOF
+  ═══════════════════════════════════════════════════ -->
+  <section class="social-proof" id="reviews">
+    <div class="container">
+      <div class="section-header reveal-block">
+        <div class="section-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text" data-i18n="reviews_eyebrow">GOOGLE REVIEWS</span>
+        </div>
+        <h2 class="section-title"><span data-i18n="reviews_title">What Our</span> <span class="text-gradient" data-i18n="reviews_title_gradient">Clients Say</span></h2>
+      </div>
+
+      <!-- Google Rating Hero -->
+      <div class="google-rating reveal-block">
+        <div class="gr-logo" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24"><path fill="#fff" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#cfd0d6" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#9a9ca8" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#e8e9ef" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg>
+        </div>
+        <div class="gr-score mono">4.9</div>
+        <div class="gr-detail">
+          <div class="gr-stars">★★★★★</div>
+          <div class="gr-count"><span data-i18n="gr_based">Based on</span> <strong>700+</strong> <span data-i18n="gr_reviews">Google reviews</span></div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="proof-stats reveal-block">
+        <div class="proof-stat glass-card">
+          <div class="ps-val"><span class="stat-count" data-count="1200">0</span>+</div>
+          <div class="ps-label" data-i18n="ps_stat1_label">Vehicles Sold</div>
+        </div>
+        <div class="proof-stat glass-card">
+          <div class="ps-val"><span class="stat-count" data-count="98">0</span>%</div>
+          <div class="ps-label" data-i18n="ps_stat2_label">Satisfaction Rate</div>
+        </div>
+        <div class="proof-stat glass-card">
+          <div class="ps-val"><span class="stat-count" data-count="4">0</span>.9★</div>
+          <div class="ps-label" data-i18n="ps_stat3_label">Average Rating</div>
+        </div>
+        <div class="proof-stat glass-card">
+          <div class="ps-val"><span class="stat-count" data-count="24">0</span>hr</div>
+          <div class="ps-label" data-i18n="ps_stat4_label">Average Approval</div>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="testimonials-grid">
+        <div class="testimonial glass-card reveal-block">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text" data-i18n="t1_text">"The smoothest car-buying experience I've ever had. No pressure, total transparency, and the vehicle was exactly as described. I drove home in my Outlander the same day."</p>
+          <div class="t-author">
+            <div class="t-avatar">MR</div>
+            <div class="t-info">
+              <span class="t-name">Marcus R. <span class="t-flag">🇺🇸</span></span>
+              <span class="t-vehicle mono" data-i18n="t_verified">Verified Purchase</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial glass-card reveal-block">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text" data-i18n="t2_text">"We were nervous about buying used after a bad experience elsewhere. CARNEXT USA completely changed our minds. They handled our trade-in and financing in one visit — outstanding."</p>
+          <div class="t-author">
+            <div class="t-avatar">SK</div>
+            <div class="t-info">
+              <span class="t-name">Sarah K. <span class="t-flag">🇧🇷</span></span>
+              <span class="t-vehicle mono" data-i18n="t_verified">Verified Purchase</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial glass-card reveal-block">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text" data-i18n="t3_text">"As a rental company owner, I've bought fleets from many dealers. CARNEXT gave us pricing, condition, and service that no one else could match. Our go-to supplier now."</p>
+          <div class="t-author">
+            <div class="t-avatar">JM</div>
+            <div class="t-info">
+              <span class="t-name">James M. <span class="t-flag">🇵🇷</span></span>
+              <span class="t-vehicle mono" data-i18n="t_verified">Verified Purchase</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -230,6 +350,133 @@
       </div>
     </div>
   </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       FEATURED VEHICLES
+  ═══════════════════════════════════════════════════ -->
+  <section class="featured" id="featured">
+    <div class="container">
+      <div class="section-header reveal-block">
+        <div class="section-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text" data-i18n="featured_eyebrow">FEATURED</span>
+        </div>
+        <h2 class="section-title"><span data-i18n="featured_title">Featured</span> <span class="text-gradient" data-i18n="featured_title_gradient">Vehicles</span></h2>
+        <p class="section-sub" data-i18n="featured_sub">Hand-picked, inspected, and ready to drive.</p>
+      </div>
+
+      <div class="featured-grid reveal-block">
+
+        <article class="fv-card glass-card">
+          <div class="fv-image">
+            <img src="assets/images/vehicles/vehicle-01.png" alt="2022 Mitsubishi Outlander" loading="lazy" onerror="this.closest('.fv-image').classList.add('fv-noimg')" />
+            <span class="fv-badge">SUV</span>
+          </div>
+          <div class="fv-body">
+            <span class="fv-make mono">MITSUBISHI</span>
+            <h3 class="fv-name">2022 Outlander SE</h3>
+            <div class="fv-price mono">$22,995</div>
+            <div class="fv-meta mono">34,200 mi · Automatic · AWD</div>
+            <div class="fv-actions">
+              <a href="inventory.html" class="btn btn-secondary btn-sm" data-i18n="fv_details">View Details</a>
+              <button type="button" class="btn btn-primary btn-sm fv-finance" data-i18n="fv_finance">Finance This</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="fv-card glass-card">
+          <div class="fv-image">
+            <img src="assets/images/vehicles/vehicle-06.png" alt="2021 Jeep Grand Cherokee" loading="lazy" onerror="this.closest('.fv-image').classList.add('fv-noimg')" />
+            <span class="fv-badge">SUV</span>
+          </div>
+          <div class="fv-body">
+            <span class="fv-make mono">JEEP</span>
+            <h3 class="fv-name">2021 Grand Cherokee</h3>
+            <div class="fv-price mono">$28,900</div>
+            <div class="fv-meta mono">38,700 mi · Automatic · 4x4</div>
+            <div class="fv-actions">
+              <a href="inventory.html" class="btn btn-secondary btn-sm" data-i18n="fv_details">View Details</a>
+              <button type="button" class="btn btn-primary btn-sm fv-finance" data-i18n="fv_finance">Finance This</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="fv-card glass-card">
+          <div class="fv-image">
+            <img src="assets/images/vehicles/vehicle-05.png" alt="2022 Toyota Sienna XLE" loading="lazy" onerror="this.closest('.fv-image').classList.add('fv-noimg')" />
+            <span class="fv-badge">Minivan</span>
+          </div>
+          <div class="fv-body">
+            <span class="fv-make mono">TOYOTA</span>
+            <h3 class="fv-name">2022 Sienna XLE Hybrid</h3>
+            <div class="fv-price mono">$36,500</div>
+            <div class="fv-meta mono">29,300 mi · eCVT · AWD</div>
+            <div class="fv-actions">
+              <a href="inventory.html" class="btn btn-secondary btn-sm" data-i18n="fv_details">View Details</a>
+              <button type="button" class="btn btn-primary btn-sm fv-finance" data-i18n="fv_finance">Finance This</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="fv-card glass-card">
+          <div class="fv-image">
+            <img src="assets/images/vehicles/vehicle-02.png" alt="2021 Chrysler Pacifica" loading="lazy" onerror="this.closest('.fv-image').classList.add('fv-noimg')" />
+            <span class="fv-badge">Minivan</span>
+          </div>
+          <div class="fv-body">
+            <span class="fv-make mono">CHRYSLER</span>
+            <h3 class="fv-name">2021 Pacifica Touring</h3>
+            <div class="fv-price mono">$25,490</div>
+            <div class="fv-meta mono">41,800 mi · Automatic · FWD</div>
+            <div class="fv-actions">
+              <a href="inventory.html" class="btn btn-secondary btn-sm" data-i18n="fv_details">View Details</a>
+              <button type="button" class="btn btn-primary btn-sm fv-finance" data-i18n="fv_finance">Finance This</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="fv-card glass-card">
+          <div class="fv-image">
+            <img src="assets/images/vehicles/vehicle-04.png" alt="2020 Toyota Camry SE" loading="lazy" onerror="this.closest('.fv-image').classList.add('fv-noimg')" />
+            <span class="fv-badge">Sedan</span>
+          </div>
+          <div class="fv-body">
+            <span class="fv-make mono">TOYOTA</span>
+            <h3 class="fv-name">2020 Camry SE</h3>
+            <div class="fv-price mono">$19,990</div>
+            <div class="fv-meta mono">47,100 mi · Automatic · FWD</div>
+            <div class="fv-actions">
+              <a href="inventory.html" class="btn btn-secondary btn-sm" data-i18n="fv_details">View Details</a>
+              <button type="button" class="btn btn-primary btn-sm fv-finance" data-i18n="fv_finance">Finance This</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="fv-card glass-card">
+          <div class="fv-image">
+            <img src="assets/images/vehicles/vehicle-03.png" alt="2019 Honda CR-V EX" loading="lazy" onerror="this.closest('.fv-image').classList.add('fv-noimg')" />
+            <span class="fv-badge">SUV</span>
+          </div>
+          <div class="fv-body">
+            <span class="fv-make mono">HONDA</span>
+            <h3 class="fv-name">2019 CR-V EX</h3>
+            <div class="fv-price mono">$18,750</div>
+            <div class="fv-meta mono">58,400 mi · CVT · AWD</div>
+            <div class="fv-actions">
+              <a href="inventory.html" class="btn btn-secondary btn-sm" data-i18n="fv_details">View Details</a>
+              <button type="button" class="btn btn-primary btn-sm fv-finance" data-i18n="fv_finance">Finance This</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="featured-cta">
+        <a href="inventory.html" class="btn btn-primary" data-i18n="featured_viewall">View All Inventory</a>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ═══════════════════════════════════════════════════
        SECTION 3 — AIRPORT DELIVERY CONCIERGE
@@ -411,6 +658,117 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════
+       FINANCING CTA BAND
+  ═══════════════════════════════════════════════════ -->
+  <section class="financing" id="financing">
+    <div class="financing-glow"></div>
+    <div class="container">
+      <div class="financing-inner reveal-block">
+        <div class="section-eyebrow financing-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text" data-i18n="fin_eyebrow">#1 IN AUTO LOANS</span>
+        </div>
+        <h2 class="financing-title"><span data-i18n="fin_title">Get Financed</span> <span class="text-gradient" data-i18n="fin_title_gradient">Today</span></h2>
+        <p class="financing-desc" data-i18n="fin_desc">
+          Through our network of trusted lenders, we help buyers across Orlando get approved — good credit, rebuilding credit, or first-time buyer. Every situation, every score.
+        </p>
+        <div class="financing-badges">
+          <span class="fin-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="fin_b1">All credit types</span></span>
+          <span class="fin-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="fin_b2">Approval in 24h</span></span>
+          <span class="fin-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="fin_b3">No obligation</span></span>
+        </div>
+        <a href="#test-drive" class="btn btn-primary financing-cta" data-i18n="fin_cta">Apply Now</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 9 — CONTACT / LOCATION
+  ═══════════════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header reveal-block">
+        <div class="section-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text" data-i18n="contact_eyebrow">GET IN TOUCH</span>
+        </div>
+        <h2 class="section-title"><span data-i18n="contact_title">We're Here When</span><br /><span class="text-gradient" data-i18n="contact_title_gradient">You're Ready</span></h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal-block">
+          <div class="ci-item glass-card">
+            <div class="ci-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="ci-body">
+              <span class="ci-label" data-i18n="contact_phone_label">Phone</span>
+              <a href="tel:+19785845424" class="ci-val" id="contactPhone">(978) 584-5424</a>
+            </div>
+          </div>
+
+          <div class="ci-item glass-card">
+            <div class="ci-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="ci-body">
+              <span class="ci-label" data-i18n="contact_email_label">Email</span>
+              <a href="mailto:nex@carnextusa.com?subject=Contact%20from%20Website%20-%20CarNext%20USA&body=Hello%20CarNext%20USA%20Team%2C%0A%0AI%20would%20like%20to%20get%20more%20information%20about%20your%20vehicles%20and%20services.%0A%0AName%3A%20%0APhone%3A%20%0AMessage%3A%20%0A%0AThank%20you%21" class="ci-val">nex@carnextusa.com</a>
+            </div>
+          </div>
+
+          <div class="ci-item glass-card">
+            <div class="ci-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="ci-body">
+              <span class="ci-label" data-i18n="contact_location_label">Location</span>
+              <span class="ci-val" data-i18n="contact_location_val">Orlando, Florida — USA</span>
+            </div>
+          </div>
+
+          <div class="ci-item glass-card">
+            <div class="ci-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="ci-body">
+              <span class="ci-label" data-i18n="contact_hours_label">Business Hours</span>
+              <div class="ci-hours">
+                <span data-i18n="contact_hours_1">Mon–Fri: 9:00 AM – 6:00 PM</span>
+                <span data-i18n="contact_hours_2">Saturday: 10:00 AM – 2:00 PM</span>
+                <span data-i18n="contact_hours_3">Sunday: By Appointment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map Placeholder -->
+        <div class="contact-map reveal-block">
+          <div class="map-placeholder glass-card">
+            <div class="map-bg">
+              <!-- Google Maps embed placeholder -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224162.8!2d-81.38!3d28.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e773d8fecdbc77%3A0xac3b2063ca5bf9e!2sOrlando%2C%20FL!5e0!3m2!1sen!2sus!4v1"
+                width="100%"
+                height="100%"
+                style="border:0; filter: invert(90%) hue-rotate(180deg);"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="CARNEXT USA Location"
+              ></iframe>
+            </div>
+            <div class="map-cta">
+              <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="contact_directions">Get Directions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
        SECTION 6 — TEST DRIVE BOOKING
   ═══════════════════════════════════════════════════ -->
   <section class="test-drive" id="test-drive">
@@ -514,165 +872,6 @@
     </div>
   </section>
 
-
-  <!-- ═══════════════════════════════════════════════════
-       SECTION 8 — SOCIAL PROOF
-  ═══════════════════════════════════════════════════ -->
-  <section class="social-proof" id="reviews">
-    <div class="container">
-      <div class="section-header reveal-block">
-        <div class="section-eyebrow">
-          <span class="eyebrow-line"></span>
-          <span class="eyebrow-text" data-i18n="reviews_eyebrow">CUSTOMER STORIES</span>
-        </div>
-        <h2 class="section-title"><span data-i18n="reviews_title">Trusted by</span> <span class="text-gradient" data-i18n="reviews_title_gradient">Thousands</span></h2>
-      </div>
-
-      <!-- Stats -->
-      <div class="proof-stats reveal-block">
-        <div class="proof-stat glass-card">
-          <div class="ps-val"><span class="stat-count" data-count="1200">0</span>+</div>
-          <div class="ps-label" data-i18n="ps_stat1_label">Vehicles Sold</div>
-        </div>
-        <div class="proof-stat glass-card">
-          <div class="ps-val"><span class="stat-count" data-count="98">0</span>%</div>
-          <div class="ps-label" data-i18n="ps_stat2_label">Satisfaction Rate</div>
-        </div>
-        <div class="proof-stat glass-card">
-          <div class="ps-val"><span class="stat-count" data-count="4">0</span>.9★</div>
-          <div class="ps-label" data-i18n="ps_stat3_label">Average Rating</div>
-        </div>
-        <div class="proof-stat glass-card">
-          <div class="ps-val"><span class="stat-count" data-count="24">0</span>hr</div>
-          <div class="ps-label" data-i18n="ps_stat4_label">Average Approval</div>
-        </div>
-      </div>
-
-      <!-- Testimonials -->
-      <div class="testimonials-grid">
-        <div class="testimonial glass-card reveal-block">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text" data-i18n="t1_text">"The smoothest car-buying experience I've ever had. No pressure, total transparency, and the vehicle was exactly as described. I drove home in my Outlander the same day."</p>
-          <div class="t-author">
-            <div class="t-avatar">MR</div>
-            <div class="t-info">
-              <span class="t-name">Marcus R.</span>
-              <span class="t-vehicle mono">2022 Mitsubishi Outlander</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial glass-card reveal-block">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text" data-i18n="t2_text">"We were nervous about buying used after a bad experience elsewhere. CARNEXT USA completely changed our minds. They handled our trade-in and financing in one visit — outstanding."</p>
-          <div class="t-author">
-            <div class="t-avatar">SK</div>
-            <div class="t-info">
-              <span class="t-name">Sarah K.</span>
-              <span class="t-vehicle mono">2021 Toyota Sienna</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial glass-card reveal-block">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text" data-i18n="t3_text">"As a rental company owner, I've bought fleets from many dealers. CARNEXT gave us pricing, condition, and service that no one else could match. Our go-to supplier now."</p>
-          <div class="t-author">
-            <div class="t-avatar">JM</div>
-            <div class="t-info">
-              <span class="t-name">James M.</span>
-              <span class="t-vehicle mono">Fleet of 12 Vehicles</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════
-       SECTION 9 — CONTACT / LOCATION
-  ═══════════════════════════════════════════════════ -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-header reveal-block">
-        <div class="section-eyebrow">
-          <span class="eyebrow-line"></span>
-          <span class="eyebrow-text" data-i18n="contact_eyebrow">GET IN TOUCH</span>
-        </div>
-        <h2 class="section-title"><span data-i18n="contact_title">We're Here When</span><br /><span class="text-gradient" data-i18n="contact_title_gradient">You're Ready</span></h2>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info reveal-block">
-          <div class="ci-item glass-card">
-            <div class="ci-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div class="ci-body">
-              <span class="ci-label" data-i18n="contact_phone_label">Phone</span>
-              <a href="tel:+19785845424" class="ci-val" id="contactPhone">(978) 584-5424</a>
-            </div>
-          </div>
-
-          <div class="ci-item glass-card">
-            <div class="ci-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div class="ci-body">
-              <span class="ci-label" data-i18n="contact_email_label">Email</span>
-              <a href="mailto:nex@carnextusa.com?subject=Contact%20from%20Website%20-%20CarNext%20USA&body=Hello%20CarNext%20USA%20Team%2C%0A%0AI%20would%20like%20to%20get%20more%20information%20about%20your%20vehicles%20and%20services.%0A%0AName%3A%20%0APhone%3A%20%0AMessage%3A%20%0A%0AThank%20you%21" class="ci-val">nex@carnextusa.com</a>
-            </div>
-          </div>
-
-          <div class="ci-item glass-card">
-            <div class="ci-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="ci-body">
-              <span class="ci-label" data-i18n="contact_location_label">Location</span>
-              <span class="ci-val" data-i18n="contact_location_val">Orlando, Florida — USA</span>
-            </div>
-          </div>
-
-          <div class="ci-item glass-card">
-            <div class="ci-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div class="ci-body">
-              <span class="ci-label" data-i18n="contact_hours_label">Business Hours</span>
-              <div class="ci-hours">
-                <span data-i18n="contact_hours_1">Mon–Fri: 9:00 AM – 6:00 PM</span>
-                <span data-i18n="contact_hours_2">Saturday: 10:00 AM – 2:00 PM</span>
-                <span data-i18n="contact_hours_3">Sunday: By Appointment</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Map Placeholder -->
-        <div class="contact-map reveal-block">
-          <div class="map-placeholder glass-card">
-            <div class="map-bg">
-              <!-- Google Maps embed placeholder -->
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224162.8!2d-81.38!3d28.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e773d8fecdbc77%3A0xac3b2063ca5bf9e!2sOrlando%2C%20FL!5e0!3m2!1sen!2sus!4v1"
-                width="100%"
-                height="100%"
-                style="border:0; filter: invert(90%) hue-rotate(180deg);"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="CARNEXT USA Location"
-              ></iframe>
-            </div>
-            <div class="map-cta">
-              <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="contact_directions">Get Directions</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ═══════════════════════════════════════════════════
        FOOTER
