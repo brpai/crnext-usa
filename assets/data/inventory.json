@@ -1,7 +1,7 @@
 {
   "source": "https://superspeedcar.com/inventory",
-  "updatedAt": "2026-07-17T19:59:22.820Z",
-  "count": 88,
+  "updatedAt": "2026-07-17T20:14:05.768Z",
+  "count": 61,
   "vehicles": [
     {
       "slug": "kia-sportage-sx-prestige-sport-utility-4d-2026-5xyk53dfxtg331144",
@@ -28,18 +28,6 @@
       "image": "https://imagesdl.dealercenter.net/1024/768/202510-a6be700496454e3191a9cfb4b6d060fc.jpg"
     },
     {
-      "slug": "ford-maverick-lariat-pickup-4d-4-1-2-ft-2025-3fttw8s32srb27109",
-      "url": "https://superspeedcar.com/inventory/ford-maverick-lariat-pickup-4d-4-1-2-ft-2025-3fttw8s32srb27109",
-      "year": 2025,
-      "make": "Ford",
-      "body": "Truck",
-      "price": 42000,
-      "mileage": 6702,
-      "title": "2025 Maverick Lariat Pickup 4D 4 1/2 ft",
-      "name": "2025 ford maverick lariat pickup 4d 4 1/2 ft",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
       "slug": "ford-f150-supercrew-cab-raptor-pickup-4d-5-1-2-ft-2024-1ftfw1rg7rfb58828",
       "url": "https://superspeedcar.com/inventory/ford-f150-supercrew-cab-raptor-pickup-4d-5-1-2-ft-2024-1ftfw1rg7rfb58828",
       "year": 2024,
@@ -64,54 +52,6 @@
       "image": "https://imagesdl.dealercenter.net/1024/768/202603-7aa53dd6f0ed4ebd815288b6e50ab307.jpg"
     },
     {
-      "slug": "gmc-sierra-2500-hd-crew-cab-pro-pickup-4d-6-1-2-ft-2024-1gt49ley8rf458533",
-      "url": "https://superspeedcar.com/inventory/gmc-sierra-2500-hd-crew-cab-pro-pickup-4d-6-1-2-ft-2024-1gt49ley8rf458533",
-      "year": 2024,
-      "make": "GMC",
-      "body": "Truck",
-      "price": 59999,
-      "mileage": 20069,
-      "title": "2024 Sierra 2500 HD Crew Cab Pro Pickup 4D 6 1/2 ft",
-      "name": "2024 gmc sierra 2500 hd crew cab pro pickup 4d 6 1/2 ft",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
-      "slug": "ram-2500-crew-cab-laramie-pickup-4d-6-1-3-ft-2024-3c6ur5fl7rg376491",
-      "url": "https://superspeedcar.com/inventory/ram-2500-crew-cab-laramie-pickup-4d-6-1-3-ft-2024-3c6ur5fl7rg376491",
-      "year": 2024,
-      "make": "Ram",
-      "body": "Truck",
-      "price": 57990,
-      "mileage": 33353,
-      "title": "2024 2500 Crew Cab Laramie Pickup 4D 6 1/3 ft",
-      "name": "2024 ram 2500 crew cab laramie pickup 4d 6 1/3 ft",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
-      "slug": "gmc-terrain-slt-sport-utility-4d-2024-3gkalveg7rl181410",
-      "url": "https://superspeedcar.com/inventory/gmc-terrain-slt-sport-utility-4d-2024-3gkalveg7rl181410",
-      "year": 2024,
-      "make": "GMC",
-      "body": "SUV",
-      "price": 32999,
-      "mileage": 11526,
-      "title": "2024 Terrain SLT Sport Utility 4D",
-      "name": "2024 gmc terrain slt sport utility 4d",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
-      "slug": "mitsubishi-outlander-se-sport-utility-4d-2024-ja4j4va84rz038022",
-      "url": "https://superspeedcar.com/inventory/mitsubishi-outlander-se-sport-utility-4d-2024-ja4j4va84rz038022",
-      "year": 2024,
-      "make": "Mitsubishi",
-      "body": "SUV",
-      "price": 26999,
-      "mileage": 47273,
-      "title": "2024 Outlander SE Sport Utility 4D",
-      "name": "2024 mitsubishi outlander se sport utility 4d",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
       "slug": "kia-sportage-lx-sport-utility-4d-2024-kndpu3df6r7245537",
       "url": "https://superspeedcar.com/inventory/kia-sportage-lx-sport-utility-4d-2024-kndpu3df6r7245537",
       "year": 2024,
@@ -134,42 +74,6 @@
       "title": "2024 Compass Latitude Sport Utility 4D",
       "name": "2024 jeep compass latitude sport utility 4d",
       "image": "https://imagesdl.dealercenter.net/1024/768/202604-e8961ffc52d44b3ab0654bdde9b2193e.jpg"
-    },
-    {
-      "slug": "ram-2500-crew-cab-laramie-pickup-4d-6-1-3-ft-2024-3c6ur5fl9rg402976",
-      "url": "https://superspeedcar.com/inventory/ram-2500-crew-cab-laramie-pickup-4d-6-1-3-ft-2024-3c6ur5fl9rg402976",
-      "year": 2024,
-      "make": "Ram",
-      "body": "Truck",
-      "price": 0,
-      "mileage": 36886,
-      "title": "2024 2500 Crew Cab Laramie Pickup 4D 6 1/3 ft",
-      "name": "2024 ram 2500 crew cab laramie pickup 4d 6 1/3 ft",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
-      "slug": "ram-2500-crew-cab-big-horn-pickup-4d-6-1-3-ft-2024-3c6ur5dl2rg176931",
-      "url": "https://superspeedcar.com/inventory/ram-2500-crew-cab-big-horn-pickup-4d-6-1-3-ft-2024-3c6ur5dl2rg176931",
-      "year": 2024,
-      "make": "Ram",
-      "body": "Truck",
-      "price": 0,
-      "mileage": 85022,
-      "title": "2024 2500 Crew Cab Big Horn Pickup 4D 6 1/3 ft",
-      "name": "2024 ram 2500 crew cab big horn pickup 4d 6 1/3 ft",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
-      "slug": "dodge-durango-srt-hellcat-premium-sport-utility-4d-2023-1c4sdjh99pc552966",
-      "url": "https://superspeedcar.com/inventory/dodge-durango-srt-hellcat-premium-sport-utility-4d-2023-1c4sdjh99pc552966",
-      "year": 2023,
-      "make": "Dodge",
-      "body": "SUV",
-      "price": 84990,
-      "mileage": 5429,
-      "title": "2023 Durango SRT Hellcat Premium Sport Utility 4D",
-      "name": "2023 dodge durango srt hellcat premium sport utility 4d",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
     },
     {
       "slug": "gmc-sierra-1500-crew-cab-slt-pickup-4d-5-3-4-ft-2023-1gtuude86pz160983",
@@ -244,18 +148,6 @@
       "image": "https://imagesdl.dealercenter.net/1024/768/202510-b316fc748b214eb0a7e90950b9d5be44.jpg"
     },
     {
-      "slug": "ram-3500-crew-cab-tradesman-pickup-4d-8-ft-2023-3c63rrgl7pg501603",
-      "url": "https://superspeedcar.com/inventory/ram-3500-crew-cab-tradesman-pickup-4d-8-ft-2023-3c63rrgl7pg501603",
-      "year": 2023,
-      "make": "Ram",
-      "body": "Truck",
-      "price": 0,
-      "mileage": 35429,
-      "title": "2023 3500 Crew Cab Tradesman Pickup 4D 8 ft",
-      "name": "2023 ram 3500 crew cab tradesman pickup 4d 8 ft",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
       "slug": "ford-f150-supercrew-cab-lariat-pickup-4d-6-1-2-ft-2022-1ftfw1e87nkd00885",
       "url": "https://superspeedcar.com/inventory/ford-f150-supercrew-cab-lariat-pickup-4d-6-1-2-ft-2022-1ftfw1e87nkd00885",
       "year": 2022,
@@ -266,18 +158,6 @@
       "title": "2022 F150 SuperCrew Cab Lariat Pickup 4D 6 1/2 ft",
       "name": "2022 ford f150 supercrew cab lariat pickup 4d 6 1/2 ft",
       "image": "https://imagesdl.dealercenter.net/1024/768/202607-863b9fbe47604d69be0733a2e47870a4.jpg"
-    },
-    {
-      "slug": "ram-2500-crew-cab-big-horn-pickup-4d-6-1-3-ft-2022-3c6ur5dl2ng247457",
-      "url": "https://superspeedcar.com/inventory/ram-2500-crew-cab-big-horn-pickup-4d-6-1-3-ft-2022-3c6ur5dl2ng247457",
-      "year": 2022,
-      "make": "Ram",
-      "body": "Truck",
-      "price": 37990,
-      "mileage": 90221,
-      "title": "2022 2500 Crew Cab Big Horn Pickup 4D 6 1/3 ft",
-      "name": "2022 ram 2500 crew cab big horn pickup 4d 6 1/3 ft",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
     },
     {
       "slug": "ram-1500-crew-cab-laramie-pickup-4d-5-1-2-ft-2022-1c6srfjm7nn401162",
@@ -364,18 +244,6 @@
       "image": "https://imagesdl.dealercenter.net/1024/768/202603-f1f69469d70b43c28c47afaee1a0a819.jpg"
     },
     {
-      "slug": "ford-expedition-limited-sport-utility-4d-2022-1fmju1kt7nea06664",
-      "url": "https://superspeedcar.com/inventory/ford-expedition-limited-sport-utility-4d-2022-1fmju1kt7nea06664",
-      "year": 2022,
-      "make": "Ford",
-      "body": "SUV",
-      "price": 0,
-      "mileage": 125182,
-      "title": "2022 Expedition Limited Sport Utility 4D",
-      "name": "2022 ford expedition limited sport utility 4d",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
       "slug": "chevrolet-tahoe-lt-sport-utility-4d-2021-1gnscnkd6mr252115",
       "url": "https://superspeedcar.com/inventory/chevrolet-tahoe-lt-sport-utility-4d-2021-1gnscnkd6mr252115",
       "year": 2021,
@@ -410,30 +278,6 @@
       "title": "2021 Silverado 1500 Crew Cab LT Trail Boss Pickup 4D 5 3/4 ft",
       "name": "2021 chevrolet silverado 1500 crew cab lt trail boss pickup 4d 5 3/4 ft",
       "image": "https://imagesdl.dealercenter.net/1024/768/202509-ca9b70cb3d504c76a58aa984e858407a.jpg"
-    },
-    {
-      "slug": "ram-2500-crew-cab-big-horn-pickup-4d-6-1-3-ft-2021-3c6ur5dl1mg541995",
-      "url": "https://superspeedcar.com/inventory/ram-2500-crew-cab-big-horn-pickup-4d-6-1-3-ft-2021-3c6ur5dl1mg541995",
-      "year": 2021,
-      "make": "Ram",
-      "body": "Truck",
-      "price": 34999,
-      "mileage": 146437,
-      "title": "2021 2500 Crew Cab Big Horn Pickup 4D 6 1/3 ft",
-      "name": "2021 ram 2500 crew cab big horn pickup 4d 6 1/3 ft",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
-      "slug": "ram-1500-crew-cab-big-horn-pickup-4d-5-1-2-ft-2021-1c6rrefg3mn814867",
-      "url": "https://superspeedcar.com/inventory/ram-1500-crew-cab-big-horn-pickup-4d-5-1-2-ft-2021-1c6rrefg3mn814867",
-      "year": 2021,
-      "make": "Ram",
-      "body": "Truck",
-      "price": 27999,
-      "mileage": 76002,
-      "title": "2021 1500 Crew Cab Big Horn Pickup 4D 5 1/2 ft",
-      "name": "2021 ram 1500 crew cab big horn pickup 4d 5 1/2 ft",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
     },
     {
       "slug": "volkswagen-tiguan-sel-premium-r-line-4motion-sport-utility-4d-2021-3vv4b7ax0mm044164",
@@ -508,18 +352,6 @@
       "image": "https://imagesdl.dealercenter.net/1024/768/202606-413dcef4e7c5430c8abd66a637077e9a.jpg"
     },
     {
-      "slug": "nissan-rogue-s-sport-utility-4d-2021-5n1at3ab3mc715223",
-      "url": "https://superspeedcar.com/inventory/nissan-rogue-s-sport-utility-4d-2021-5n1at3ab3mc715223",
-      "year": 2021,
-      "make": "Nissan",
-      "body": "SUV",
-      "price": 16999,
-      "mileage": 93622,
-      "title": "2021 Rogue S Sport Utility 4D",
-      "name": "2021 nissan rogue s sport utility 4d",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
       "slug": "volkswagen-tiguan-s-sport-utility-4d-2021-3vv1b7ax0mm004444",
       "url": "https://superspeedcar.com/inventory/volkswagen-tiguan-s-sport-utility-4d-2021-3vv1b7ax0mm004444",
       "year": 2021,
@@ -556,30 +388,6 @@
       "image": "https://imagesdl.dealercenter.net/1024/768/202606-e44a9fdce29a47d495d4af1ee9e32a05.jpg"
     },
     {
-      "slug": "ram-2500-crew-cab-tradesman-pickup-4d-8-ft-2021-3c6ur4hj9mg672403",
-      "url": "https://superspeedcar.com/inventory/ram-2500-crew-cab-tradesman-pickup-4d-8-ft-2021-3c6ur4hj9mg672403",
-      "year": 2021,
-      "make": "Ram",
-      "body": "Truck",
-      "price": 0,
-      "mileage": 214973,
-      "title": "2021 2500 Crew Cab Tradesman Pickup 4D 8 ft",
-      "name": "2021 ram 2500 crew cab tradesman pickup 4d 8 ft",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
-      "slug": "tesla-model-y-standard-range-sport-utility-4d-2021-5yjygded0mf125900",
-      "url": "https://superspeedcar.com/inventory/tesla-model-y-standard-range-sport-utility-4d-2021-5yjygded0mf125900",
-      "year": 2021,
-      "make": "Tesla",
-      "body": "SUV",
-      "price": 0,
-      "mileage": 51490,
-      "title": "2021 Model Y Standard Range Sport Utility 4D",
-      "name": "2021 tesla model y standard range sport utility 4d",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
       "slug": "chevrolet-silverado-1500-crew-cab-rst-pickup-4d-5-3-4-ft-2020-3gcuyeedxlg407696",
       "url": "https://superspeedcar.com/inventory/chevrolet-silverado-1500-crew-cab-rst-pickup-4d-5-3-4-ft-2020-3gcuyeedxlg407696",
       "year": 2020,
@@ -604,18 +412,6 @@
       "image": "https://imagesdl.dealercenter.net/1024/768/202508-86e01c77a2224600b9e6106fb809008b.jpg"
     },
     {
-      "slug": "ford-transit-250-cargo-van-extended-length-high-roof-van-3d-2020-1ftbr3x85lka18269",
-      "url": "https://superspeedcar.com/inventory/ford-transit-250-cargo-van-extended-length-high-roof-van-3d-2020-1ftbr3x85lka18269",
-      "year": 2020,
-      "make": "Ford",
-      "body": "Cargo Van",
-      "price": 29990,
-      "mileage": 80521,
-      "title": "2020 Transit 250 Cargo Van Extended Length High Roof Van 3D",
-      "name": "2020 ford transit 250 cargo van extended length high roof van 3d",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
       "slug": "jeep-wrangler-unlimited-sport-s-sport-utility-4d-2020-1c4hjxdn8lw114974",
       "url": "https://superspeedcar.com/inventory/jeep-wrangler-unlimited-sport-s-sport-utility-4d-2020-1c4hjxdn8lw114974",
       "year": 2020,
@@ -626,18 +422,6 @@
       "title": "2020 Wrangler Unlimited Sport S Sport Utility 4D",
       "name": "2020 jeep wrangler unlimited sport s sport utility 4d",
       "image": "https://imagesdl.dealercenter.net/1024/768/202605-08b0f0580ed746d6a7c71ada3c9cf9bc.jpg"
-    },
-    {
-      "slug": "ram-promaster-cargo-van-2500-high-roof-w-159-wb-van-3d-2020-3c6trvdgxle143533",
-      "url": "https://superspeedcar.com/inventory/ram-promaster-cargo-van-2500-high-roof-w-159-wb-van-3d-2020-3c6trvdgxle143533",
-      "year": 2020,
-      "make": "Ram",
-      "body": "Cargo Van",
-      "price": 24999,
-      "mileage": 82893,
-      "title": "2020 ProMaster Cargo Van 2500 High Roof w/159&quot; WB Van 3D",
-      "name": "2020 ram promaster cargo van 2500 high roof w/159&quot; wb van 3d",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
     },
     {
       "slug": "volkswagen-jetta-gli-s-sedan-4d-2020-3vw6t7bu7lm044151",
@@ -664,18 +448,6 @@
       "image": "https://imagesdl.dealercenter.net/1024/768/202607-483510ad64e44131b18b0ca3fe18f7cd.jpg"
     },
     {
-      "slug": "toyota-camry-le-sedan-4d-2020-4t1c11ak8lu305867",
-      "url": "https://superspeedcar.com/inventory/toyota-camry-le-sedan-4d-2020-4t1c11ak8lu305867",
-      "year": 2020,
-      "make": "Toyota",
-      "body": "Sedan",
-      "price": 12999,
-      "mileage": 158990,
-      "title": "2020 Camry LE Sedan 4D",
-      "name": "2020 toyota camry le sedan 4d",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
       "slug": "mercedes-benz-mercedes-amg-gt-63-s-sedan-4d-2019-wdd7x8kb7ka001432",
       "url": "https://superspeedcar.com/inventory/mercedes-benz-mercedes-amg-gt-63-s-sedan-4d-2019-wdd7x8kb7ka001432",
       "year": 2019,
@@ -700,18 +472,6 @@
       "image": "https://imagesdl.dealercenter.net/1024/768/202606-241d41f6294844f6894bd40ae1a6beef.jpg"
     },
     {
-      "slug": "chevrolet-silverado-3500-hd-crew-cab-chassis-work-truck-cab-chassis-4d-2019-1gb4cvcy2kf203418",
-      "url": "https://superspeedcar.com/inventory/chevrolet-silverado-3500-hd-crew-cab-chassis-work-truck-cab-chassis-4d-2019-1gb4cvcy2kf203418",
-      "year": 2019,
-      "make": "Chevrolet",
-      "body": "Truck",
-      "price": 40990,
-      "mileage": 93653,
-      "title": "2019 Silverado 3500 HD Crew Cab &amp; Chassis Work Truck Cab &amp; Chassis 4D",
-      "name": "2019 chevrolet silverado 3500 hd crew cab &amp; chassis work truck cab &amp; chassis 4d",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
       "slug": "ram-1500-crew-cab-limited-pickup-4d-5-1-2-ft-2019-1c6srfht8kn809114",
       "url": "https://superspeedcar.com/inventory/ram-1500-crew-cab-limited-pickup-4d-5-1-2-ft-2019-1c6srfht8kn809114",
       "year": 2019,
@@ -722,42 +482,6 @@
       "title": "2019 1500 Crew Cab Limited Pickup 4D 5 1/2 ft",
       "name": "2019 ram 1500 crew cab limited pickup 4d 5 1/2 ft",
       "image": "https://imagesdl.dealercenter.net/1024/768/202606-4c13102572f144cd81d35cb1ee0e8889.jpg"
-    },
-    {
-      "slug": "mercedes-benz-sprinter-2500-cargo-high-roof-w-170-wb-van-3d-2019-wd4pf1cd8kp153095",
-      "url": "https://superspeedcar.com/inventory/mercedes-benz-sprinter-2500-cargo-high-roof-w-170-wb-van-3d-2019-wd4pf1cd8kp153095",
-      "year": 2019,
-      "make": "Mercedes-Benz",
-      "body": "Cargo Van",
-      "price": 35990,
-      "mileage": 103943,
-      "title": "2019 Sprinter 2500 Cargo High Roof w/170&quot; WB Van 3D",
-      "name": "2019 mercedes-benz sprinter 2500 cargo high roof w/170&quot; wb van 3d",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
-      "slug": "chevrolet-silverado-1500-crew-cab-rst-pickup-4d-5-3-4-ft-2019-1gcuyeed6kz319131",
-      "url": "https://superspeedcar.com/inventory/chevrolet-silverado-1500-crew-cab-rst-pickup-4d-5-3-4-ft-2019-1gcuyeed6kz319131",
-      "year": 2019,
-      "make": "Chevrolet",
-      "body": "Truck",
-      "price": 32999,
-      "mileage": 115000,
-      "title": "2019 Silverado 1500 Crew Cab RST Pickup 4D 5 3/4 ft",
-      "name": "2019 chevrolet silverado 1500 crew cab rst pickup 4d 5 3/4 ft",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
-      "slug": "ram-1500-crew-cab-big-horn-pickup-4d-6-1-3-ft-2019-1c6srfmt9kn515470",
-      "url": "https://superspeedcar.com/inventory/ram-1500-crew-cab-big-horn-pickup-4d-6-1-3-ft-2019-1c6srfmt9kn515470",
-      "year": 2019,
-      "make": "Ram",
-      "body": "Truck",
-      "price": 27900,
-      "mileage": 96422,
-      "title": "2019 1500 Crew Cab Big Horn Pickup 4D 6 1/3 ft",
-      "name": "2019 ram 1500 crew cab big horn pickup 4d 6 1/3 ft",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
     },
     {
       "slug": "ford-f150-supercrew-cab-lariat-pickup-4d-5-1-2-ft-2019-1ftew1e55kkd75517",
@@ -916,18 +640,6 @@
       "image": "https://imagesdl.dealercenter.net/1024/768/202607-ab6a6870778d42688eb1bc49cae5c579.jpg"
     },
     {
-      "slug": "toyota-camry-2018-dc-12",
-      "url": "https://superspeedcar.com/inventory/toyota-camry-2018-dc-12",
-      "year": 2018,
-      "make": "toyota",
-      "body": "Sedan",
-      "price": 0,
-      "mileage": 0,
-      "title": "2018 camry",
-      "name": "2018 toyota camry",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
       "slug": "ford-escape-se-sport-utility-4d-2017-1fmcu0gd5hue01814",
       "url": "https://superspeedcar.com/inventory/ford-escape-se-sport-utility-4d-2017-1fmcu0gd5hue01814",
       "year": 2017,
@@ -938,30 +650,6 @@
       "title": "2017 Escape SE Sport Utility 4D",
       "name": "2017 ford escape se sport utility 4d",
       "image": "https://imagesdl.dealercenter.net/1024/768/202607-8e5e5b75e0b14626b3489c4881be3bb5.jpg"
-    },
-    {
-      "slug": "ram-1500-crew-cab-laramie-limited-pickup-4d-5-1-2-ft-2015-1c6rr6pt6fs651010",
-      "url": "https://superspeedcar.com/inventory/ram-1500-crew-cab-laramie-limited-pickup-4d-5-1-2-ft-2015-1c6rr6pt6fs651010",
-      "year": 2015,
-      "make": "Ram",
-      "body": "Truck",
-      "price": 16999,
-      "mileage": 150100,
-      "title": "2015 1500 Crew Cab Laramie Limited Pickup 4D 5 1/2 ft",
-      "name": "2015 ram 1500 crew cab laramie limited pickup 4d 5 1/2 ft",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
-    },
-    {
-      "slug": "subaru-brz-limited-coupe-2d-2015-jf1zcac13f9602071",
-      "url": "https://superspeedcar.com/inventory/subaru-brz-limited-coupe-2d-2015-jf1zcac13f9602071",
-      "year": 2015,
-      "make": "Subaru",
-      "body": "Coupe",
-      "price": 0,
-      "mileage": 80183,
-      "title": "2015 BRZ Limited Coupe 2D",
-      "name": "2015 subaru brz limited coupe 2d",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
     },
     {
       "slug": "nissan-rogue-sl-sport-utility-4d-2014-5n1at2mt9ec814046",
@@ -1022,18 +710,6 @@
       "title": "2011 2500 Crew Cab Laramie Pickup 4D 6 1/3 ft",
       "name": "2011 ram 2500 crew cab laramie pickup 4d 6 1/3 ft",
       "image": "https://imagesdl.dealercenter.net/1024/768/202510-032e26f6bc07420a8383ddb20278917e.jpg"
-    },
-    {
-      "slug": "hyundai-sonata-gls-sedan-4d-2011-5npeb4ac6bh233564",
-      "url": "https://superspeedcar.com/inventory/hyundai-sonata-gls-sedan-4d-2011-5npeb4ac6bh233564",
-      "year": 2011,
-      "make": "Hyundai",
-      "body": "Sedan",
-      "price": 0,
-      "mileage": 195441,
-      "title": "2011 Sonata GLS Sedan 4D",
-      "name": "2011 hyundai sonata gls sedan 4d",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202607-70dfefc364654dfab65549b7e433626f.jpg"
     },
     {
       "slug": "nissan-murano-sl-sport-utility-4d-2010-jn8az1mu4aw010241",

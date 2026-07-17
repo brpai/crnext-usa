@@ -41,6 +41,10 @@ async function main() {
     const slug = slugM ? slugM[1] : '';
     if (!slug) continue;
 
+    // Only mirror vehicles that actually have photos (data-hasphotos="1").
+    // No-photo cars ("0") all share a generic placeholder image — skip them.
+    if (attr(a, 'hasphotos') !== '1') continue;
+
     const year = parseInt(attr(a, 'year'), 10) || null;
     const make = attr(a, 'make');
     const price = parseInt(attr(a, 'price'), 10) || 0;
