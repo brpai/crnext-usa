@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CARNEXT USA — Vehicle details, photos and test drive scheduling. Orlando, FL." />
+  <title>Vehicle — CARNEXT USA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { black:'#0A0A0B', white:'#F4F5F8', yellow:'#D6D7DE', amber:'#FFFFFF', red:'#8C8E98', blue:'#B9BBC5' } },
+        fontFamily: { sans: ['Poppins','system-ui','sans-serif'] },
+      } },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #0A0A0B; -webkit-font-smoothing: antialiased; }
+    ::selection { background: rgba(255,255,255,0.22); }
+    .light { background: #F3F1EA !important; }
+    .light .bg-brand-black { background: #FFFFFF !important; }
+    .light .text-brand-white { color: #16171C !important; }
+    .light .text-brand-white\/80 { color: rgba(22,23,28,.82) !important; }
+    .light .text-brand-white\/70 { color: rgba(22,23,28,.74) !important; }
+    .light .text-brand-white\/60 { color: rgba(22,23,28,.66) !important; }
+    .light .text-brand-white\/50 { color: rgba(22,23,28,.58) !important; }
+    .light .text-brand-white\/40 { color: rgba(22,23,28,.52) !important; }
+    .light .border-brand-white\/10, .light .border-brand-white\/20, .light .border-brand-white\/30 { border-color: rgba(22,23,28,.14) !important; }
+    .light .bg-brand-white\/5, .light .bg-brand-white\/10 { background: rgba(22,23,28,.05) !important; }
+    .light .bg-brand-yellow { background: #16171C !important; }
+    .light .text-brand-black { color: #F4F5F8 !important; }
+    .light .hover\:bg-brand-amber:hover { background: #33353E !important; }
+    .light .hover\:bg-brand-white:hover { background: #16171C !important; }
+    .light .hover\:text-brand-black:hover { color: #F4F5F8 !important; }
+    .thumb.active { outline: 2px solid #16171C; outline-offset: 2px; }
+  </style>
+</head>
+<body class="font-sans text-brand-white">
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-brand-black/95 backdrop-blur-md">
+    <div class="h-0.5 bg-gradient-to-r from-brand-yellow via-brand-red to-brand-blue"></div>
+    <div id="header-inner" class="relative flex items-center justify-between px-6 lg:px-12 py-3 transition-all duration-300">
+      <a href="index.html" class="flex items-center gap-3 flex-shrink-0" aria-label="CarNext USA Home">
+        <img src="assets/images/carnext-logo.png" alt="CarNext USA" class="h-11 w-auto object-contain" loading="eager" />
+      </a>
+      <nav class="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2" aria-label="Main navigation">
+        <a href="index.html#experience" data-i18n="nav.experience" class="text-sm font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white transition-colors">Business</a>
+        <a href="index.html#reviews" data-i18n="nav.reviews" class="text-sm font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white transition-colors">Reviews</a>
+        <a href="index.html#contact" data-i18n="nav.contact" class="text-sm font-semibold uppercase tracking-wider text-brand-white/80 hover:text-brand-white transition-colors">Contact</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <div class="hidden md:flex items-center gap-1 border border-brand-white/20 rounded-full px-3 py-1.5">
+          <button data-lang="en" class="lang-btn text-xs font-bold text-brand-white transition-colors">🇺🇸 EN</button>
+          <span class="text-brand-white/20 text-xs mx-1">·</span>
+          <button data-lang="pt" class="lang-btn text-xs font-bold text-brand-white/50 hover:text-brand-white transition-colors">🇧🇷 PT</button>
+          <span class="text-brand-white/20 text-xs mx-1">·</span>
+          <button data-lang="es" class="lang-btn text-xs font-bold text-brand-white/50 hover:text-brand-white transition-colors">🇪🇸 ES</button>
+        </div>
+        <a href="inventory.html" class="hidden sm:inline-flex items-center gap-2 bg-brand-yellow text-brand-black text-sm font-bold uppercase tracking-wider px-5 py-2.5 rounded-full hover:bg-brand-amber transition-colors">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7"/></svg>
+          <span data-i18n="nav.inventory">Inventory</span>
+        </a>
+        <button id="mobile-menu-btn" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu" aria-expanded="false">
+          <span class="block w-6 h-0.5 bg-brand-white transition-all duration-300 origin-center" id="burger-1"></span>
+          <span class="block w-6 h-0.5 bg-brand-white transition-all duration-300" id="burger-2"></span>
+          <span class="block w-6 h-0.5 bg-brand-white transition-all duration-300 origin-center" id="burger-3"></span>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="lg:hidden hidden bg-brand-black/98 border-t border-brand-white/10 px-6 pb-6" aria-label="Mobile navigation">
+      <div class="flex flex-col gap-4 pt-4">
+        <a href="inventory.html" data-i18n="nav.inventory" class="text-base font-semibold uppercase tracking-wider text-brand-white/80 py-2 border-b border-brand-white/10">Inventory</a>
+        <a href="index.html#experience" data-i18n="nav.experience" class="text-base font-semibold uppercase tracking-wider text-brand-white/80 py-2 border-b border-brand-white/10">Business</a>
+        <a href="index.html#reviews" data-i18n="nav.reviews" class="text-base font-semibold uppercase tracking-wider text-brand-white/80 py-2 border-b border-brand-white/10">Reviews</a>
+        <a href="index.html#contact" data-i18n="nav.contact" class="text-base font-semibold uppercase tracking-wider text-brand-white/80 py-2 border-b border-brand-white/10">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══════════════ VEHICLE ═══════════════ -->
+  <main class="light pt-28 pb-20 min-h-screen">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+      <a href="inventory.html" class="inline-flex items-center gap-2 text-brand-white/60 hover:text-brand-white text-sm mb-6 transition-colors">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        <span data-i18n="veh.back">Back to inventory</span>
+      </a>
+
+      <div id="veh-loading" class="text-center text-brand-white/50 py-24" data-i18n="veh.loading">Loading vehicle…</div>
+      <div id="veh-notfound" class="hidden text-center py-24">
+        <p class="text-brand-white text-lg font-bold mb-2" data-i18n="veh.notFound">Vehicle not found</p>
+        <a href="inventory.html" class="text-brand-white/60 underline" data-i18n="veh.back">Back to inventory</a>
+      </div>
+
+      <div id="veh-content" class="hidden grid lg:grid-cols-2 gap-10">
+        <!-- Gallery -->
+        <div>
+          <div class="relative rounded-2xl overflow-hidden bg-brand-black border border-brand-white/10 aspect-[4/3]">
+            <img id="veh-main" src="" alt="" class="w-full h-full object-cover" />
+            <button id="veh-prev" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-black/70 text-white flex items-center justify-center hover:bg-brand-black transition" aria-label="Previous photo">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button id="veh-next" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-black/70 text-white flex items-center justify-center hover:bg-brand-black transition" aria-label="Next photo">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <span id="veh-counter" class="absolute bottom-3 right-3 bg-brand-black/70 text-white text-xs px-3 py-1.5 rounded-full">1 / 1</span>
+          </div>
+          <div id="veh-thumbs" class="grid grid-cols-6 gap-2 mt-3"></div>
+        </div>
+
+        <!-- Info -->
+        <div>
+          <p id="veh-make" class="text-brand-white/50 text-xs uppercase tracking-wider"></p>
+          <h1 id="veh-title" class="text-3xl md:text-4xl font-black uppercase text-brand-white mt-1 mb-3"></h1>
+          <p id="veh-price" class="text-3xl font-black text-brand-white mb-6"></p>
+
+          <div id="veh-specs" class="grid grid-cols-2 gap-3 mb-8"></div>
+
+          <div class="flex flex-wrap gap-3 mb-6">
+            <button id="download-photos" type="button" class="inline-flex items-center gap-2 bg-brand-yellow text-brand-black text-sm font-bold uppercase tracking-wider px-5 py-3 rounded-xl hover:bg-brand-amber transition-colors disabled:opacity-60">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3"/></svg>
+              <span id="download-photos-label" data-i18n="veh.download">Download photos</span>
+            </button>
+            <button id="copy-details" type="button" class="inline-flex items-center gap-2 border border-brand-white/30 text-brand-white text-sm font-semibold uppercase tracking-wider px-5 py-3 rounded-xl hover:bg-brand-white hover:text-brand-black transition-all">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              <span id="copy-details-label" data-i18n="veh.copy">Copy details</span>
+            </button>
+          </div>
+
+          <a href="index.html#test-drive" class="block text-center bg-brand-yellow text-brand-black font-black uppercase tracking-wider px-6 py-4 rounded-xl hover:bg-brand-amber transition-all mb-3" data-i18n="veh.testDrive">Schedule a Test Drive</a>
+          <a id="veh-whatsapp" href="https://wa.me/19785845424" target="_blank" rel="noopener" class="block text-center border border-brand-white/30 text-brand-white font-semibold uppercase tracking-wider text-sm px-6 py-3.5 rounded-xl hover:bg-brand-white hover:text-brand-black transition-all" data-i18n="veh.whatsapp">Ask on WhatsApp</a>
+
+          <p class="text-brand-white/40 text-xs mt-6" data-i18n="veh.note">Vehicle available through our partner lot in Orlando. Prices exclude tax, tag, title and dealer fees.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="bg-[#060607] border-t border-brand-white/10">
+    <div class="h-1 bg-gradient-to-r from-brand-yellow via-brand-red to-brand-blue"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <p class="text-brand-white/20 text-xs">© <span id="footer-year">2026</span> CarNext USA. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <div class="flex items-center gap-1">
+        <button data-lang="en" class="lang-btn text-xs font-bold text-brand-white">🇺🇸 EN</button>
+        <span class="text-brand-white/20 text-xs mx-1">·</span>
+        <button data-lang="pt" class="lang-btn text-xs font-bold text-brand-white/30 hover:text-brand-white/60">🇧🇷 PT</button>
+        <span class="text-brand-white/20 text-xs mx-1">·</span>
+        <button data-lang="es" class="lang-btn text-xs font-bold text-brand-white/30 hover:text-brand-white/60">🇪🇸 ES</button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="clone.js" defer></script>
+  <script src="vehicle.js" defer></script>
+</body>
+</html>

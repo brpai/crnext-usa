@@ -23,6 +23,19 @@ function titleCase(s) {
   return s.replace(/\b\w/g, c => c.toUpperCase());
 }
 
+/** Run fn over items with limited concurrency (polite to the source site). */
+async function mapLimit(items, limit, fn) {
+  let i = 0;
+  await Promise.all(
+    Array.from({ length: Math.min(limit, items.length) }, async () => {
+      while (i < items.length) {
+        const idx = i++;
+        await fn(items[idx], idx);
+      }
+    })
+  );
+}
+
 async function main() {
   console.log('[sync] fetching', SOURCE);
   const res = await fetch(SOURCE, { headers: { 'User-Agent': 'CarNextInventorySync/1.0' } });
@@ -67,6 +80,23 @@ async function main() {
   // De-dupe by slug (cards are duplicated in markup)
   const seen = new Set();
   const unique = vehicles.filter(v => (seen.has(v.slug) ? false : seen.add(v.slug)));
+
+  // Fetch every vehicle's detail page to collect its full photo set
+  console.log('[sync] fetching photo sets for', unique.length, 'vehicles…');
+  await mapLimit(unique, 6, async (v) => {
+    try {
+      const r = await fetch(v.url, { headers: { 'User-Agent': 'CarNextInventorySync/1.0' } });
+      if (r.ok) {
+        const page = await r.text();
+        const found = page.match(/https:\/\/imagesdl\.dealercenter\.net\/[^"'\s\\]+/g) || [];
+        const imgs = [...new Set(found)];
+        if (imgs.length) { v.images = imgs; v.image = imgs[0]; }
+      }
+    } catch { /* keep the card image as fallback */ }
+    if (!v.images) v.images = v.image ? [v.image] : [];
+  });
+  const totalPhotos = unique.reduce((n, v) => n + v.images.length, 0);
+  console.log('[sync] collected', totalPhotos, 'photos total');
 
   // Sort: photos first, then newest year, then price desc
   unique.sort((a, b) => (b.year || 0) - (a.year || 0) || (b.price || 0) - (a.price || 0));

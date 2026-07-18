@@ -45,6 +45,8 @@ const I18N = {
     'footer.tagline': "Premium Pre-Owned. Orlando's Best.", 'footer.inventory': 'Inventory', 'footer.company': 'Company', 'footer.legal': 'Legal', 'footer.allInventory': 'All Vehicles', 'footer.testDrive': 'Test Drive', 'footer.contact': 'Contact', 'footer.privacy': 'Privacy Policy', 'footer.terms': 'Terms of Service', 'footer.rights': 'All rights reserved.', 'footer.by': 'Developed by',
     'inv.title': 'Inventory', 'inv.subtitle': 'Browse our current selection', 'inv.loading': 'Loading inventory…', 'inv.showing': 'Showing', 'inv.of': 'of', 'inv.vehicles': 'vehicles', 'inv.empty': 'Inventory is being updated. Please check back shortly.',
     'invf.make': 'Make', 'invf.anyMake': 'All Makes', 'invf.year': 'Year', 'invf.from': 'From', 'invf.to': 'To', 'invf.miles': 'Mileage', 'invf.anyMiles': 'Any mileage', 'invf.price': 'Price', 'invf.anyPrice': 'Any price', 'invf.clear': 'Clear', 'invf.details': 'Details', 'invf.finance': 'Finance This',
+    'veh.back': 'Back to inventory', 'veh.loading': 'Loading vehicle…', 'veh.notFound': 'Vehicle not found', 'veh.download': 'Download photos', 'veh.downloaded': 'Downloaded!', 'veh.failed': 'Failed — retry', 'veh.copy': 'Copy details', 'veh.copied': 'Copied!', 'veh.testDrive': 'Schedule a Test Drive', 'veh.whatsapp': 'Ask on WhatsApp', 'veh.askPrice': 'Ask for price', 'veh.year': 'Year', 'veh.mileage': 'Mileage', 'veh.make': 'Make', 'veh.body': 'Body',
+    'veh.note': 'Vehicle available through our partner lot in Orlando. Prices exclude tax, tag, title and dealer fees.',
   },
   pt: {
     'nav.inventory': 'Estoque', 'nav.experience': 'Empresas', 'nav.financing': 'Financiamento', 'nav.reviews': 'Avaliações', 'nav.contact': 'Contato',
@@ -65,6 +67,8 @@ const I18N = {
     'footer.tagline': 'Seminovos Premium. O Melhor de Orlando.', 'footer.inventory': 'Estoque', 'footer.company': 'Empresa', 'footer.legal': 'Jurídico', 'footer.allInventory': 'Todos os Veículos', 'footer.testDrive': 'Test Drive', 'footer.contact': 'Contato', 'footer.privacy': 'Política de Privacidade', 'footer.terms': 'Termos de Serviço', 'footer.rights': 'Todos os direitos reservados.', 'footer.by': 'Desenvolvido por',
     'inv.title': 'Estoque', 'inv.subtitle': 'Veja nossa seleção atual', 'inv.loading': 'Carregando estoque…', 'inv.showing': 'Mostrando', 'inv.of': 'de', 'inv.vehicles': 'veículos', 'inv.empty': 'O estoque está sendo atualizado. Volte em instantes.',
     'invf.make': 'Marca', 'invf.anyMake': 'Todas as Marcas', 'invf.year': 'Ano', 'invf.from': 'De', 'invf.to': 'Até', 'invf.miles': 'Milhas', 'invf.anyMiles': 'Qualquer km', 'invf.price': 'Preço', 'invf.anyPrice': 'Qualquer valor', 'invf.clear': 'Limpar', 'invf.details': 'Detalhes', 'invf.finance': 'Financiar',
+    'veh.back': 'Voltar ao estoque', 'veh.loading': 'Carregando veículo…', 'veh.notFound': 'Veículo não encontrado', 'veh.download': 'Baixar fotos', 'veh.downloaded': 'Baixado!', 'veh.failed': 'Falhou — tentar de novo', 'veh.copy': 'Copiar detalhes', 'veh.copied': 'Copiado!', 'veh.testDrive': 'Agendar Test Drive', 'veh.whatsapp': 'Perguntar no WhatsApp', 'veh.askPrice': 'Consultar preço', 'veh.year': 'Ano', 'veh.mileage': 'Milhas', 'veh.make': 'Marca', 'veh.body': 'Carroceria',
+    'veh.note': 'Veículo disponível através do nosso parceiro em Orlando. Preços não incluem impostos, emplacamento e taxas.',
   },
   es: {
     'nav.inventory': 'Inventario', 'nav.experience': 'Empresas', 'nav.financing': 'Financiamiento', 'nav.reviews': 'Reseñas', 'nav.contact': 'Contacto',
@@ -85,6 +89,8 @@ const I18N = {
     'footer.tagline': 'Seminuevos Premium. Lo Mejor de Orlando.', 'footer.inventory': 'Inventario', 'footer.company': 'Empresa', 'footer.legal': 'Legal', 'footer.allInventory': 'Todos los Vehículos', 'footer.testDrive': 'Test Drive', 'footer.contact': 'Contacto', 'footer.privacy': 'Política de Privacidad', 'footer.terms': 'Términos de Servicio', 'footer.rights': 'Todos los derechos reservados.', 'footer.by': 'Desarrollado por',
     'inv.title': 'Inventario', 'inv.subtitle': 'Explora nuestra selección actual', 'inv.loading': 'Cargando inventario…', 'inv.showing': 'Mostrando', 'inv.of': 'de', 'inv.vehicles': 'vehículos', 'inv.empty': 'El inventario se está actualizando. Vuelve en unos momentos.',
     'invf.make': 'Marca', 'invf.anyMake': 'Todas las Marcas', 'invf.year': 'Año', 'invf.from': 'Desde', 'invf.to': 'Hasta', 'invf.miles': 'Kilometraje', 'invf.anyMiles': 'Cualquier km', 'invf.price': 'Precio', 'invf.anyPrice': 'Cualquier precio', 'invf.clear': 'Limpiar', 'invf.details': 'Detalles', 'invf.finance': 'Financiar',
+    'veh.back': 'Volver al inventario', 'veh.loading': 'Cargando vehículo…', 'veh.notFound': 'Vehículo no encontrado', 'veh.download': 'Descargar fotos', 'veh.downloaded': '¡Descargado!', 'veh.failed': 'Falló — reintentar', 'veh.copy': 'Copiar detalles', 'veh.copied': '¡Copiado!', 'veh.testDrive': 'Agendar Test Drive', 'veh.whatsapp': 'Preguntar por WhatsApp', 'veh.askPrice': 'Consultar precio', 'veh.year': 'Año', 'veh.mileage': 'Kilometraje', 'veh.make': 'Marca', 'veh.body': 'Carrocería',
+    'veh.note': 'Vehículo disponible a través de nuestro socio en Orlando. Precios no incluyen impuestos, placas ni cargos.',
   },
 };
 
@@ -101,7 +107,7 @@ function featuredCard(v, i) {
   const badge = v.body || v.badge || '';
   return `
     <article class="group bg-brand-black border border-brand-white/10 rounded-2xl overflow-hidden hover:border-brand-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <a href="inventory.html" class="block relative overflow-hidden aspect-[16/10]">
+      <a href="${v.slug ? `vehicle.html?slug=${encodeURIComponent(v.slug)}` : 'inventory.html'}" class="block relative overflow-hidden aspect-[16/10]">
         <img src="${img}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="${i === 0 ? 'eager' : 'lazy'}" width="800" height="500" onerror="this.style.opacity=0" />
         ${badge ? `<div class="absolute top-3 left-3 flex flex-wrap gap-1.5"><span class="bg-brand-yellow text-brand-black text-xs font-bold px-2.5 py-1 rounded-full">${badge}</span></div>` : ''}
         <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-brand-black to-transparent"></div>
@@ -122,7 +128,7 @@ function featuredCard(v, i) {
           ${badge ? `<span>·</span><span>${badge}</span>` : ''}
         </div>
         <div class="flex gap-2">
-          <a href="inventory.html" data-i18n="featured.details" class="flex-1 text-center text-sm font-semibold text-brand-white bg-brand-white/10 hover:bg-brand-white hover:text-brand-black px-4 py-2.5 rounded-xl transition-all">View Details</a>
+          <a href="${v.slug ? `vehicle.html?slug=${encodeURIComponent(v.slug)}` : 'inventory.html'}" data-i18n="featured.details" class="flex-1 text-center text-sm font-semibold text-brand-white bg-brand-white/10 hover:bg-brand-white hover:text-brand-black px-4 py-2.5 rounded-xl transition-all">View Details</a>
           <a href="#test-drive" data-i18n="featured.financing" class="flex-1 text-center text-sm font-semibold text-brand-black bg-brand-yellow hover:bg-brand-amber px-4 py-2.5 rounded-xl transition-all">Finance This</a>
         </div>
       </div>

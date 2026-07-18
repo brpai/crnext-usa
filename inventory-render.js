@@ -30,7 +30,7 @@
     const badge = v.body || '';
     return `
       <article class="vehicle-card group bg-brand-black border border-brand-white/10 rounded-2xl overflow-hidden hover:border-brand-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl" data-make="${v.make || ''}" data-year="${v.year || 0}" data-miles="${v.mileage || 0}" data-price="${v.price || 0}">
-        <a href="${v.url}" target="_blank" rel="noopener" class="block relative overflow-hidden aspect-[16/10]">
+        <a href="vehicle.html?slug=${encodeURIComponent(v.slug)}" class="block relative overflow-hidden aspect-[16/10]">
           <img src="${v.image}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.opacity=0" />
           ${badge ? `<div class="absolute top-3 left-3"><span class="bg-brand-yellow text-brand-black text-xs font-bold px-2.5 py-1 rounded-full">${badge}</span></div>` : ''}
         </a>
@@ -42,7 +42,7 @@
             <p class="text-brand-white/40 text-xs">${miles}</p>
           </div>
           <div class="flex gap-2 mt-4">
-            <a href="${v.url}" target="_blank" rel="noopener" class="flex-1 text-center text-sm font-semibold text-brand-white bg-brand-white/10 hover:bg-brand-white hover:text-brand-black px-3 py-2.5 rounded-xl transition-all" data-i18n="invf.details">Details</a>
+            <a href="vehicle.html?slug=${encodeURIComponent(v.slug)}" class="flex-1 text-center text-sm font-semibold text-brand-white bg-brand-white/10 hover:bg-brand-white hover:text-brand-black px-3 py-2.5 rounded-xl transition-all" data-i18n="invf.details">Details</a>
             <a href="index.html#test-drive" class="flex-1 text-center text-sm font-semibold text-brand-black bg-brand-yellow hover:bg-brand-amber px-3 py-2.5 rounded-xl transition-all" data-i18n="invf.finance">Finance This</a>
           </div>
         </div>
