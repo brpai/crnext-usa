@@ -1,7 +1,7 @@
 {
   "source": "https://superspeedcar.com/inventory",
-  "updatedAt": "2026-07-17T20:14:05.768Z",
-  "count": 61,
+  "updatedAt": "2026-07-18T13:49:12.679Z",
+  "count": 62,
   "vehicles": [
     {
       "slug": "kia-sportage-sx-prestige-sport-utility-4d-2026-5xyk53dfxtg331144",
@@ -28,16 +28,16 @@
       "image": "https://imagesdl.dealercenter.net/1024/768/202510-a6be700496454e3191a9cfb4b6d060fc.jpg"
     },
     {
-      "slug": "ford-f150-supercrew-cab-raptor-pickup-4d-5-1-2-ft-2024-1ftfw1rg7rfb58828",
-      "url": "https://superspeedcar.com/inventory/ford-f150-supercrew-cab-raptor-pickup-4d-5-1-2-ft-2024-1ftfw1rg7rfb58828",
-      "year": 2024,
+      "slug": "ford-escape-st-line-sport-utility-4d-2025-1fmcu0mn8sua10094",
+      "url": "https://superspeedcar.com/inventory/ford-escape-st-line-sport-utility-4d-2025-1fmcu0mn8sua10094",
+      "year": 2025,
       "make": "Ford",
-      "body": "Truck",
-      "price": 79990,
-      "mileage": 24426,
-      "title": "2024 F150 SuperCrew Cab Raptor Pickup 4D 5 1/2 ft",
-      "name": "2024 ford f150 supercrew cab raptor pickup 4d 5 1/2 ft",
-      "image": "https://imagesdl.dealercenter.net/1024/768/202604-21825b0f95194469b6bf81b532c9b01a.jpg"
+      "body": "SUV",
+      "price": 25990,
+      "mileage": 16426,
+      "title": "2025 Escape ST-Line Sport Utility 4D",
+      "name": "2025 ford escape st-line sport utility 4d",
+      "image": "https://imagesdl.dealercenter.net/1024/768/202508-e2a59bd1c3c74a888b16355e2d3ae54c.jpg"
     },
     {
       "slug": "bmw-m4-competition-xdrive-convertible-2d-2024-wbs33ba09rcn59940",
@@ -650,6 +650,18 @@
       "title": "2017 Escape SE Sport Utility 4D",
       "name": "2017 ford escape se sport utility 4d",
       "image": "https://imagesdl.dealercenter.net/1024/768/202607-8e5e5b75e0b14626b3489c4881be3bb5.jpg"
+    },
+    {
+      "slug": "chevrolet-sonic-rs-sedan-4d-2015-1g1jg5sb3f4208153",
+      "url": "https://superspeedcar.com/inventory/chevrolet-sonic-rs-sedan-4d-2015-1g1jg5sb3f4208153",
+      "year": 2015,
+      "make": "Chevrolet",
+      "body": "Sedan",
+      "price": 7999,
+      "mileage": 112891,
+      "title": "2015 Sonic RS Sedan 4D",
+      "name": "2015 chevrolet sonic rs sedan 4d",
+      "image": "https://imagesdl.dealercenter.net/1024/768/202601-02fb9f6ef0f942399ebba18ab1aaeb87.jpg"
     },
     {
       "slug": "nissan-rogue-sl-sport-utility-4d-2014-5n1at2mt9ec814046",
