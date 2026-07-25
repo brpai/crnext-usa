@@ -1,7 +1,7 @@
 {
   "source": "https://superspeedcar.com/inventory",
-  "updatedAt": "2026-07-24T07:37:27.271Z",
-  "count": 64,
+  "updatedAt": "2026-07-25T07:23:35.183Z",
+  "count": 65,
   "vehicles": [
     {
       "slug": "kia-sportage-sx-prestige-sport-utility-4d-2026-5xyk53dfxtg331144",
@@ -572,7 +572,7 @@
       "year": 2022,
       "make": "Ram",
       "body": "Truck",
-      "price": 36990,
+      "price": 39990,
       "mileage": 114647,
       "title": "2022 1500 Crew Cab Laramie Pickup 4D 5 1/2 ft",
       "name": "2022 ram 1500 crew cab laramie pickup 4d 5 1/2 ft",
@@ -1668,6 +1668,48 @@
         "https://imagesdl.dealercenter.net/1024/768/202606-2db30f0428ee496a8b28cec19662f3b8.jpg",
         "https://imagesdl.dealercenter.net/1024/768/202606-630bd230272c498cb7e53fe69f61a420.jpg",
         "https://imagesdl.dealercenter.net/1024/768/202606-241d41f6294844f6894bd40ae1a6beef.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-64f8878a68d5487c970b1342a4dda355.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-ce7c5a0e2f7345f4ae76dbcd866c5a22.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-9dc89062392f464c9eac0a8c49d946bc.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-9046daa62e0a409cb8348c3f638ef168.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-725f43d6256e476f9f94ae9aea1d3ab2.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-a21a32a1aa0b47ca87ae375770debc48.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-0849ef1b39854c86bfc96324f4d34f2b.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-b01f90570a044c1e827fcccf4044764c.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-1c869cb5dbe0476fbca6b139ed71bdf4.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-cc1d442fc42340349a60f0b21e7d81a9.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-64fdff3e44194041b79cd8ee60d39a75.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-05fa2b0bdcef433883b5a11aeea7a4ef.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-8f8671a065154cfebb84f5d35cd96043.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-8e6cc114d73e426f8daf3dcbfd316704.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-bfc236326d2f489e9f80149337ca67c5.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-d79666d4b0dc4c4999a0adcd8d5eca25.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-2330c00b29014d31bcc7e704db3150f6.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-928a7338de994299a22e1a890fbfe028.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-a656d5e3c6004ed3853600c982d2f2fd.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-43dff610d668424a87778faa3742d75d.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-80ac409b73af4926999f6e24623be5d0.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-55f2a570f89b44a1b3457d0adacfabfd.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-2db30f0428ee496a8b28cec19662f3b8.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202606-630bd230272c498cb7e53fe69f61a420.jpg&quot;]"
+      ]
+    },
+    {
+      "slug": "ram-1500-crew-cab-limited-pickup-4d-5-1-2-ft-2019-1c6srfht5kn587101",
+      "url": "https://superspeedcar.com/inventory/ram-1500-crew-cab-limited-pickup-4d-5-1-2-ft-2019-1c6srfht5kn587101",
+      "year": 2019,
+      "make": "Ram",
+      "body": "Truck",
+      "price": 38999,
+      "mileage": 77126,
+      "title": "2019 1500 Crew Cab Limited Pickup 4D 5 1/2 ft",
+      "name": "2019 ram 1500 crew cab limited pickup 4d 5 1/2 ft",
+      "image": "https://imagesdl.dealercenter.net/1024/768/202607-3e60cdaf4a744d85bf3a6402f3dbbf6c.jpg",
+      "images": [
+        "https://imagesdl.dealercenter.net/1024/768/202607-3e60cdaf4a744d85bf3a6402f3dbbf6c.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-f8addb8d768b425daeaed29eded6677a.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-f348d4da6ba745158afa5e985e6b8033.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-a868fd19779b4d0aa3b5d60dc4411958.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-a1a77ac1ad3c4378857f05bbfb704429.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-b6109965e4d14b5582056a9ed206cd8d.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-d20e33fc77d549049d66179f9c29d8cf.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-bf222ea58f9546319e6e044270f75d57.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-f911e7a4664c4fa397d6f4310a8e8218.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-9849950b254b4fed8704dfa243136b06.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-7b54dc8dd3324a1e90accc1118a3e77a.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-db65ac68173443aa888938151acdea9e.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-36823f13ded64a739d362354b2234570.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-d7652e20eb9d4d918ce516b6789653b6.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-2ba1bf5230fc41d3833e9afdf3fa1e97.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-01df1aa470f64af29ed52e6c18dc4aa0.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-406944c058864f0e96245f75abd3c13b.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-1c487defceff4622bd678616c88520c7.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-72dc2383b1434cfd8d6c2f7ad7714edc.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-a5c36907ea2e462ea4618696cf202d8a.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-2d1a9ebb6fe1464d8cd87317041a7a74.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-64d04182d1ca4e15863ed530f88cc74b.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-e9b93c99fb874abfb10c456cb378d036.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-746686d7733540f3a7a8c6348065f8fb.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-4d766d401d0a435796933db412d7747a.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-ae26ddb9ef8f4f37bf78261750bd0efd.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-3e86bbf0d32f420e85325d4e0799d248.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202607-3e60cdaf4a744d85bf3a6402f3dbbf6c.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-f8addb8d768b425daeaed29eded6677a.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-f348d4da6ba745158afa5e985e6b8033.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-a868fd19779b4d0aa3b5d60dc4411958.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-a1a77ac1ad3c4378857f05bbfb704429.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-b6109965e4d14b5582056a9ed206cd8d.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-d20e33fc77d549049d66179f9c29d8cf.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-bf222ea58f9546319e6e044270f75d57.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-f911e7a4664c4fa397d6f4310a8e8218.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-9849950b254b4fed8704dfa243136b06.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-7b54dc8dd3324a1e90accc1118a3e77a.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-db65ac68173443aa888938151acdea9e.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-36823f13ded64a739d362354b2234570.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-d7652e20eb9d4d918ce516b6789653b6.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-2ba1bf5230fc41d3833e9afdf3fa1e97.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-01df1aa470f64af29ed52e6c18dc4aa0.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-406944c058864f0e96245f75abd3c13b.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-1c487defceff4622bd678616c88520c7.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-72dc2383b1434cfd8d6c2f7ad7714edc.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-a5c36907ea2e462ea4618696cf202d8a.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-2d1a9ebb6fe1464d8cd87317041a7a74.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-64d04182d1ca4e15863ed530f88cc74b.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-e9b93c99fb874abfb10c456cb378d036.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-746686d7733540f3a7a8c6348065f8fb.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-4d766d401d0a435796933db412d7747a.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-ae26ddb9ef8f4f37bf78261750bd0efd.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-3e86bbf0d32f420e85325d4e0799d248.jpg&quot;]"
       ]
     },
     {
