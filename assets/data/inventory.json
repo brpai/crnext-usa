@@ -1,7 +1,7 @@
 {
   "source": "https://superspeedcar.com/inventory",
-  "updatedAt": "2026-08-29T11:33:43.303Z",
-  "count": 53,
+  "updatedAt": "2026-08-30T10:26:06.291Z",
+  "count": 54,
   "vehicles": [
     {
       "slug": "bmw-m4-competition-xdrive-convertible-2d-2024-wbs33ba09rcn59940",
@@ -1440,6 +1440,45 @@
         "https://imagesdl.dealercenter.net/1024/768/202607-29d213dd0c594e7da8aab075a25bcd26.jpg",
         "https://imagesdl.dealercenter.net/1024/768/202607-ea31ae15c1da4749a3c79dc2d14ccf36.jpg",
         "https://imagesdl.dealercenter.net/1024/768/202607-483510ad64e44131b18b0ca3fe18f7cd.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-3ecb04fbabba4b0cb2db0ba0ce5d9438.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-b84b2beac06140f08785b814c5a6eef5.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-f89391c2972640c9a36132859067e97d.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-71ede1fab62c41e8914c733ec5d67b5c.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-283f074422f14fa193c68a535d4f39be.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-a6aff6c8455f4e209c16ff54f4f32f44.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-a2e0087fc2f44aefb34c1e644925241e.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-cb79268ffb0b4be0ae5015471478fa1e.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-278d1c4b2a7241c691689e2b15eb9bcc.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-79cd4be4f95a49a09807495955f0c175.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-d85219d859a74fc0827e47f0ba86d22d.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-daff620be375436ba0bf4af1c6123bd2.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-151123a532c64b839e06a376860e6dd8.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-f1cb8e110a2d44da9585a82441853c0b.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-3e0a3e160c21472eb9e75bb105b3238e.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-979e98b9239240939d38a04688feec92.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-92bb4706f1754b4ea2fe0ebba21c718e.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-ebaf872a9f684a4ab198e7adfa2d33e2.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-228645fc72ae4b898d3d3c7324b25d36.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-1fd12febbfc5488187bb59d2abe14be9.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-2a00a9c5454545c0a695ed211c6651e9.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-510424c26c2f4de4bd70eea10e56046e.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-d4f2f3442152480ea51f35df15608e36.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-142f13c93eff41bdb865630c8b896ec0.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-29d213dd0c594e7da8aab075a25bcd26.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202607-ea31ae15c1da4749a3c79dc2d14ccf36.jpg&quot;]"
+      ]
+    },
+    {
+      "slug": "hyundai-tucson-sel-sport-utility-4d-2020-km8j33al8lu235132",
+      "url": "https://superspeedcar.com/inventory/hyundai-tucson-sel-sport-utility-4d-2020-km8j33al8lu235132",
+      "year": 2020,
+      "make": "Hyundai",
+      "body": "SUV",
+      "price": 13990,
+      "mileage": 103105,
+      "title": "2020 Tucson SEL Sport Utility 4D",
+      "name": "2020 hyundai tucson sel sport utility 4d",
+      "image": "https://imagesdl.dealercenter.net/1024/768/202608-e1d3c8a3eda44f1fb5c16d564c599654.jpg",
+      "images": [
+        "https://imagesdl.dealercenter.net/1024/768/202608-e1d3c8a3eda44f1fb5c16d564c599654.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-f679deefefa64187af3fae0c03e3ba09.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-a7ab995ae8694b58b034641093a12c57.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-7b485da1aed748388d5bd2ebc73f7e56.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-d7943baa084e4fb9bb2eee9a4c86f9e4.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-ee05912ad2e9414f8f0ec96476a5cb49.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-fa3d2204f69d4a988684601fbefac261.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-b57179e2eccc43098a8457a6f00afba3.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-6187d1454ded4bb1ada0438be6dbbe8c.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-dbe23c753b7d44af841c51dc6a3223d2.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-97af43a3b058400d96a4172170b3d2e6.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-ce832dc8742a4fe9b5d03a99cb7e4036.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-089903a86f6b4fb7a3d8237ff73a44fd.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-d4bf3dec0760473680ad303103d10d5c.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-453f697275ce434a8ce8065c16e3a31e.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-2360552e5d4444419e0ba072186e6e44.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-b3b7674cf31346acb53406bf1fb878c9.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-011be2107dc246b9b4a3a049b7b63d06.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-269a0361ade54663a88efaa10e316144.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-62c16e61b6b3425d983405349afab8c4.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-fba0ff980c9a4bd58958e2378ee37331.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-e556169fe22f4b228a8b4d2b283c4c66.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-ea9ed1f56b4045f58c96f9d720e8764c.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-360d28f1b5384b1492799325b74cf20e.jpg",
+        "https://imagesdl.dealercenter.net/1024/768/202608-e1d3c8a3eda44f1fb5c16d564c599654.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-f679deefefa64187af3fae0c03e3ba09.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-a7ab995ae8694b58b034641093a12c57.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-7b485da1aed748388d5bd2ebc73f7e56.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-d7943baa084e4fb9bb2eee9a4c86f9e4.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-ee05912ad2e9414f8f0ec96476a5cb49.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-fa3d2204f69d4a988684601fbefac261.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-b57179e2eccc43098a8457a6f00afba3.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-6187d1454ded4bb1ada0438be6dbbe8c.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-dbe23c753b7d44af841c51dc6a3223d2.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-97af43a3b058400d96a4172170b3d2e6.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-ce832dc8742a4fe9b5d03a99cb7e4036.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-089903a86f6b4fb7a3d8237ff73a44fd.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-d4bf3dec0760473680ad303103d10d5c.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-453f697275ce434a8ce8065c16e3a31e.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-2360552e5d4444419e0ba072186e6e44.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-b3b7674cf31346acb53406bf1fb878c9.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-011be2107dc246b9b4a3a049b7b63d06.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-269a0361ade54663a88efaa10e316144.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-62c16e61b6b3425d983405349afab8c4.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-fba0ff980c9a4bd58958e2378ee37331.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-e556169fe22f4b228a8b4d2b283c4c66.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-ea9ed1f56b4045f58c96f9d720e8764c.jpg&quot;,&quot;https://imagesdl.dealercenter.net/1024/768/202608-360d28f1b5384b1492799325b74cf20e.jpg&quot;]"
       ]
     },
     {
