@@ -1,0 +1,88 @@
+/* Dados fictícios de demonstração. Nenhum dado real de investidor.
+   Acessos autorizados iniciais do protótipo */
+
+import type { AccessGrant } from "../../types";
+
+/** Código aceito no protótipo, que não envia e-mail. */
+export const DEMO_LOGIN_CODE = "123456";
+
+export const MOCK_ACCESS_GRANTS: AccessGrant[] = [
+  {
+    id: "acc-01",
+    email: "bruno.ramos@example.com",
+    name: "Bruno Ramos",
+    role: "admin",
+    investorId: null,
+    status: "ativo",
+    createdAt: "2025-11-01T12:00:00Z",
+    createdBy: "Configuração inicial",
+    revokedAt: null,
+    revokedBy: null,
+    lastLoginAt: "2026-09-08T17:10:00Z",
+  },
+  {
+    id: "acc-02",
+    email: "comercial@example.com",
+    name: "Equipe Comercial",
+    role: "colaborador",
+    investorId: null,
+    status: "ativo",
+    createdAt: "2026-03-10T14:00:00Z",
+    createdBy: "Bruno Ramos",
+    revokedAt: null,
+    revokedBy: null,
+    lastLoginAt: "2026-09-05T11:02:00Z",
+  },
+  {
+    id: "acc-03",
+    email: "ricardo.menezes@example.com",
+    name: "Ricardo Menezes",
+    role: "investidor",
+    investorId: "inv-01",
+    status: "ativo",
+    createdAt: "2025-11-04T15:00:00Z",
+    createdBy: "Bruno Ramos",
+    revokedAt: null,
+    revokedBy: null,
+    lastLoginAt: "2026-09-02T10:58:00Z",
+  },
+  {
+    id: "acc-04",
+    email: "patricia.lombardi@example.com",
+    name: "Patrícia Lombardi",
+    role: "investidor",
+    investorId: "inv-02",
+    status: "ativo",
+    createdAt: "2026-01-16T13:30:00Z",
+    createdBy: "Bruno Ramos",
+    revokedAt: null,
+    revokedBy: null,
+    lastLoginAt: "2026-08-30T09:15:00Z",
+  },
+  {
+    id: "acc-05",
+    email: "eduardo.tanaka@example.com",
+    name: "Eduardo Tanaka",
+    role: "investidor",
+    investorId: "inv-03",
+    status: "ativo",
+    createdAt: "2026-02-27T16:20:00Z",
+    createdBy: "Bruno Ramos",
+    revokedAt: null,
+    revokedBy: null,
+    lastLoginAt: "2026-09-06T16:40:00Z",
+  },
+  {
+    id: "acc-06",
+    email: "helena.vasconcelos@example.com",
+    name: "Helena Vasconcelos",
+    role: "investidor",
+    investorId: "inv-04",
+    status: "revogado",
+    createdAt: "2026-04-09T10:00:00Z",
+    createdBy: "Bruno Ramos",
+    revokedAt: "2026-08-01T13:00:00Z",
+    revokedBy: "Bruno Ramos",
+    lastLoginAt: "2026-07-28T20:11:00Z",
+  },
+];
