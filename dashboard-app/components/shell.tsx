@@ -15,6 +15,7 @@ import {
   Inbox,
   ScrollText,
   KeyRound,
+  Landmark,
   LogOut,
   Menu,
   X,
@@ -42,6 +43,7 @@ export const INVESTOR_NAV: NavItem[] = [
 
 export const ADMIN_NAV: NavItem[] = [
   { href: "/admin", label: "Operação", icon: <LayoutDashboard size={17} /> },
+  { href: "/admin/financeiro", label: "Financeiro", icon: <Landmark size={17} /> },
   { href: "/admin/investidores", label: "Investidores", icon: <Users size={17} /> },
   { href: "/admin/veiculos", label: "Estoque", icon: <Car size={17} /> },
   { href: "/admin/alocacoes", label: "Alocações", icon: <Layers size={17} /> },
@@ -52,8 +54,8 @@ export const ADMIN_NAV: NavItem[] = [
   { href: "/admin/acessos", label: "Acessos", icon: <KeyRound size={17} /> },
 ];
 
-/** Telas do painel que só o admin abre — colaborador não gerencia acessos. */
-const ADMIN_ONLY_HREFS = new Set(["/admin/acessos"]);
+/** Telas do painel que só o admin abre — colaborador não vê o financeiro nem gerencia acessos. */
+const ADMIN_ONLY_HREFS = new Set(["/admin/financeiro", "/admin/acessos"]);
 
 export function adminNavFor(role: Role): NavItem[] {
   return role === "admin"

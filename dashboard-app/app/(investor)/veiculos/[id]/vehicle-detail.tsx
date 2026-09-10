@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, FileText, CheckCircle2 } from "lucide-react";
 import { useAsync, useInvestorId } from "@/lib/hooks";
@@ -28,10 +29,12 @@ import {
 import { PageSkeleton } from "@/components/loading";
 import { COST_CATEGORY_LABEL, date, miles, money, vehicleLabel } from "@/lib/format";
 import { RIGHT_LABEL } from "@/lib/copy";
+import { CostByCategoryChart, ViewToggle, type ViewMode } from "@/components/charts";
 import { Gallery } from "./gallery";
 
 export function VehicleDetail({ id }: { id: string }) {
   const investorId = useInvestorId();
+  const [costView, setCostView] = useState<ViewMode>("tabela");
 
   const q = useAsync(async () => {
     if (!investorId) return null;
@@ -229,9 +232,18 @@ export function VehicleDetail({ id }: { id: string }) {
             <CardHeader
               title="Custos variáveis lançados"
               subtitle="Todo custo aplicado a este VIN, com data, fornecedor e comprovante."
+              action={
+                costs.length > 0 ? (
+                  <ViewToggle value={costView} onChange={setCostView} />
+                ) : undefined
+              }
             />
             <CardBody className="px-0 py-0">
-              {costs.length === 0 ? (
+              {costView === "grafico" && costs.length > 0 ? (
+                <div className="p-5">
+                  <CostByCategoryChart costs={costs} />
+                </div>
+              ) : costs.length === 0 ? (
                 <div className="p-5">
                   <EmptyState
                     title="Nenhum custo lançado ainda"

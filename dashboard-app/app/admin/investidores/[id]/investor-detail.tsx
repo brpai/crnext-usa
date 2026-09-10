@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useAsync } from "@/lib/hooks";
@@ -29,8 +30,10 @@ import {
   money,
   vehicleLabel,
 } from "@/lib/format";
+import { BalanceChart, ViewToggle, type ViewMode } from "@/components/charts";
 
 export function InvestorDetail({ id }: { id: string }) {
+  const [statementView, setStatementView] = useState<ViewMode>("tabela");
   const q = useAsync(async () => {
     const [investor, positions, movements, contracts] = await Promise.all([
       getInvestor(id),
@@ -149,8 +152,21 @@ export function InvestorDetail({ id }: { id: string }) {
         </Card>
 
         <Card>
-          <CardHeader title="Extrato" subtitle={`${movements.length} movimentos.`} />
+          <CardHeader
+            title="Extrato"
+            subtitle={`${movements.length} movimentos.`}
+            action={
+              movements.length > 0 ? (
+                <ViewToggle value={statementView} onChange={setStatementView} />
+              ) : undefined
+            }
+          />
           <CardBody className="px-0 py-0">
+            {statementView === "grafico" && movements.length > 0 ? (
+              <div className="p-5">
+                <BalanceChart rows={movements} />
+              </div>
+            ) : (
             <Table>
               <thead>
                 <tr>
@@ -181,6 +197,7 @@ export function InvestorDetail({ id }: { id: string }) {
                 ))}
               </tbody>
             </Table>
+            )}
           </CardBody>
         </Card>
 

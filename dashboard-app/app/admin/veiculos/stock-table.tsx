@@ -21,6 +21,7 @@ import {
   TotalRow,
 } from "@/components/ui";
 import { AgingBadge, ResultValue } from "@/components/finance";
+import { CostCompositionChart, ViewToggle, type ViewMode } from "@/components/charts";
 import { COST_CATEGORY_LABEL, date, money, vehicleLabel } from "@/lib/format";
 
 type Filter = "todos" | "em_estoque" | "vendido";
@@ -33,6 +34,7 @@ export function StockTable({
   funding: Record<string, number>;
 }) {
   const [filter, setFilter] = React.useState<Filter>("todos");
+  const [view, setView] = React.useState<ViewMode>("tabela");
 
   const visible = vehicles.filter((v) => {
     if (filter === "todos") return true;
@@ -68,9 +70,19 @@ export function StockTable({
       <Card>
         <CardHeader
           title="Veículos"
-          subtitle={`${visible.length} no filtro atual.`}
+          subtitle={
+            view === "grafico"
+              ? `${visible.length} no filtro atual · composição do custo final de cada veículo.`
+              : `${visible.length} no filtro atual.`
+          }
+          action={<ViewToggle value={view} onChange={setView} />}
         />
         <CardBody className="px-0 py-0">
+          {view === "grafico" ? (
+            <div className="p-5">
+              <CostCompositionChart vehicles={visible} />
+            </div>
+          ) : (
           <Table>
             <thead>
               <tr>
@@ -157,6 +169,7 @@ export function StockTable({
               </TotalRow>
             </tfoot>
           </Table>
+          )}
         </CardBody>
       </Card>
     </>

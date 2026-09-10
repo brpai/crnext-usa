@@ -412,3 +412,96 @@ export interface AdminOverview {
   };
   pnl: PnlBuckets;
 }
+
+/* ─────────────────────────── Financeiro da empresa ──────────────────────── */
+
+export type LedgerDirection = "entrada" | "saida";
+
+/**
+ * Grupo do lançamento. Define se ele entra no RESULTADO da empresa.
+ * `capital_investidor` passa pelo caixa (aporte, distribuição), mas nunca é
+ * receita nem despesa da CarNext.
+ */
+export type LedgerGroup =
+  | "receita"
+  | "custo_veiculo"
+  | "custo_fixo"
+  | "custo_variavel_operacional"
+  | "impostos"
+  | "capital_investidor";
+
+export type CostCenter = "loja" | "veiculos" | "comercial" | "administrativo";
+
+export type LedgerMethod = "zelle" | "wire" | "ach" | "cartao" | "dinheiro" | "cheque";
+
+/** Nada é apagado: pendente vira pago, ou é cancelado; pago só se corrige com estorno. */
+export type LedgerStatus = "pago" | "pendente" | "cancelado";
+
+export interface FinanceAccount {
+  id: string;
+  name: string;
+  kind: "banco" | "caixa";
+  openingBalanceCents: Cents;
+}
+
+export interface LedgerEntry {
+  id: string;
+  /** Data do lançamento (pagamento, recebimento ou emissão, se pendente). */
+  date: IsoDate;
+  direction: LedgerDirection;
+  group: LedgerGroup;
+  category: string;
+  costCenter: CostCenter;
+  description: string;
+  /** Sempre positivo. O sentido está em `direction`. */
+  amountCents: Cents;
+  accountId: string;
+  method: LedgerMethod;
+  counterparty: string;
+  vehicleId: string | null;
+  status: LedgerStatus;
+  /** Vencimento — obrigatório enquanto pendente. */
+  dueDate: IsoDate | null;
+  paidAt: IsoDate | null;
+  receiptUrl: string | null;
+  createdBy: string;
+  createdAt: IsoTimestamp;
+  /** Este lançamento é estorno de outro. */
+  reversalOf: string | null;
+  /** Este lançamento foi anulado pelo estorno indicado. */
+  reversedBy: string | null;
+}
+
+/** Um mês do fluxo de caixa. Somente lançamentos pagos, sem capital de investidor. */
+export interface CashFlowMonth {
+  month: string;
+  inCents: Cents;
+  outCents: Cents;
+  resultCents: Cents;
+}
+
+export interface PendingSummary {
+  count: number;
+  cents: Cents;
+  overdueCount: number;
+  overdueCents: Cents;
+}
+
+export interface FinanceOverview {
+  referenceMonth: string;
+  months: string[];
+  month: {
+    inCents: Cents;
+    outCents: Cents;
+    resultCents: Cents;
+    /** Aportes menos distribuições no mês — fora do resultado. */
+    investorNetCents: Cents;
+  };
+  cashBalanceCents: Cents;
+  accounts: Array<{ account: FinanceAccount; balanceCents: Cents }>;
+  cashFlow: CashFlowMonth[];
+  outByGroup: Array<{ group: LedgerGroup; cents: Cents }>;
+  outByCostCenter: Array<{ costCenter: CostCenter; cents: Cents }>;
+  payables: PendingSummary;
+  receivables: PendingSummary;
+}

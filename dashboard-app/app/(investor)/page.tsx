@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { AlertTriangle, Info, ArrowRight } from "lucide-react";
 import { useAsync, useInvestorId } from "@/lib/hooks";
@@ -24,10 +25,19 @@ import {
 } from "@/components/finance";
 import { PageHeader } from "@/components/shell";
 import { PageSkeleton } from "@/components/loading";
-import { CapitalByVehicleChart, RealizedHistoryChart } from "@/components/charts";
+import {
+  CapitalByVehicleChart,
+  CapitalByVehicleTable,
+  RealizedHistoryChart,
+  RealizedHistoryTable,
+  ViewToggle,
+  type ViewMode,
+} from "@/components/charts";
 
 export default function InvestorOverviewPage() {
   const investorId = useInvestorId();
+  const [historyView, setHistoryView] = useState<ViewMode>("grafico");
+  const [capitalView, setCapitalView] = useState<ViewMode>("grafico");
   const q = useAsync(
     async () => (investorId ? await getInvestorPortfolio(investorId) : null),
     [investorId]
@@ -135,9 +145,14 @@ export default function InvestorOverviewPage() {
           <CardHeader
             title="Histórico realizado"
             subtitle="Capital alocado e lucro distribuído, mês a mês. Apenas movimentos já ocorridos."
+            action={<ViewToggle value={historyView} onChange={setHistoryView} />}
           />
           <CardBody>
-            <RealizedHistoryChart data={portfolio.realizedHistory} />
+            {historyView === "grafico" ? (
+              <RealizedHistoryChart data={portfolio.realizedHistory} />
+            ) : (
+              <RealizedHistoryTable data={portfolio.realizedHistory} />
+            )}
             <PastResultsNote className="mt-4" />
           </CardBody>
         </Card>
@@ -146,9 +161,14 @@ export default function InvestorOverviewPage() {
           <CardHeader
             title="Distribuição do seu capital"
             subtitle="Em quais veículos em estoque o seu capital está alocado hoje."
+            action={<ViewToggle value={capitalView} onChange={setCapitalView} />}
           />
           <CardBody>
-            <CapitalByVehicleChart data={portfolio.capitalByVehicle} />
+            {capitalView === "grafico" ? (
+              <CapitalByVehicleChart data={portfolio.capitalByVehicle} />
+            ) : (
+              <CapitalByVehicleTable data={portfolio.capitalByVehicle} />
+            )}
           </CardBody>
         </Card>
       </section>

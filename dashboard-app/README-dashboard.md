@@ -74,6 +74,9 @@ por pessoa. No protótipo a lista fica no `localStorage` do navegador (chave
 | `/dashboard/admin/suporte` | Fila de tickets |
 | `/dashboard/admin/auditoria` | Log de eventos |
 | `/dashboard/admin/acessos` | Autorizar, revogar e reativar e-mails — **somente admin** |
+| `/dashboard/admin/financeiro` | Financeiro: fluxo de caixa, resultado mensal, saídas por grupo e centro de custo, saldo por conta — **somente admin** |
+| `/dashboard/admin/financeiro/lancamentos` | Entradas e saídas: filtros, novo lançamento, baixa, cancelamento, estorno e CSV |
+| `/dashboard/admin/financeiro/contas` | Contas a pagar e a receber por vencimento, com baixa |
 
 ---
 
@@ -578,6 +581,76 @@ create policy grants_self_read on access_grants for select
 
 Validar os dois triggers no projeto real antes de convidar investidores: as
 permissões do Supabase sobre o schema `auth` já mudaram mais de uma vez.
+
+### 5.2 Financeiro da empresa — somente admin (protótipo)
+
+Decisões do Bruno (10/09/2026): telas com dados fictícios primeiro; acesso
+**somente Admin**; dados reais só depois da fundação segura (Supabase +
+verificação em duas etapas), com backup do Supabase **e** cópia no Google
+Drive, e o portal num repositório privado com Netlify/Vercel.
+
+Regras que o código já cumpre e o banco precisa repetir:
+
+- Valor sempre positivo em centavos; o sentido é `direction` (entrada/saída).
+- **Nada é apagado.** Conta pendente é baixada ou cancelada; lançamento pago
+  só se corrige com **estorno** (lançamento oposto ligado ao original).
+- **Capital de investidores** (aporte, distribuição) passa pelo caixa, mas
+  fica **fora do resultado** da empresa.
+- Grupos: receita · custo de veículos · custo fixo · custo variável
+  operacional · impostos · capital de investidores. Centros de custo: loja ·
+  veículos · comercial · administrativo.
+
+No protótipo, a base fictícia é gerada em `lib/data/mock/ledger.ts` a partir
+dos veículos, custos e movimentos de investidor já existentes, e as alterações
+ficam no `localStorage` (`cnx_ledger_v1`).
+
+```sql
+create type ledger_direction as enum ('entrada','saida');
+create type ledger_group     as enum ('receita','custo_veiculo','custo_fixo',
+                                      'custo_variavel_operacional','impostos','capital_investidor');
+create type ledger_status    as enum ('pago','pendente','cancelado');
+
+create table finance_accounts (
+  id                    uuid primary key default gen_random_uuid(),
+  name                  text not null,
+  kind                  text not null check (kind in ('banco','caixa')),
+  opening_balance_cents bigint not null default 0
+);
+
+create table ledger_entries (
+  id            uuid primary key default gen_random_uuid(),
+  entry_date    date not null,
+  direction     ledger_direction not null,
+  entry_group   ledger_group not null,
+  category      text not null,
+  cost_center   text not null check (cost_center in ('loja','veiculos','comercial','administrativo')),
+  description   text not null,
+  amount_cents  bigint not null check (amount_cents > 0),
+  account_id    uuid not null references finance_accounts(id),
+  method        text not null,
+  counterparty  text not null,
+  vehicle_id    uuid references vehicles(id),
+  status        ledger_status not null,
+  due_date      date,
+  paid_at       date,
+  receipt_path  text,            -- bucket privado, servido por URL assinada
+  created_by    uuid not null default auth.uid() references auth.users(id),
+  created_at    timestamptz not null default now(),
+  reversal_of   uuid references ledger_entries(id),
+  constraint pendente_tem_vencimento check (status <> 'pendente' or due_date is not null),
+  constraint pago_tem_data           check (status <> 'pago' or paid_at is not null)
+);
+
+alter table finance_accounts enable row level security;
+alter table ledger_entries   enable row level security;
+
+create policy fin_accounts_admin on finance_accounts for all
+  using (is_admin()) with check (is_admin());
+create policy ledger_admin_read   on ledger_entries for select using (is_admin());
+create policy ledger_admin_insert on ledger_entries for insert with check (is_admin());
+-- sem update/delete direto: baixa, cancelamento e estorno só por funções
+-- security definer que validam o estado e gravam a auditoria.
+```
 
 ## 6. Deploy
 

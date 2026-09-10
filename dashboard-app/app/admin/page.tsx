@@ -2,7 +2,7 @@
 
 import { useAsync } from "@/lib/hooks";
 import { PageSkeleton } from "@/components/loading";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { AlertTriangle, CheckCircle2 } from "lucide-react";
 import { getAdminOverview } from "@/lib/data/admin";
 import { PageHeader } from "@/components/shell";
@@ -18,11 +18,17 @@ import {
   cn,
 } from "@/components/ui";
 import { ResultValue, StatCard } from "@/components/finance";
-import { AgingChart } from "@/components/charts";
+import {
+  AgingChart,
+  CapitalByInvestorChart,
+  ViewToggle,
+  type ViewMode,
+} from "@/components/charts";
 import { money, monthLabel, plural } from "@/lib/format";
 
 export default function AdminOverviewPage() {
   const q = useAsync(() => getAdminOverview(), []);
+  const [capitalView, setCapitalView] = useState<ViewMode>("tabela");
   if (q.status === "loading") return <PageSkeleton cards={4} />;
   const data = q.data;
   const { reconciliation: rec, stock, monthSales, pnl } = data;
@@ -111,8 +117,14 @@ export default function AdminOverviewPage() {
           <CardHeader
             title="Capital fracionado por investidor"
             subtitle="Quanto cada investidor aportou, quanto está alocado, quanto está livre e quanto já recebeu."
+            action={<ViewToggle value={capitalView} onChange={setCapitalView} />}
           />
           <CardBody className="px-0 py-0">
+            {capitalView === "grafico" ? (
+              <div className="p-5">
+                <CapitalByInvestorChart rows={data.positions} />
+              </div>
+            ) : (
             <Table>
               <thead>
                 <tr>
@@ -161,6 +173,7 @@ export default function AdminOverviewPage() {
                 </TotalRow>
               </tfoot>
             </Table>
+            )}
           </CardBody>
         </Card>
       </section>

@@ -183,3 +183,30 @@ export function vehicleLabel(v: {
 }): string {
   return `${v.year} ${v.make} ${v.model}${v.trim ? ` ${v.trim}` : ""}`;
 }
+
+/* ─────────────────────────────── Financeiro ─────────────────────────────── */
+
+export const LEDGER_GROUP_LABEL: Record<string, string> = {
+  receita: "Receita",
+  custo_veiculo: "Custo de veículos",
+  custo_fixo: "Custo fixo",
+  custo_variavel_operacional: "Custo variável operacional",
+  impostos: "Impostos e taxas",
+  capital_investidor: "Capital de investidores",
+};
+
+export const COST_CENTER_LABEL: Record<string, string> = {
+  loja: "Loja",
+  veiculos: "Veículos",
+  comercial: "Comercial",
+  administrativo: "Administrativo",
+};
+
+export const LEDGER_METHOD_LABEL: Record<string, string> = {
+  zelle: "Zelle",
+  wire: "Wire transfer",
+  ach: "ACH",
+  cartao: "Cartão",
+  dinheiro: "Dinheiro",
+  cheque: "Cheque",
+};

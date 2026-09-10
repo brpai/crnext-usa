@@ -21,6 +21,7 @@ import {
   TotalRow,
   cn,
 } from "@/components/ui";
+import { BalanceChart, ViewToggle, type ViewMode } from "@/components/charts";
 
 const TYPES: MovementType[] = [
   "aporte",
@@ -46,6 +47,7 @@ export function StatementTable({
   const [type, setType] = React.useState<"todos" | MovementType>("todos");
   const [from, setFrom] = React.useState("");
   const [to, setTo] = React.useState("");
+  const [view, setView] = React.useState<ViewMode>("tabela");
 
   const visible = React.useMemo(
     () =>
@@ -143,7 +145,8 @@ export function StatementTable({
           title="Movimentos"
           subtitle={`${visible.length} ${visible.length === 1 ? "registro" : "registros"} no filtro atual.`}
           action={
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <ViewToggle value={view} onChange={setView} />
               <Button variant="secondary" onClick={exportCsv} disabled={!visible.length}>
                 <Download size={15} /> Exportar CSV
               </Button>
@@ -155,7 +158,11 @@ export function StatementTable({
           }
         />
         <CardBody className="px-0 py-0">
-          {visible.length === 0 ? (
+          {view === "grafico" && visible.length > 0 ? (
+            <div className="p-5">
+              <BalanceChart rows={visible} />
+            </div>
+          ) : visible.length === 0 ? (
             <div className="p-5">
               <EmptyState
                 title="Nenhum movimento neste filtro"

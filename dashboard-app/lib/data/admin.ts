@@ -14,6 +14,7 @@ import { MOCK_MOVEMENTS } from "./mock/movements";
 import { MOCK_VEHICLES } from "./mock/vehicles";
 import { MOCK_COMPANY_CASH_CENTS, MOCK_OPERATING } from "./mock/operating";
 import { listAccessAuditEvents } from "./access";
+import { listFinanceAuditEvents } from "./finance";
 
 /**
  * Agregados do painel administrativo.
@@ -146,8 +147,11 @@ export async function getAdminOverview(): Promise<AdminOverview> {
 }
 
 export async function getAuditLog(): Promise<AuditEvent[]> {
-  const access = await listAccessAuditEvents();
-  return [...access, ...MOCK_AUDIT].sort((a, b) => (a.at < b.at ? 1 : -1));
+  const [access, finance] = await Promise.all([
+    listAccessAuditEvents(),
+    listFinanceAuditEvents(),
+  ]);
+  return [...access, ...finance, ...MOCK_AUDIT].sort((a, b) => (a.at < b.at ? 1 : -1));
 }
 
 export const ADMIN_CURRENT_MONTH = CURRENT_MONTH;
