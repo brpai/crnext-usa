@@ -76,8 +76,22 @@ function write(key: string, value: unknown) {
   }
 }
 
+/**
+ * Lista salva neste navegador + acessos da semente que ainda não estão nela.
+ * Assim um acesso novo na semente aparece também para quem já tinha a lista
+ * salva, sem desfazer o que foi autorizado ou revogado localmente.
+ */
 function loadGrants(): AccessGrant[] {
-  return read(GRANTS_KEY, memoryGrants ?? MOCK_ACCESS_GRANTS.map((g) => ({ ...g })));
+  const seed = MOCK_ACCESS_GRANTS.map((g) => ({ ...g }));
+  const stored = read<AccessGrant[] | null>(GRANTS_KEY, memoryGrants);
+  if (!stored) return seed;
+
+  const ids = new Set(stored.map((g) => g.id));
+  const activeEmails = new Set(
+    stored.filter((g) => g.status === "ativo").map((g) => g.email)
+  );
+  const missing = seed.filter((g) => !ids.has(g.id) && !activeEmails.has(g.email));
+  return missing.length ? [...stored, ...missing] : stored;
 }
 
 function saveGrants(grants: AccessGrant[]) {

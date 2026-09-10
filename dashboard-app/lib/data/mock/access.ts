@@ -1,5 +1,6 @@
 /* Dados fictícios de demonstração. Nenhum dado real de investidor.
-   Acessos autorizados iniciais do protótipo */
+   Acessos autorizados iniciais do protótipo.
+   Único e-mail real: nex@carnextusa.com (admin da CarNext). */
 
 import type { AccessGrant } from "../../types";
 
@@ -19,6 +20,19 @@ export const MOCK_ACCESS_GRANTS: AccessGrant[] = [
     revokedAt: null,
     revokedBy: null,
     lastLoginAt: "2026-09-08T17:10:00Z",
+  },
+  {
+    id: "acc-07",
+    email: "nex@carnextusa.com",
+    name: "Nex",
+    role: "admin",
+    investorId: null,
+    status: "ativo",
+    createdAt: "2026-09-10T21:00:00Z",
+    createdBy: "Bruno Ramos",
+    revokedAt: null,
+    revokedBy: null,
+    lastLoginAt: null,
   },
   {
     id: "acc-02",

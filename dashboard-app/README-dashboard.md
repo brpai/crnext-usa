@@ -42,6 +42,7 @@ Acessos já cadastrados no protótipo (dados fictícios):
 | E-mail | Papel | Abre |
 |---|---|---|
 | `bruno.ramos@example.com` | Admin | `/dashboard/admin` + tela Acessos |
+| `nex@carnextusa.com` | Admin (e-mail real do Nex) | `/dashboard/admin` + tela Acessos |
 | `comercial@example.com` | Colaborador | `/dashboard/admin`, sem a tela Acessos |
 | `ricardo.menezes@example.com` | Investidor | `/dashboard` |
 | `patricia.lombardi@example.com` | Investidor | `/dashboard` |
