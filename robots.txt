@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /dashboard
 Allow: /
 
 Sitemap: https://www.carnextusa.com/sitemap.xml

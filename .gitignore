@@ -1,1 +1,6 @@
 carnext-usa-deploy.zip
+dashboard-app/node_modules/
+dashboard-app/.next/
+dashboard-app/out/
+dashboard-app/*.tsbuildinfo
+preview-carnext-dashboard.html
