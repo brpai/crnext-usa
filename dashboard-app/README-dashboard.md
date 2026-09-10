@@ -31,33 +31,20 @@ mantidos justamente para que a paleta viva num arquivo só.
 ### Como entrar
 
 Só entra quem está na lista de **acessos autorizados** — não existe cadastro
-aberto nem seletor de perfil. O papel (Investidor, Colaborador ou Admin) vem do
-acesso cadastrado, nunca de uma escolha no login.
+aberto nem seletor de perfil. O papel vem do acesso cadastrado.
+
+Por enquanto (decisão de 10/09/2026) **somente `nex@carnextusa.com` (Admin)**
+está autorizado.
 
 1. Abra `/dashboard/login`, informe o e-mail e clique em **Receber código**.
-2. No protótipo nenhum e-mail é enviado: use o código **123456**.
+2. No protótipo nenhum e-mail é enviado: informe o **código de acesso**,
+   combinado diretamente com o Bruno. O código não fica neste repositório (que é
+   público) — só o hash SHA-256, em `lib/data/mock/access.ts`.
 
-Acessos já cadastrados no protótipo (dados fictícios):
-
-| E-mail | Papel | Abre |
-|---|---|---|
-| `bruno.ramos@example.com` | Admin | `/dashboard/admin` + tela Acessos |
-| `nex@carnextusa.com` | Admin (e-mail real do Nex) | `/dashboard/admin` + tela Acessos |
-| `comercial@example.com` | Colaborador | `/dashboard/admin`, sem a tela Acessos |
-| `ricardo.menezes@example.com` | Investidor | `/dashboard` |
-| `patricia.lombardi@example.com` | Investidor | `/dashboard` |
-| `eduardo.tanaka@example.com` | Investidor | `/dashboard` |
-| `helena.vasconcelos@example.com` | Investidor — **revogado** | não entra |
-
-Novos acessos são criados por um admin em `/dashboard/admin/acessos`, **uma
-vez por pessoa**; depois ela entra sozinha sempre com e-mail + código. No
-protótipo a lista fica no `localStorage` do navegador (chave
-`cnx_access_grants_v1`): vale só naquele navegador, e apagar a chave volta à
-lista inicial. A sessão é o cookie `cnx_email`; "Sair" o apaga.
-
-Para ver a tela mais rica, entre como **Ricardo Menezes** — ele tem 3 veículos
-em estoque (um com 113 dias), 4 vendidos, um deles **com prejuízo**, e uma
-solicitação de aporte em aberto.
+Novos acessos são criados por um admin em `/dashboard/admin/acessos`, uma vez
+por pessoa. No protótipo a lista fica no `localStorage` do navegador (chave
+`cnx_access_grants_v2`) e vale só naquele navegador. A sessão é o cookie
+`cnx_email`; "Sair" o apaga.
 
 ---
 

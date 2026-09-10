@@ -1,26 +1,20 @@
-/* Dados fictícios de demonstração. Nenhum dado real de investidor.
-   Acessos autorizados iniciais do protótipo.
-   Único e-mail real: nex@carnextusa.com (admin da CarNext). */
+/* Acesso inicial do protótipo.
+   Decisão do Bruno (2026-09-10): por enquanto, somente o Nex entra. */
 
 import type { AccessGrant } from "../../types";
 
-/** Código aceito no protótipo, que não envia e-mail. */
-export const DEMO_LOGIN_CODE = "123456";
+/**
+ * SHA-256 do código de acesso do protótipo. O código em si NÃO fica no
+ * repositório, que é público: foi combinado diretamente com o Bruno.
+ *
+ * Não é segurança de verdade — 6 dígitos com hash público podem ser
+ * descobertos por força bruta. Só impede que o código fique à vista.
+ * A proteção real chega com o Supabase.
+ */
+export const LOGIN_CODE_SHA256 =
+  "0f7bbfd60ca17c3b59c7923a1a79b7cce8703decc9f4aa08abc4c68ac0d955b5";
 
 export const MOCK_ACCESS_GRANTS: AccessGrant[] = [
-  {
-    id: "acc-01",
-    email: "bruno.ramos@example.com",
-    name: "Bruno Ramos",
-    role: "admin",
-    investorId: null,
-    status: "ativo",
-    createdAt: "2025-11-01T12:00:00Z",
-    createdBy: "Configuração inicial",
-    revokedAt: null,
-    revokedBy: null,
-    lastLoginAt: "2026-09-08T17:10:00Z",
-  },
   {
     id: "acc-07",
     email: "nex@carnextusa.com",
@@ -33,70 +27,5 @@ export const MOCK_ACCESS_GRANTS: AccessGrant[] = [
     revokedAt: null,
     revokedBy: null,
     lastLoginAt: null,
-  },
-  {
-    id: "acc-02",
-    email: "comercial@example.com",
-    name: "Equipe Comercial",
-    role: "colaborador",
-    investorId: null,
-    status: "ativo",
-    createdAt: "2026-03-10T14:00:00Z",
-    createdBy: "Bruno Ramos",
-    revokedAt: null,
-    revokedBy: null,
-    lastLoginAt: "2026-09-05T11:02:00Z",
-  },
-  {
-    id: "acc-03",
-    email: "ricardo.menezes@example.com",
-    name: "Ricardo Menezes",
-    role: "investidor",
-    investorId: "inv-01",
-    status: "ativo",
-    createdAt: "2025-11-04T15:00:00Z",
-    createdBy: "Bruno Ramos",
-    revokedAt: null,
-    revokedBy: null,
-    lastLoginAt: "2026-09-02T10:58:00Z",
-  },
-  {
-    id: "acc-04",
-    email: "patricia.lombardi@example.com",
-    name: "Patrícia Lombardi",
-    role: "investidor",
-    investorId: "inv-02",
-    status: "ativo",
-    createdAt: "2026-01-16T13:30:00Z",
-    createdBy: "Bruno Ramos",
-    revokedAt: null,
-    revokedBy: null,
-    lastLoginAt: "2026-08-30T09:15:00Z",
-  },
-  {
-    id: "acc-05",
-    email: "eduardo.tanaka@example.com",
-    name: "Eduardo Tanaka",
-    role: "investidor",
-    investorId: "inv-03",
-    status: "ativo",
-    createdAt: "2026-02-27T16:20:00Z",
-    createdBy: "Bruno Ramos",
-    revokedAt: null,
-    revokedBy: null,
-    lastLoginAt: "2026-09-06T16:40:00Z",
-  },
-  {
-    id: "acc-06",
-    email: "helena.vasconcelos@example.com",
-    name: "Helena Vasconcelos",
-    role: "investidor",
-    investorId: "inv-04",
-    status: "revogado",
-    createdAt: "2026-04-09T10:00:00Z",
-    createdBy: "Bruno Ramos",
-    revokedAt: "2026-08-01T13:00:00Z",
-    revokedBy: "Bruno Ramos",
-    lastLoginAt: "2026-07-28T20:11:00Z",
   },
 ];

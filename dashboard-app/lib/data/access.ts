@@ -1,6 +1,6 @@
 import type { AccessGrant, AuditEvent, Role, SessionUser } from "../types";
 import { ROLE_LABEL } from "../format";
-import { DEMO_LOGIN_CODE, MOCK_ACCESS_GRANTS } from "./mock/access";
+import { LOGIN_CODE_SHA256, MOCK_ACCESS_GRANTS } from "./mock/access";
 
 /**
  * Lista de e-mails autorizados a entrar no portal.
@@ -11,7 +11,8 @@ import { DEMO_LOGIN_CODE, MOCK_ACCESS_GRANTS } from "./mock/access";
  *
  * PROTÓTIPO: a lista vive no localStorage DESTE navegador, semeada com
  * `MOCK_ACCESS_GRANTS`. Um acesso criado aqui não vale em outro aparelho, e
- * nenhum e-mail é enviado — o código aceito é `DEMO_LOGIN_CODE`.
+ * nenhum e-mail é enviado — o código é privado e só o hash dele fica no
+ * código-fonte (`LOGIN_CODE_SHA256`).
  *
  * TODO(supabase): tabela `access_grants` (README, seção 5.1). A barreira real
  * fica no banco: trigger em `auth.users` recusa e-mail sem acesso ativo, e a
@@ -20,10 +21,9 @@ import { DEMO_LOGIN_CODE, MOCK_ACCESS_GRANTS } from "./mock/access";
  */
 
 export const IS_PROTOTYPE = true;
-export { DEMO_LOGIN_CODE };
 
-const GRANTS_KEY = "cnx_access_grants_v1";
-const AUDIT_KEY = "cnx_access_audit_v1";
+const GRANTS_KEY = "cnx_access_grants_v2";
+const AUDIT_KEY = "cnx_access_audit_v2";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /** Erro de regra de negócio, com mensagem pronta para a tela. */
@@ -255,6 +255,11 @@ export async function requestLoginCode(email: string): Promise<void> {
     throw new AccessError("E-mail inválido.");
 }
 
+async function sha256Hex(text: string): Promise<string> {
+  const hash = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+  return Array.from(new Uint8Array(hash), (b) => b.toString(16).padStart(2, "0")).join("");
+}
+
 /**
  * Confere o código. Devolve a sessão apenas se o e-mail tiver acesso ativo.
  *
@@ -267,7 +272,7 @@ export async function verifyLoginCode(
   code: string
 ): Promise<SessionUser | null> {
   const grant = findActiveGrantSync(email);
-  if (!grant || code.trim() !== DEMO_LOGIN_CODE) return null;
+  if (!grant || (await sha256Hex(code.trim())) !== LOGIN_CODE_SHA256) return null;
   const now = new Date().toISOString();
   saveGrants(
     loadGrants().map((g) => (g.id === grant.id ? { ...g, lastLoginAt: now } : g))

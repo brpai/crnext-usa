@@ -4,7 +4,6 @@ import * as React from "react";
 import { useRouter } from "next/navigation";
 import {
   AccessError,
-  DEMO_LOGIN_CODE,
   IS_PROTOTYPE,
   normalizeEmail,
   requestLoginCode,
@@ -119,8 +118,10 @@ export default function LoginPage() {
             <form onSubmit={verify} className="space-y-4">
               <p className="text-xs leading-relaxed text-brand-muted">
                 Se <span className="font-medium text-brand-white">{email}</span>{" "}
-                estiver autorizado, você receberá um código de 6 dígitos por
-                e-mail.
+                estiver autorizado,{" "}
+                {IS_PROTOTYPE
+                  ? "informe o seu código de acesso de 6 dígitos."
+                  : "você receberá um código de 6 dígitos por e-mail."}
               </p>
 
               <Field label="Código" htmlFor="code">
@@ -138,13 +139,6 @@ export default function LoginPage() {
                   autoFocus
                 />
               </Field>
-
-              {IS_PROTOTYPE ? (
-                <p className="rounded-xl border border-warn/30 bg-warn-dim px-3 py-2 text-[11px] font-medium leading-relaxed text-warn">
-                  Protótipo: nenhum e-mail é enviado. Use o código{" "}
-                  {DEMO_LOGIN_CODE}.
-                </p>
-              ) : null}
 
               {error ? (
                 <p role="alert" className="text-xs text-loss">
