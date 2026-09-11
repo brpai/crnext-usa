@@ -12,7 +12,7 @@ import type { AccessGrant } from "../../types";
  * A proteção real chega com o Supabase.
  */
 export const LOGIN_CODE_SHA256 =
-  "0f7bbfd60ca17c3b59c7923a1a79b7cce8703decc9f4aa08abc4c68ac0d955b5";
+  "f8fb6c836e621698d6c698be15622bbd7dab0aaef288a3573e3d15c566bbe67f";
 
 export const MOCK_ACCESS_GRANTS: AccessGrant[] = [
   {

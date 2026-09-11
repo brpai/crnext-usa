@@ -4,3 +4,4 @@ dashboard-app/.next/
 dashboard-app/out/
 dashboard-app/*.tsbuildinfo
 preview-carnext-dashboard.html
+.env*.local
