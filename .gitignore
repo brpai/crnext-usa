@@ -1,7 +1,6 @@
 carnext-usa-deploy.zip
-dashboard-app/node_modules/
-dashboard-app/.next/
-dashboard-app/out/
-dashboard-app/*.tsbuildinfo
+# Protótipo antigo do portal. O portal real vive no repo privado carnext-portal.
+# Ignorado por inteiro: este repo é público e a pasta era servida pelo GitHub Pages.
+dashboard-app/
 preview-carnext-dashboard.html
 .env*.local
